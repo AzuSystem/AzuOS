@@ -1,0 +1,299 @@
+.desktop {
+/*  background-image: url('assets/wallpapers/blackGrid.jpg'); 
+  background-repeat: no-repeat; */
+  background-color: #110b17;
+  top: 0px;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  margin: 0px;
+  padding: 0px;
+  position: absolute;
+}
+
+@font-face {
+  font-family: 'Inter';
+  src: url('../assets/fonts/inter/Inter-Regular.ttf');
+}
+
+@font-face {
+  font-family: 'InterThin';
+  src: url('../assets/fonts/inter/Inter-Thin.ttf');
+}
+
+p, h1, h2, h3, h4, h5, h6 {
+  font-family: 'Inter';
+  color: white;
+}
+p {
+  font-size: 16px;
+}
+
+h1 {
+  font-size: 35px;
+}
+
+.desktopIcons {
+  padding: 20px;
+  display: flex;
+}
+
+.deskIcon {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100px;
+  height: 90px;
+  border-radius: 8px;
+  padding: 5px;
+  padding-top: 20px;
+  transition-duration: 0.2s;
+}
+
+.deskIcon:Hover {
+  background-color: #FFFFFF09;
+  font-size: 17px;
+  scale: 1.03;
+}
+
+.deskIcon:Active {
+  scale: 0.97;
+}
+
+.taskbar {
+  background-color: #1e112c;
+  outline: 2px solid #2d1b40;
+  border-radius: 4px;
+  position: fixed;
+  bottom: 0px;
+  width: 80%;
+  margin: 15px;
+  height: 45px;
+  padding: 0px;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  box-shadow: 0 0 28px 2px rgba(0, 0, 0, .41);
+  display: flex;
+}
+
+.window {
+  background-color: #1e112c;
+  position: fixed;
+  width: 50%;
+  height: 40%;
+  padding: 0px;
+  padding-bottom: 92px;
+  border: 2px solid #2d1b40;
+  border-radius: 5px;
+  margin: auto;
+  inset: 0px;
+  text-align: center;
+  box-shadow: 0px 0px 30px #000000;
+  transition-duration: 0.2s;
+} 
+
+.container {
+  position: fixed;
+  background-color: #150d1f;
+  width: 50%;
+  height: 40%;
+  padding: 0px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+} 
+
+button {
+  background-color: #1e112c;
+  border: 2px solid #2d1b40;
+  border-radius: 5px;
+  color: white;
+  font-family: inter;
+  padding: 10px 26px;
+  text-align: center;
+  display: inline-block;
+  font-size: 16px;
+  box-shadow: 0px 0px 7px #000000;
+  transition-duration: 0.2s;
+  cursor: pointer;
+}
+
+.list {
+  background-color: #261838;
+  border-radius: 15px;
+  margin: auto;
+  width: 80%;
+  height: 50%;
+  padding: 5px;
+}
+
+.listOption {
+  background-color: #311f47;
+  border-radius: 15px;
+  padding: 5px;
+  margin: auto;
+  width: 95%;
+  height: 50%;
+  text-align: left;
+}
+
+button:hover {
+  background-color: #231433;
+  font-size: 17px;
+}
+
+button:active {
+  background-color: #170d21;
+}
+
+.toolbarStart, .trayButton, .quickPanel-Button, .taskbarDate-Button, .power-button {
+  border: 0px;
+  border-radius: 0px;
+  width: 45px;
+  height: 45px;
+  padding: 5px;
+  padding-top: 7px;
+  display: flex;
+  justify-content: center;
+}
+
+.toolbarStart {
+  box-shadow: 2px 0px 0px #2d1b40;
+}
+
+.trayButton, .quickPanel-Button, .taskbarDate-Button {
+  box-shadow: -2px 0px 0px #2d1b40;
+}
+
+.taskbarDate-Button {
+  width: 55px;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.toolbarTask {
+  width: 100%;
+}
+
+.mini {
+  font-size: 10px;
+}
+
+.implementationToast {
+  background-color: #1e112c;
+  outline: 2px solid #2d1b40;
+  position: fixed;
+  border-radius: 4px;
+  width: 20%;
+  margin-left: auto;
+  margin-right: auto;
+  height: 45px;
+  padding: 0px;
+  left: 0;
+  right: 0;
+  bottom: 80px;
+  padding-left: 10px;
+  align-items: center;
+  justify-content: left;
+  display: none;
+  box-shadow: 0 0 28px 2px rgba(0, 0, 0, .41);
+  transition-duration: 0.2s;
+}
+
+.pfp {
+  width: 45px; /* i wanna use 69px :( */
+  border-radius: 50%;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 1);
+}
+
+.start-menu {
+  background-color: #1e112c;
+  outline: 2px solid #2d1b40;
+  position: fixed;
+  border-radius: 4px;
+  width: 30%;
+  height: 60%;
+  margin-left: 10.1%;
+  padding: 0px;
+  bottom: -100px;
+  opacity: 0;
+  padding-left: 0px;
+  box-shadow: 0 0 20px 3px rgba(0, 0, 0, .71);
+}
+
+@keyframes open {
+  from {
+    bottom: -100px;
+    opacity: 0;
+  }
+  to {
+    bottom: 80px;
+    opacity: 1;
+  }
+}
+
+@keyframes close {
+  from {
+    bottom: 80px;
+    opacity: 1;
+  }
+  to {
+    bottom: -100px;
+    opacity: 0;
+  }
+}
+
+.open {
+  animation: open 0.2s ease-out forwards;
+}
+
+.close {
+  animation: close 0.2s ease-in forwards;
+}
+
+.startUser {
+  display: flex;
+  align-items: center;
+  padding-left: 5px;
+  padding-top: 10px;
+  width: 10%;
+}
+
+.startShadow {
+  padding-left: 10px;
+  padding-bottom: 10px;
+  margin: 0;
+  box-shadow: 0 0 15px 3px rgba(0, 0, 0, .50);
+}
+
+.start-menu-username {
+  margin-left: 15px;
+  font-size: 16px;
+}
+
+.power-button {
+  position: absolute;
+  margin-left: 340px;
+  border-radius: 10px;
+  display: flex;
+  width: 40px;
+  height: 40px;
+  padding-top: 6px;
+  justify-content: center;
+  box-shadow: 0 0 0 0
+}
+
+.pinapptitle {
+  opacity: 0.5;
+  margin-left: 20px;
+  display: flex;
+  align-items: center
+}
+
+hr.menuhr {
+  opacity: 0.2;
+  color: 000000;
+}

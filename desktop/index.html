@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>AzuOS</title>
+		<link rel="stylesheet" href="index.css">
+	</head>
+	<body>
+		<div class=desktop>
+			<div class=desktopIcons>
+				<script src=scripts/window.js></script>
+				<div class=deskIcon>
+					<img width=40px src=assets/icons/folderopen.svg>
+					<p>File Explorer</p>
+				</div>
+				<div class=deskIcon>
+					<img width=40px src=assets/icons/settings.svg>
+					<p>Settings</p>
+				</div>
+				<div class=deskIcon>
+					<img width=40px src=assets/icons/terminal.svg>
+					<p>Terminal</p>
+				</div>
+				<div id=winTest class=deskIcon>
+					<img width=40px src=assets/icons/questionmark.svg>
+					<p>Window Test</p>
+				</div>
+			</div>
+			<div id=daToast class=implementationToast>
+				<script src=scripts/toast.js></script>
+				<p>Not Implemented...</p>
+			</div>
+			<div id=startMenu class=start-menu> 
+				<div class=startShadow>
+					<div class=startUser>
+						<img class=pfp src=assets/pfp/wallpaperCave-uwp4415391.jpeg>
+						<p class=start-menu-username>AzuUser</p>
+						<button onclick="powerDialog()" class=power-button>
+							<img width=30px height=30px src=assets/icons/power.svg>
+						</button>
+					</div>
+				</div>
+				<p class=pinapptitle>Pinned Apps <img height=15px src=assets/icons/pin.svg></p>
+				<hr class=menuhr>
+				<p>im going insane.</p>
+			</div>
+			<div class=taskbar>
+				<script src=scripts/startmenu.js></script>
+				<button onclick="openStartMenu()" class="toolbarStart">
+					<img width=30px height=30px src=../assets/logo.svg>
+				</button>
+				<div class="toolbarTask">
+					<p>test</p>
+				</div>
+				<button onclick="notImplemented()" class="trayButton">
+					<img width=30px src=assets/icons/arrowup.svg>
+				</button>
+				<button onclick="notImplemented()" class="quickPanel-Button">
+					<img width=30px src=assets/icons/config.svg>
+				</button>
+				<button onclick="notImplemented()" class="taskbarDate-Button">
+					<p id="time">00:00</p>
+					<script src="scripts/datetime.js"></script>
+				</button>
+			</div>
+		</div>
+	</body>
+</html>
+

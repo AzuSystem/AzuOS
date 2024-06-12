@@ -1,0 +1,91 @@
+body {
+/*  background-image: url('assets/wallpapers/blackGrid.jpg'); 
+  background-repeat: no-repeat; */
+  background-color: #110b17;
+}
+
+.window {
+  background-color: #1e112c;
+  position: fixed;
+  width: 50%;
+  height: 40%;
+  padding: 0px;
+  padding-bottom: 92px;
+  border: 2px solid #2d1b40;
+  border-radius: 5px;
+  margin: auto;
+  inset: 0px;
+  text-align: center;
+  box-shadow: 0px 0px 30px #000000;
+  transition-duration: 0.2s;
+} 
+
+.container {
+  position: fixed;
+  background-color: #150d1f;
+  width: 50%;
+  height: 40%;
+  padding: 0px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+} 
+
+p, h1, h2, h3 {
+	font-family: inter;
+	color: white;
+}
+p {
+	font-size: 16px;
+}
+
+h1 {
+	font-size: 35px;
+}
+
+button {
+  background-color: #1e112c;
+  border: 2px solid #2d1b40;
+  border-radius: 5px;
+  color: white;
+  font-family: inter;
+  padding: 10px 26px;
+  text-align: center;
+  display: inline-block;
+  font-size: 16px;
+  box-shadow: 0px 0px 7px #000000;
+  transition-duration: 0.2s;
+  cursor: pointer;
+}
+
+.list {
+  background-color: #261838;
+  border-radius: 15px;
+  margin: auto;
+  width: 80%;
+  height: 50%;
+  padding: 5px;
+}
+
+.listOption {
+  background-color: #311f47;
+  border-radius: 15px;
+  padding: 5px;
+  margin: auto;
+  width: 95%;
+  height: 50%;
+  text-align: left;
+}
+
+
+button:hover {
+  background-color: #231433;
+  font-size: 17px;
+}
+
+button:active {
+  background-color: #170d21;
+}
+
+.mini {
+  font-size: 10px;
+}
