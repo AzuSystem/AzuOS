@@ -4,6 +4,16 @@ body {
   background-color: #110b17;
 }
 
+@font-face {
+  font-family: 'Inter';
+  src: url('assets/fonts/inter/Inter-Regular.ttf');
+}
+
+@font-face {
+  font-family: 'InterThin';
+  src: url('assets/fonts/inter/Inter-Thin.ttf');
+}
+
 .window {
   background-color: #1e112c;
   position: fixed;
@@ -20,7 +30,7 @@ body {
   transition-duration: 0.2s;
 } 
 
-.container {
+.content {
   position: fixed;
   background-color: #150d1f;
   width: 50%;
@@ -28,6 +38,14 @@ body {
   padding: 0px;
   padding-top: 20px;
   padding-bottom: 20px;
+} 
+
+.container {
+  position: fixed;
+  background-color: #ffffff00;
+  width: 50%;
+  height: 100%;
+  padding: 0px;
 } 
 
 p, h1, h2, h3 {
@@ -62,7 +80,7 @@ button {
   border-radius: 15px;
   margin: auto;
   width: 80%;
-  height: 50%;
+  height: 45%;
   padding: 5px;
 }
 
@@ -71,9 +89,30 @@ button {
   border-radius: 15px;
   padding: 5px;
   margin: auto;
+  margin-top: 10px;
   width: 95%;
-  height: 50%;
+  height: 48px;
+  display: flex;
+  box-shadow: 0px 0px 20px #00000030;
+  transition-duration: 0.2s;
+}
+
+.listOptionText {
   text-align: left;
+  margin-top: -10px;
+  margin-left: 5px;
+  display: flex;
+  flex-direction: column;
+}
+
+.listOption:hover {
+  scale: 1.02;
+  background-color: #35224d;
+}
+
+.listOption:active {
+  scale: 0.99;
+  background-color: #2e1d42;
 }
 
 
@@ -87,5 +126,46 @@ button:active {
 }
 
 .mini {
+  margin-top: -12px;
   font-size: 10px;
+}
+
+@keyframes utilSize {
+  from {
+    height: 40%;
+  }
+  to {
+    height: 70%;
+  }
+}
+
+.utilSize {
+  animation: utilSize 0.5s ease-out forwards;
+}
+
+/* fade in - fade out */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.fadeIn {
+  animation: fadeIn 0.5s ease-out forwards;
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+.fadeOut {
+  animation: fadeOut 0.5s ease-out forwards;
 }

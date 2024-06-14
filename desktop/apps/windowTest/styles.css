@@ -1,0 +1,38 @@
+body {
+/*  background-image: url('assets/wallpapers/blackGrid.jpg'); 
+  background-repeat: no-repeat; */
+  background-color: #110b17;
+}
+
+@font-face {
+  font-family: 'Inter';
+  src: url('../../assets/fonts/inter/Inter-Regular.ttf');
+}
+
+@font-face {
+  font-family: 'InterThin';
+  src: url('../../assets/fonts/inter/Inter-Thin.ttf');
+}
+
+p, h1, h2, h3 {
+	font-family: inter;
+	color: white;
+}
+
+p {
+	margin-top: -10px;
+}
+
+div {
+  position: fixed;
+  width: 40%;
+  height: 10%;
+  padding: 0px;
+  margin: auto;
+  inset: 0px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}

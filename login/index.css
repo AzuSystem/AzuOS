@@ -18,6 +18,35 @@ body {
   overflow: hidden;
 }
 
+.window {
+  background-color: #1e112cee;
+  position: fixed;
+  width: 28%;
+  height: 20%;
+  padding: 0px;
+  padding-bottom: 92px;
+  border: 2px solid #2d1b40;
+  border-radius: 5px;
+  margin: auto;
+  inset: 0px;
+  text-align: center;
+  box-shadow: 0px 0px 30px #000000;
+  transition-duration: 0.2s;
+  z-index: 5;
+  opacity: 0;
+}
+
+.login {
+  position: fixed;
+  background-color: #150d1fcc;
+  width: 30%;
+  height: 20%;
+  padding: 0px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+
 @font-face {
   font-family: 'Inter';
   src: url('../assets/fonts/inter/Inter-Regular.ttf');
@@ -93,11 +122,9 @@ p, h1, h2, h3, h4, h5, h6 {
 @keyframes noBlur {
   from {
     filter: blur(5px) brightness(0.5);
-    scale: 1.1;
   }
   to {
     filter: blur(0px) brightness(1);
-    scale: 1;
   }
 }
 
@@ -107,4 +134,39 @@ p, h1, h2, h3, h4, h5, h6 {
 
 .noBlur {
   animation: noBlur 0.5s ease-in-out forwards;
+}
+
+/* fade in - fade out */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    width: 28%;
+    height: 18%;
+  }
+  to {
+    opacity: 1;
+    width: 30%;
+    height: 20%;
+  }
+}
+
+.fadeIn {
+  animation: fadeIn 0.5s ease-out forwards;
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+    width: 30%;
+    height: 20%;
+  }
+  to {
+    opacity: 0;
+    width: 28%;
+    height: 18%;
+  }
+}
+
+.fadeOut {
+  animation: fadeOut 0.5s ease-out forwards;
 }

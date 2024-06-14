@@ -1,7 +1,11 @@
-.desktop {
-/*  background-image: url('assets/wallpapers/blackGrid.jpg'); 
-  background-repeat: no-repeat; */
+body {
   background-color: #110b17;
+}
+
+.desktop {
+  /* background-image: url('assets/wallpapers/palm tree near dome.jpg'); */
+  background-size: cover;
+  background-attachment: fixed;
   top: 0px;
   bottom: 0px;
   left: 0px;
@@ -36,6 +40,7 @@ h1 {
 .desktopIcons {
   padding: 20px;
   display: flex;
+  flex-wrap: wrap;
 }
 
 .deskIcon {
@@ -80,7 +85,7 @@ h1 {
 }
 
 .window {
-  background-color: #1e112c;
+  background-color: #ffffff;
   position: fixed;
   width: 50%;
   height: 40%;
@@ -93,6 +98,7 @@ h1 {
   text-align: center;
   box-shadow: 0px 0px 30px #000000;
   transition-duration: 0.2s;
+
 } 
 
 .container {
@@ -210,19 +216,43 @@ button:active {
 }
 
 .start-menu {
-  background-color: #1e112c;
-  outline: 2px solid #2d1b40;
-  position: fixed;
-  border-radius: 4px;
-  width: 30%;
-  height: 60%;
-  margin-left: 10.1%;
-  padding: 0px;
-  bottom: -100px;
-  opacity: 0;
-  padding-left: 0px;
-  box-shadow: 0 0 20px 3px rgba(0, 0, 0, .71);
+    background-color: #1e112c;
+    outline: 2px solid #2d1b40;
+    position: fixed;
+    border-radius: 4px;
+    width: 30%;
+    height: 60%;
+    margin-left: 10.1%;
+    padding: 0px;
+    bottom: -100px;
+    opacity: 0;
+    padding-left: 0px;
+    box-shadow: 0 0 20px 3px rgba(0, 0, 0, .71);
+    overflow-x: hidden;
+    overflow-y: auto
 }
+
+/* Customize scrollbar for WebKit browsers */
+.start-menu::-webkit-scrollbar {
+    width: 5px; /* Specify the width of the scrollbar */
+}
+
+/* Customize scrollbar thumb for WebKit browsers */
+.start-menu::-webkit-scrollbar-thumb {
+    background-color: #36204d; /* Specify the color of the scrollbar thumb */
+    border-radius: 4px; /* Specify the border radius of the scrollbar thumb */
+}
+
+/* Hide the scrollbar track and button */
+.start-menu::-webkit-scrollbar-track {
+    background-color: transparent; /* Set background color of track to transparent */
+    border: none; /* Remove border */
+}
+
+.start-menu::-webkit-scrollbar-button {
+    display: none; /* Hide the scrollbar button */
+}
+
 
 @keyframes open {
   from {
@@ -287,13 +317,68 @@ button:active {
 }
 
 .pinapptitle {
-  opacity: 0.5;
+  opacity: 0.1;
   margin-left: 20px;
   display: flex;
   align-items: center
 }
 
 hr.menuhr {
-  opacity: 0.2;
-  color: 000000;
+  border-color: #2d1b40;
+  border-style: solid;
+}
+
+.listOption {
+  background-color: #311f47;
+  border-radius: 15px;
+  padding: 5px;
+  padding-left: 20px;
+  margin: 7px;
+  margin-top: 10px;
+  width: 90.7%;
+  height: 48px;
+  display: flex;
+  box-shadow: 0px 0px 20px #00000030;
+  transition-duration: 0.2s;
+}
+
+.listOptionText {
+  text-align: left;
+  margin-top: -2px;
+  margin-left: 5px;
+  padding-left: 5px;
+  display: flex;
+  flex-direction: column;
+}
+
+.listOption:hover {
+  scale: 1.02;
+  background-color: #35224d;
+}
+
+.listOption:active {
+  scale: 0.99;
+  background-color: #2e1d42;
+}
+
+.taskbar-date {
+    background-color: #1e112c;
+    outline: 2px solid #2d1b40;
+    position: fixed;
+    border-radius: 4px;
+    width: 15%;
+    height: 87px;
+    margin-left: 65%;
+    padding: 0px;
+    padding-top: 10px;
+    bottom: -100px;
+    opacity: 0;
+    padding-left: 0px;
+    text-align: center;
+    box-shadow: 0 0 20px 3px rgba(0, 0, 0, .71);
+    overflow: hidden;
+}
+
+.taskDateText {
+  margin-top: -9%;
 }

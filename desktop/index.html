@@ -5,7 +5,7 @@
 		<link rel="stylesheet" href="index.css">
 	</head>
 	<body>
-		<div class=desktop>
+		<div id=desktop class=desktop>
 			<div class=desktopIcons>
 				<script src=scripts/window.js></script>
 				<div class=deskIcon>
@@ -20,11 +20,14 @@
 					<img width=40px src=assets/icons/terminal.svg>
 					<p>Terminal</p>
 				</div>
-				<div id=winTest class=deskIcon>
-					<img width=40px src=assets/icons/questionmark.svg>
-					<p>Window Test</p>
-				</div>
+				<a onclick="newWindow('windowTest')">
+					<div class=deskIcon>
+						<img width=40px src=assets/icons/questionmark.svg>
+						<p>Window Test</p>
+					</div>
+				</a>
 			</div>
+			<p>Test ISO</p>
 			<div id=daToast class=implementationToast>
 				<script src=scripts/toast.js></script>
 				<p>Not Implemented...</p>
@@ -41,9 +44,53 @@
 				</div>
 				<p class=pinapptitle>Pinned Apps <img height=15px src=assets/icons/pin.svg></p>
 				<hr class=menuhr>
-				<p>im going insane.</p>
+				<a>
+					<div id=install class="listOption">
+						<img width=30 src=assets/icons/folderopen.svg>
+						<div class=listOptionText>
+							<p>File Manager</p>
+						</div>
+					</div>
+				</a>
+				<a>
+					<div id=install class="listOption">
+						<img width=30 src=assets/icons/settings.svg>
+						<div class=listOptionText>
+							<p>Settings</p>
+						</div>
+					</div>
+				</a>
+				<a>
+					<div id=install class="listOption">
+						<img width=30 src=assets/icons/terminal.svg>
+						<div class=listOptionText>
+							<p>Terminal</p>
+						</div>
+					</div>
+				</a>
+				<a>
+					<div id=install class="listOption">
+						<img width=30 src=assets/icons/internet.svg>
+						<div class=listOptionText>
+							<p>Web Browser</p>
+						</div>
+					</div>
+				</a>
+				<a>
+					<div id=install class="listOption">
+						<img width=30 src=assets/icons/questionmark.svg>
+						<div class=listOptionText>
+							<p>Window Test</p>
+						</div>
+					</div>
+				</a>
 			</div>
 			<div class=taskbar>
+				<div id=taskbardate class=taskbar-date>
+					<h3 id="fulltime">00:00</h3>
+					<p id="date" class=taskDateText>January 1, 2000</p>
+					<script src="scripts/datetime.js"></script>
+				</div>
 				<script src=scripts/startmenu.js></script>
 				<button onclick="openStartMenu()" class="toolbarStart">
 					<img width=30px height=30px src=../assets/logo.svg>
@@ -57,12 +104,10 @@
 				<button onclick="notImplemented()" class="quickPanel-Button">
 					<img width=30px src=assets/icons/config.svg>
 				</button>
-				<button onclick="notImplemented()" class="taskbarDate-Button">
+				<button onclick="openTaskDate()" class="taskbarDate-Button">
 					<p id="time">00:00</p>
-					<script src="scripts/datetime.js"></script>
 				</button>
 			</div>
 		</div>
 	</body>
 </html>
-

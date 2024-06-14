@@ -11,8 +11,9 @@ function updateTime() {
     var hhmmtime = hours + ":" + (minutes < 10 ? '0' : '') + minutes;
     var hhmmsstime = hours + ":" + (minutes < 10 ? '0' : '') + minutes + ":" + (seconds < 10 ? '0' : '') + seconds;
     
-    // Display the time in an element with id "clock"
+    // Display the time in an element with id "time"
     document.getElementById('time').innerText = hhmmtime;
+    document.getElementById('fulltime').innerText = hhmmsstime;
 }
 
 // Array of month names
@@ -38,3 +39,40 @@ function updateDate() {
 // Update the time & date every second
 setInterval(updateTime, 1000);
 setInterval(updateDate, 1000);
+
+let dateTaskMenu = document.querySelector(".taskbar-date");
+var dtmDiv = document.getElementById('taskbardate');
+
+function openTaskDate() {
+    console.log('Quick Date Menu Opened')
+    dateTaskMenu.classList.remove("close");
+    dateTaskMenu.classList.add("open");
+}
+
+function closeTaskDate() {
+    console.log('Quick Date Menu Closed')
+    dateTaskMenu.classList.remove("open");
+    dateTaskMenu.classList.add("close");
+}
+
+document.addEventListener('click', function(event) {
+    var dtmComputedStyle = window.getComputedStyle(dtmDiv);
+    var dtmOpacity = dtmComputedStyle.getPropertyValue('opacity');
+    if (dtmOpacity === '1') {
+        closeTaskDate();
+    } else {
+        console.log("dtmOpacity (Click): " + dtmOpacity);
+    }
+});
+
+document.addEventListener('keydown', function(event) {
+    if (event.key === "Escape") {
+        var dtmComputedStyle = window.getComputedStyle(dtmDiv);
+        var dtmOpacity = dtmComputedStyle.getPropertyValue('opacity');
+        if (dtmOpacity === '1') {
+            closeTaskDate();
+        } else {
+            console.log("dtmOpacity (Key): " + dtmOpacity);
+        }
+    }
+});
