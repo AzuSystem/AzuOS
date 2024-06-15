@@ -68,3 +68,27 @@ p {
   background-color: #09060d;
   box-shadow: 0px 0px 20px #00000030;
 }
+
+.v-line {
+  border-left: 2px solid #ffffff10;
+  height: 467px;
+  position: absolute;
+  left: 180px;
+  margin-top: 10px;
+  margin-left: -3px;
+  top: 0;
+}
+
+hr {
+  opacity: 1;
+  margin: 0;
+  margin-left: 10px;
+  border: 1px solid #ffffff10;
+  width: 140px;
+}
+
+.settings {
+  position: flex;
+  flex-direction: column;
+  margin: 0;
+}
