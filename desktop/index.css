@@ -3,7 +3,7 @@ body {
 }
 
 .desktop {
-  /* background-image: url('assets/wallpapers/palm tree near dome.jpg'); */
+  background-image: url('assets/wallpapers/palm tree near dome.jpg');
   background-size: cover;
   background-attachment: fixed;
   top: 0px;
