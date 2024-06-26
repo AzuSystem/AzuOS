@@ -1,0 +1,17 @@
+title=Notepad
+
+navbar {
+	dropdown: File, New:new, Open:open, Save:save, Save As:saveas, Exit:exit;
+	dropdown: Edit, Time & Date:timedate, Font:font;
+	dropdown: View, Zoom In:zoomin, Zoom Out:zoomout, Toggle Word Wrap:wordwrap;
+	dropdown: About:about;
+}
+
+// sec means section
+sec {
+	input: hint:Enter Something;
+}
+
+new {
+	print: new;
+}

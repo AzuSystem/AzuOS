@@ -82,6 +82,7 @@ h1 {
   margin-right: auto;
   box-shadow: 0 0 28px 2px rgba(0, 0, 0, .41);
   display: flex;
+  z-index: 420; /* very funny numbr */
 }
 
 .window {

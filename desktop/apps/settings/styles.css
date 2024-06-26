@@ -1,7 +1,29 @@
 body {
 /*  background-image: url('assets/wallpapers/blackGrid.jpg'); 
   background-repeat: no-repeat; */
-  background-color: #110b17;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+/* Customize scrollbar for WebKit browsers */
+body::-webkit-scrollbar {
+  width: 5px; /* Specify the width of the scrollbar */
+}
+
+/* Customize scrollbar thumb for WebKit browsers */
+body::-webkit-scrollbar-thumb {
+  background-color: #36204d; /* Specify the color of the scrollbar thumb */
+  border-radius: 4px; /* Specify the border radius of the scrollbar thumb */
+}
+
+/* Hide the scrollbar track and button */
+body::-webkit-scrollbar-track {
+  background-color: transparent; /* Set background color of track to transparent */
+  border: none; /* Remove border */
+}
+
+body::-webkit-scrollbar-button {
+  display: none; /* Hide the scrollbar button */
 }
 
 @font-face {
@@ -14,13 +36,13 @@ body {
   src: url('../../assets/fonts/inter/Inter-Thin.ttf');
 }
 
-p, h1, h2, h3 {
+p, h1, h2, h3, h4, h5, h6, div {
 	font-family: inter;
 	color: white;
 }
 
 p {
-	margin-top: -10px;
+  margin: 0;
 }
 
 .sidebar {
@@ -31,7 +53,7 @@ p {
 }
 
 .sidebar-button {
-  background-color: #110b17;
+  background-color: #00000000;
   border-radius: 15px;
   border: 0;
   padding: 5px;
@@ -39,7 +61,7 @@ p {
   padding-left: 20px;
   margin: 2px;
   margin-top: 10px;
-  width: 10%;
+  width: 155px;
   height: 40px;
   display: flex;
   box-shadow: 0px 0px 0px #00000030;
@@ -59,7 +81,7 @@ p {
 
 .sidebar-button:hover {
   scale: 1.02;
-  background-color: #1c1226;
+  background-color: #ffffff10;
   box-shadow: 0px 0px 20px #00000030;
 }
 
@@ -91,4 +113,54 @@ hr {
   position: flex;
   flex-direction: column;
   margin: 0;
+}
+
+.content {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  top: 0;
+  left: 200px;
+}
+
+.section {
+  border: 2px solid #ffffff10;
+  border-radius: 10px;
+  padding: 12px;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: left;
+  justify-content: center;
+  box-shadow: 0px 0px 20px #00000070;
+}
+
+.label {
+  font-size: 12px;
+  color: #ffffff70;
+}
+
+.systemsection {
+  border: 2px solid #ffffff10;
+  border-radius: 10px;
+  padding: 12px;
+  display: inline-flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+  width: 200px;
+  box-shadow: 0px 0px 20px #00000070;
+}
+
+.h-layout {
+  display: inline-flex;
+  flex-direction: column;
+}
+
+.v-layout {
+  display: inline-flex;
+  flex-direction: row;
+}
+
+iframe {
+  background-color: transparent;
 }

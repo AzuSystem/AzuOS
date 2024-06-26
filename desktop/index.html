@@ -6,24 +6,41 @@
 	</head>
 	<body>
 		<div id=desktop class=desktop>
+			<link rel="stylesheet" href="scripts/winbox.min.css">
+			<link rel="stylesheet" href="window.css">
+			<script src=scripts/winbox.min.js></script>
+			<script src=scripts/window.js></script>
 			<div class=desktopIcons>
-				<script src=scripts/window.js></script>
 				<div class=deskIcon>
 					<img width=40px src=assets/icons/folderopen.svg>
 					<p>File Explorer</p>
 				</div>
-				<div class=deskIcon>
-					<img width=40px src=assets/icons/settings.svg>
-					<p>Settings</p>
-				</div>
+				<a onclick='newWindow("Settings", false, "apps/settings/index.html")'>
+					<div class=deskIcon>
+						<img width=40px src=assets/icons/settings.svg>
+						<p>Settings</p>
+					</div>
+				</a>
 				<div class=deskIcon>
 					<img width=40px src=assets/icons/terminal.svg>
 					<p>Terminal</p>
 				</div>
-				<a onclick="newWindow('windowTest')">
+				<a onclick='newWindow("Window Test", false, "apps/windowTest/index.html")'>
 					<div class=deskIcon>
 						<img width=40px src=assets/icons/questionmark.svg>
 						<p>Window Test</p>
+					</div>
+				</a>
+				<a onclick='newWindowAZML("AZML Test", false, "apps/AZMLTest/index.html")'>
+					<div class=deskIcon>
+						<img width=40px src=assets/icons/questionmark.svg>
+						<p>AZML Test</p>
+					</div>
+				</a>
+				<a onclick='newWindow("Clock", false, "apps/clock/index.html")'>
+					<div class=deskIcon>
+						<img width=40px src=assets/icons/questionmark.svg>
+						<p>Clock</p>
 					</div>
 				</a>
 			</div>
@@ -52,7 +69,7 @@
 						</div>
 					</div>
 				</a>
-				<a>
+				<a onclick='newWindow("Settings", false, "apps/settings/index.html")'>
 					<div id=install class="listOption">
 						<img width=30 src=assets/icons/settings.svg>
 						<div class=listOptionText>
@@ -76,7 +93,7 @@
 						</div>
 					</div>
 				</a>
-				<a>
+				<a onclick='newWindow("Window Test", false, "apps/windowTest/index.html")'>
 					<div id=install class="listOption">
 						<img width=30 src=assets/icons/questionmark.svg>
 						<div class=listOptionText>
