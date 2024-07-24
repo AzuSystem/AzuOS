@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>AzuOS</title>
+		<link rel="stylesheet" href="login.css">
+	</head>
+	<body>
+		<div id=boot class=bootscreen>
+			<img width=150 src=../assets/logo.png>
+			<p class=boottext>AzuOS</p>
+			<div class=loading>
+				<p>Loading...</p>
+			</div>
+		</div>
+		<div id="window" class="window">
+			<p>Login</p>
+			<div id="login" class=login>
+				<p>AzuUser</p>
+				<input type="password" id="pwd" name="password">
+			</div>
+		</div>
+		<div class=screen>
+			<script src="scripts/functionality.js"></script>
+			<div class=datetime>
+				<h1 class="time" id="time">00:00</h1>
+				<p class="date" id="date">January 1, 2000</p>
+				<script src="../desktop/scripts/datetime.js"></script>
+			</div>
+		</div>
+	</body>
+</html>

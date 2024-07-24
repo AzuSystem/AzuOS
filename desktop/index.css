@@ -25,7 +25,7 @@ body {
   src: url('../assets/fonts/inter/Inter-Thin.ttf');
 }
 
-p, h1, h2, h3, h4, h5, h6 {
+p, h1, h2, h3, h4, h5, h6, .taskbartask {
   font-family: 'Inter';
   color: white;
 }
@@ -82,7 +82,7 @@ h1 {
   margin-right: auto;
   box-shadow: 0 0 28px 2px rgba(0, 0, 0, .41);
   display: flex;
-  z-index: 420; /* very funny numbr */
+  z-index: 50;
 }
 
 .window {
@@ -99,7 +99,6 @@ h1 {
   text-align: center;
   box-shadow: 0px 0px 30px #000000;
   transition-duration: 0.2s;
-
 } 
 
 .container {
@@ -155,22 +154,25 @@ button:active {
   background-color: #170d21;
 }
 
-.toolbarStart, .trayButton, .quickPanel-Button, .taskbarDate-Button, .power-button {
+.toolbarStart, .trayButton, .quickPanel-Button, .taskbarDate-Button, .power-button, .wifi-Button {
   border: 0px;
   border-radius: 0px;
   width: 45px;
   height: 45px;
   padding: 5px;
-  padding-top: 7px;
   display: flex;
+  align-items: center;
   justify-content: center;
+  text-align: center;
+  z-index: 50;
 }
 
 .toolbarStart {
   box-shadow: 2px 0px 0px #2d1b40;
 }
 
-.trayButton, .quickPanel-Button, .taskbarDate-Button {
+
+.trayButton, .quickPanel-Button, .taskbarDate-Button, .wifi-Button {
   box-shadow: -2px 0px 0px #2d1b40;
 }
 
@@ -183,6 +185,8 @@ button:active {
 
 .toolbarTask {
   width: 100%;
+  display: flex;
+  flex-direction: row;
 }
 
 .mini {
@@ -307,7 +311,7 @@ button:active {
 
 .power-button {
   position: absolute;
-  margin-left: 340px;
+  right: 10px;
   border-radius: 10px;
   display: flex;
   width: 40px;
@@ -334,7 +338,6 @@ hr.menuhr {
   border-radius: 15px;
   padding: 5px;
   padding-left: 20px;
-  margin: 7px;
   margin-top: 10px;
   width: 90.7%;
   height: 48px;
@@ -382,4 +385,115 @@ hr.menuhr {
 
 .taskDateText {
   margin-top: -9%;
+}
+
+.welcome {
+  background-color: black;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding: 0px;
+  margin: auto;
+  inset: 0px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  z-index: 420; /* very funny numbr */
+}
+
+.welcometext {
+  font-size: 45px;
+  font-family: 'InterThin'
+}
+
+@keyframes fadeout {
+  from {
+    opacity: 1;
+    pointer-events: all;
+  }
+  to {
+    opacity: 0;
+    pointer-events: none;
+  }
+}
+
+.fadeout {
+  animation: fadeout 0.5s ease-in-out forwards;
+}
+
+.startmenulist {
+  padding: 2px;
+  margin: 0px;
+}
+
+@keyframes opentask {
+  from {
+    opacity: 0;
+    margin-left: -5px;
+  }
+  to {
+    opacity: 1;
+    margin-left: 0px;
+  }
+}
+
+.opentask {
+  animation: opentask 0.2s ease-out forwards;
+}
+
+@keyframes closetask {
+  from {
+    opacity: 1;
+    margin-left: 0px;
+  }
+  to {
+    opacity: 0;
+    margin-left: -5px;
+  }
+}
+
+.closetask {
+  animation: closetask 0.2s ease-out forwards;
+}
+
+.taskbartask {
+  margin: 0;
+  padding: 0;
+  box-shadow: 0px 0px 0px #2d1b40;
+  border: 0px solid #2d1b40;
+  border-right: 2px solid #2d1b40;
+  border-radius: 0px;
+  min-width: 45px;
+  max-width: 150px;
+  height: 45px;
+  padding: 20px;
+  padding-top: 0;
+  padding-bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  opacity: 0;
+  margin-left: -5px;
+}
+
+.taskbartask:hover {
+  background-color: #231433;
+}
+
+.taskbartask:active {
+  background-color: #170d21;
+}
+
+.sysver {
+  position: fixed;
+  top: 5px;
+  right: 15px;
+  opacity: 0.5;
+  text-align: right;
+  text-shadow: 0px 0px 25px #000000cc;
 }

@@ -1,0 +1,216 @@
+body {
+  background-image: url('../desktop/assets/wallpapers/blackGrid.jpg'); 
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.screen {
+  background-image: url('../desktop/assets/wallpapers/blackGrid.jpg'); 
+  background-size: cover;
+  background-attachment: fixed;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+.window {
+  background-color: #1e112cee;
+  position: fixed;
+  width: 28%;
+  height: 20%;
+  padding: 0px;
+  padding-bottom: 92px;
+  border: 2px solid #2d1b40;
+  border-radius: 5px;
+  margin: auto;
+  inset: 0px;
+  text-align: center;
+  box-shadow: 0px 0px 30px #000000;
+  transition-duration: 0.2s;
+  z-index: 5;
+  opacity: 0;
+}
+
+.login {
+  position: fixed;
+  background-color: #150d1fcc;
+  width: 30%;
+  height: 20%;
+  padding: 0px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+
+@font-face {
+  font-family: 'Inter';
+  src: url('../assets/fonts/inter/Inter-Regular.ttf');
+}
+
+p, h1, h2, h3, h4, h5, h6 {
+  font-family: 'Inter';
+  color: white;
+}
+
+.datetime {
+  position: fixed;
+  width: 40%;
+  height: 10%;
+  padding: 0px;
+  padding-top: 40px;
+  padding-bottom: 90px;
+  margin: auto;
+  inset: 0px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.time {
+	font-size: 100px;
+	margin: auto;
+	position: fixed;
+}
+
+.date {
+	font-size: 50px;
+	margin: auto;
+	margin-top: 150px;
+	position: fixed;
+}
+
+@keyframes loginDate {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes noLoginDate {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.loginDate {
+  animation: loginDate 0.2s ease-in-out forwards;
+}
+
+.noLoginDate {
+  animation: noLoginDate 0.2s ease-in-out forwards;
+}
+
+@keyframes blur {
+  from {
+    filter: brightness(1);
+  }
+  to {
+    filter: brightness(0.5);
+  }
+}
+
+@keyframes noBlur {
+  from {
+    filter: brightness(0.5);
+  }
+  to {
+    filter: brightness(1);
+  }
+}
+
+.blur {
+  animation: blur 0.5s ease-in-out forwards;
+}
+
+.noBlur {
+  animation: noBlur 0.5s ease-in-out forwards;
+}
+
+/* fade in - fade out */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    width: 28%;
+    height: 18%;
+    pointer-events: none;
+  }
+  to {
+    opacity: 1;
+    width: 30%;
+    height: 20%;
+    pointer-events: all;
+  }
+}
+
+.fadeIn {
+  animation: fadeIn 0.5s ease-out forwards;
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+    width: 30%;
+    height: 20%;
+    pointer-events: all;
+  }
+  to {
+    opacity: 0;
+    width: 28%;
+    height: 18%;
+    pointer-events: none;
+  }
+}
+
+.fadeOut {
+  animation: fadeOut 0.5s ease-out forwards;
+}
+
+@keyframes fadeOutBoot {
+  from {
+    opacity: 1;
+    pointer-events: all;
+  }
+  to {
+    opacity: 0;
+    pointer-events: none;
+  }
+}
+
+.bootscreen {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  padding: 0px;
+  margin: auto;
+  inset: 0px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  z-index: 10;
+  background-color: black;
+  animation: fadeOutBoot 0.5s ease-in-out forwards;
+}
+
+.boottext {
+  font-size: 24px;
+  font-family: 'Inter';
+}
+
+.loading {
+  position: fixed;
+  left: 10px;
+  bottom: 0;
+}

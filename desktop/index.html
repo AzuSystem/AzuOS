@@ -5,11 +5,16 @@
 		<link rel="stylesheet" href="index.css">
 	</head>
 	<body>
+		<div id=welcome class=welcome>
+			<script src=scripts/welcome.js></script>
+			<p class=welcometext>Welcome!</p>
+		</div>
 		<div id=desktop class=desktop>
 			<link rel="stylesheet" href="scripts/winbox.min.css">
 			<link rel="stylesheet" href="window.css">
 			<script src=scripts/winbox.min.js></script>
 			<script src=scripts/window.js></script>
+			<p class=sysver>AzuOS Alpha 5<br>By AzuSystem</p>
 			<div class=desktopIcons>
 				<div class=deskIcon>
 					<img width=40px src=assets/icons/folderopen.svg>
@@ -27,24 +32,35 @@
 				</div>
 				<a onclick='newWindow("Window Test", false, "apps/windowTest/index.html")'>
 					<div class=deskIcon>
-						<img width=40px src=assets/icons/questionmark.svg>
+						<img width=40px src=assets/icons/window.svg>
 						<p>Window Test</p>
 					</div>
 				</a>
 				<a onclick='newWindowAZML("AZML Test", false, "apps/AZMLTest/index.html")'>
 					<div class=deskIcon>
-						<img width=40px src=assets/icons/questionmark.svg>
+						<img width=40px src=assets/icons/code.svg>
 						<p>AZML Test</p>
 					</div>
 				</a>
 				<a onclick='newWindow("Clock", false, "apps/clock/index.html")'>
 					<div class=deskIcon>
-						<img width=40px src=assets/icons/questionmark.svg>
+						<img width=40px src=assets/icons/clock.svg>
 						<p>Clock</p>
 					</div>
 				</a>
+				<a onclick='newWindow("Dezunkrr", false, "apps/dezunkrr/index.html")'>
+					<div class=deskIcon>
+						<img width=40px src=assets/icons/questionmark.svg>
+						<p>Dezunkrr</p>
+					</div>
+				</a>
+				<a onclick='AzuDialog("Dialog Test", "yo how u doin?", true)'>
+					<div class=deskIcon>
+						<img width=40px src=assets/icons/exclamation.svg>
+						<p>Dialog Test</p>
+					</div>
+				</a>
 			</div>
-			<p>Test ISO</p>
 			<div id=daToast class=implementationToast>
 				<script src=scripts/toast.js></script>
 				<p>Not Implemented...</p>
@@ -61,46 +77,48 @@
 				</div>
 				<p class=pinapptitle>Pinned Apps <img height=15px src=assets/icons/pin.svg></p>
 				<hr class=menuhr>
-				<a>
-					<div id=install class="listOption">
-						<img width=30 src=assets/icons/folderopen.svg>
-						<div class=listOptionText>
-							<p>File Manager</p>
+				<div class=startmenulist>
+					<a>
+						<div id=install class="listOption">
+							<img width=30 src=assets/icons/folderopen.svg>
+							<div class=listOptionText>
+								<p>File Manager</p>
+							</div>
 						</div>
-					</div>
-				</a>
-				<a onclick='newWindow("Settings", false, "apps/settings/index.html")'>
-					<div id=install class="listOption">
-						<img width=30 src=assets/icons/settings.svg>
-						<div class=listOptionText>
-							<p>Settings</p>
+					</a>
+					<a onclick='newWindow("Settings", false, "apps/settings/index.html")'>
+						<div id=install class="listOption">
+							<img width=30 src=assets/icons/settings.svg>
+							<div class=listOptionText>
+								<p>Settings</p>
+							</div>
 						</div>
-					</div>
-				</a>
-				<a>
-					<div id=install class="listOption">
-						<img width=30 src=assets/icons/terminal.svg>
-						<div class=listOptionText>
-							<p>Terminal</p>
+					</a>
+					<a>
+						<div id=install class="listOption">
+							<img width=30 src=assets/icons/terminal.svg>
+							<div class=listOptionText>
+								<p>Terminal</p>
+							</div>
 						</div>
-					</div>
-				</a>
-				<a>
-					<div id=install class="listOption">
-						<img width=30 src=assets/icons/internet.svg>
-						<div class=listOptionText>
-							<p>Web Browser</p>
+					</a>
+					<a>
+						<div id=install class="listOption">
+							<img width=30 src=assets/icons/internet.svg>
+							<div class=listOptionText>
+								<p>Web Browser</p>
+							</div>
 						</div>
-					</div>
-				</a>
-				<a onclick='newWindow("Window Test", false, "apps/windowTest/index.html")'>
-					<div id=install class="listOption">
-						<img width=30 src=assets/icons/questionmark.svg>
-						<div class=listOptionText>
-							<p>Window Test</p>
+					</a>
+					<a onclick='newWindow("Window Test", false, "apps/windowTest/index.html")'>
+						<div id=install class="listOption">
+							<img width=30 src=assets/icons/questionmark.svg>
+							<div class=listOptionText>
+								<p>Window Test</p>
+							</div>
 						</div>
-					</div>
-				</a>
+					</a>
+				</div>
 			</div>
 			<div class=taskbar>
 				<div id=taskbardate class=taskbar-date>
@@ -112,11 +130,12 @@
 				<button onclick="openStartMenu()" class="toolbarStart">
 					<img width=30px height=30px src=../assets/logo.svg>
 				</button>
-				<div class="toolbarTask">
-					<p>test</p>
-				</div>
+				<div class="toolbarTask" id=tbtasks></div>
 				<button onclick="notImplemented()" class="trayButton">
 					<img width=30px src=assets/icons/arrowup.svg>
+				</button>
+				<button onclick="wifiPanel()" class="wifi-Button">
+					<img width=20px src=assets/icons/wifi.svg>
 				</button>
 				<button onclick="notImplemented()" class="quickPanel-Button">
 					<img width=30px src=assets/icons/config.svg>
