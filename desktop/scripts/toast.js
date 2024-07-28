@@ -1,3 +1,8 @@
+/*
+	Toast Library for AzuOS
+	Written by: MTSyntho @ AzuSystem 2024
+*/
+
 const toast = document.getElementById('daToast');
 
 function notImplemented() {

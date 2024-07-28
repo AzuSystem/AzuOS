@@ -1,0 +1,17 @@
+{
+  "Clock": {
+    "link": "clock/index.html",
+    "icon": "default:clock"
+  },
+  "Dezunkrr": {
+    "link": "dezunkrr/index.html",
+    "icon": ""
+  },
+  "Settings": {
+    "link": "settings/index.html",
+    "icon": "default:settings"
+  },
+  "Window Test": {
+    "link": "windowTest/index.html",
+    "icon": "default:window"
+}

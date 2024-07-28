@@ -1,3 +1,9 @@
+/*
+	(OLD) Window Handler for AzuOS
+	Written by: MTSyntho @ AzuSystem 2024
+	This file will be removed in the future
+*/
+
 function newWindow(folder) {
 	// Select an existing element where you want to add the HTML
 	var desktop = document.getElementById("desktop");

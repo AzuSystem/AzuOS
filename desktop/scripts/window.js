@@ -1,3 +1,4 @@
+// Window Handler for AzuOS by MTSyntho @ AzuSystem
 // Portions of this code is from TwinBox v10.0
 // (C) datkat21, Envy ISDX 2024
 

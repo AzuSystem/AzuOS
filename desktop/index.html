@@ -60,6 +60,12 @@
 						<p>Dialog Test</p>
 					</div>
 				</a>
+				<a onclick='newWindow("Apps Center", false, "apps/appcenter/index.html")'>
+					<div class=deskIcon>
+						<img width=40px src=assets/icons/gridview.svg>
+						<p>Apps Center</p>
+					</div>
+				</a>
 			</div>
 			<div id=daToast class=implementationToast>
 				<script src=scripts/toast.js></script>
@@ -118,6 +124,14 @@
 							</div>
 						</div>
 					</a>
+					<a onclick='newWindow("Pluto WebOS", false, "https://pluto-app.zeon.dev")'>
+						<div id=install class="listOption">
+							<img width=30 src=assets/icons/questionmark.svg>
+							<div class=listOptionText>
+								<p>Pluto</p>
+							</div>
+						</div>
+					</a>
 				</div>
 			</div>
 			<div class=taskbar>
@@ -144,6 +158,15 @@
 					<p id="time">00:00</p>
 				</button>
 			</div>
+<!-- 			<div class=contextmenu>
+				<button class=contextmenubtn>Button 1</button>
+				<button class=contextmenubtn>Button 2</button>
+				<button class=contextmenubtn>Button 3</button>
+			</div>
+ -->			
+ 			<script src=scripts/contextmenu.js></script>
+ 			<script src=api/contextmenu.js></script>
+ 			<script src=scripts/desktop.js></script>
 		</div>
 	</body>
 </html>

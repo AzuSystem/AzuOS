@@ -263,10 +263,12 @@ button:active {
   from {
     bottom: -100px;
     opacity: 0;
+    pointer-events: none;
   }
   to {
     bottom: 80px;
     opacity: 1;
+    pointer-events: all;
   }
 }
 
@@ -274,10 +276,12 @@ button:active {
   from {
     bottom: 80px;
     opacity: 1;
+    pointer-events: all;
   }
   to {
     bottom: -100px;
     opacity: 0;
+    pointer-events: none;
   }
 }
 
@@ -301,6 +305,8 @@ button:active {
   padding-left: 10px;
   padding-bottom: 10px;
   margin: 0;
+  position: fixed;
+  width: inherit;
   box-shadow: 0 0 15px 3px rgba(0, 0, 0, .50);
 }
 
@@ -325,7 +331,8 @@ button:active {
   opacity: 0.1;
   margin-left: 20px;
   display: flex;
-  align-items: center
+  align-items: center;
+  margin-top: 90px;
 }
 
 hr.menuhr {
@@ -496,4 +503,27 @@ hr.menuhr {
   opacity: 0.5;
   text-align: right;
   text-shadow: 0px 0px 25px #000000cc;
+}
+
+.contextmenu {
+  width: 210px;
+  background-color: #1e112c;
+  border: 2px solid #2d1b40;
+  border-radius: 5px;
+  padding: 5px;
+  gap: 5px;
+  position: fixed;
+}
+
+.contextmenubtn {
+  border: 0px solid;
+  color: white;
+  font-family: inter;
+  padding: 7px 10px;
+  text-align: left;
+  display: inline-block;
+  font-size: 16px;
+  transition-duration: 0.2s;
+  width: 100%;
+  box-shadow: 0px 0px 0px #000000;
 }

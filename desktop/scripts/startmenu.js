@@ -1,3 +1,7 @@
+/*
+    Start Menu for AzuOS
+    Written by: MTSyntho @ AzuSystem 2024
+*/ 
 
 let startMenu = document.querySelector(".start-menu");
 var smDiv = document.getElementById('startMenu');

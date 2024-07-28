@@ -1,0 +1,18 @@
+/*body {
+	
+}*/
+
+@font-face {
+  font-family: 'Inter';
+  src: url('../../assets/fonts/inter/Inter-Regular.ttf');
+}
+
+@font-face {
+  font-family: 'InterThin';
+  src: url('../../assets/fonts/inter/Inter-Thin.ttf');
+}
+
+p, h1, h2, h3 {
+	font-family: inter;
+	color: white;
+}

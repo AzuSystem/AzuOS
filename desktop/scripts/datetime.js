@@ -1,3 +1,8 @@
+/*
+    Date & Time Library for AzuOS
+    Written by: MTSyntho @ AzuSystem 2024
+*/
+
 function updateTime() {
     // Get the current time
     var currentDate = new Date();
