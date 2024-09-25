@@ -1,0 +1,104 @@
+body {
+  background-color: black;
+}
+
+@font-face {
+  font-family: 'Inter';
+  src: url('../assets/fonts/inter/Inter-Regular.ttf');
+}
+
+@font-face {
+  font-family: 'InterThin';
+  src: url('../assets/fonts/inter/Inter-Thin.ttf');
+}
+
+p, h1, h2, h3, h4, h5, h6 {
+  font-family: 'Inter';
+  color: white;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    pointer-events: none;
+
+  }
+  to {
+    opacity: 1;
+    pointer-events: all;
+
+  }
+}
+
+.fadein {
+  animation: fadeIn 0.5s ease-in-out forwards;
+}
+
+.bootscreen {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  padding: 0px;
+  margin: auto;
+  inset: 0px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  z-index: 10;
+  background-color: black;
+  opacity: 0;
+  animation: fadeIn 0.5s ease-in-out forwards;
+}
+
+.boottext {
+  font-size: 24px;
+  font-family: 'Inter';
+}
+
+.loading {
+  position: fixed;
+  left: 10px;
+  bottom: 0;
+}
+
+@keyframes fadeout {
+  from {
+    opacity: 1;
+    pointer-events: all;
+  }
+  to {
+    opacity: 0;
+    pointer-events: none;
+
+  }
+}
+
+.fadeout {
+  animation: fadeout 0.5s ease-in-out forwards;
+}
+
+.welcome {
+  background-color: black;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding: 0px;
+  margin: auto;
+  inset: 0px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  z-index: 420; /* very funny numbr */
+  opacity: 0;
+}
+
+.welcometext {
+  font-size: 45px;
+  font-family: 'InterThin'
+}
