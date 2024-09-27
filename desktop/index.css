@@ -154,7 +154,7 @@ button:active {
   background-color: #170d21;
 }
 
-.toolbarStart, .trayButton, .quickPanel-Button, .taskbarDate-Button, .power-button, .wifi-Button {
+.toolbarStart, .trayButton, .quickPanel-Button, .quickTime-Button, .power-button, .wifi-Button {
   border: 0px;
   border-radius: 0px;
   width: 45px;
@@ -172,11 +172,11 @@ button:active {
 }
 
 
-.trayButton, .quickPanel-Button, .taskbarDate-Button, .wifi-Button {
+.trayButton, .quickPanel-Button, .quickTime-Button, .wifi-Button {
   box-shadow: -2px 0px 0px #2d1b40;
 }
 
-.taskbarDate-Button {
+.quickTime-Button {
   width: 55px;
   align-items: center;
   justify-content: center;
@@ -372,7 +372,7 @@ hr.menuhr {
   background-color: #2e1d42;
 }
 
-.taskbar-date {
+.quicktime {
     background-color: #1e112c;
     outline: 2px solid #2d1b40;
     position: fixed;
@@ -415,6 +415,23 @@ hr.menuhr {
 .welcometext {
   font-size: 45px;
   font-family: 'InterThin'
+}
+
+@keyframes fadein {
+  from {
+    opacity: 0;
+    pointer-events: none;
+
+  }
+  to {
+    opacity: 1;
+    pointer-events: all;
+
+  }
+}
+
+.fadein {
+  animation: fadein 0.5s ease-in-out forwards;
 }
 
 @keyframes fadeout {

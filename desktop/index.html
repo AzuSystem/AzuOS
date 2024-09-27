@@ -4,7 +4,7 @@
 		<title>AzuOS</title>
 		<link rel="stylesheet" href="boot.css">
 		<link rel="stylesheet" href="login.css">
-		<script src=pkgs/bootscreen.js></script>
+		<!-- <script src=libs/jquery-3.7.1.min.js></script> -->
 		<script src=pkgs/bootloader.js></script>
 	</head>
 	<body>
@@ -53,16 +53,27 @@
 				<p>Login to AzuOS</p>
 				<p class=center-title>AzuOS</p>
 				<div class=align-right>
-					<p>03:00</p>
-					<button>Quick Apps</button>
+					<button class=quick-button onclick="quickApps('open')">Quick Apps</button>
+					<p id="status-time">03:00</p>
 				</div>
+			</div>
+			<div id=quick-apps class=quick-apps>
+				<p>Work in Progress...</p>
+				<button onclick="quickApps('close')">Close</button>
 			</div>
 			<div class=login-panel>
 				<p class=login-title>Login</p>
-				<input type="text" id="name" name="name">
-				<input type="password" id="pwd" name="password">
+				<input type="text" id="name" name="name" placeholder="Username">
+				<input type="password" id="pwd" name="password" placeholder="Password">
 				<button onclick='login()'>Login</button>
 			</div>
+			<div class=datetime>
+				<h1 class="time" id="time">00:00</h1>
+				<p class="date" id="date">January 1, 2000</p>
+				<!-- <script src="../desktop/scripts/datetime.js"></script> -->
+			</div>
+			<div class=top-fade></div>
+			<div class=bottom-fade></div>
 		</div>
 	</body>
 </html>
