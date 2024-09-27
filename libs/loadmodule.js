@@ -8,7 +8,7 @@ function loadPackage(file) {
 	script.src = `pkgs/${file}`;
 	document.head.appendChild(script);
 
-	console.log(`[Package Loading] Imported '${file}'`)
+	console.log(`[Package Injector] Imported '${file}'`)
 };
 
 function loadLibrary(file) {
@@ -16,7 +16,7 @@ function loadLibrary(file) {
 	script.src = `libs/${file}`;
 	document.head.appendChild(script);
 
-	console.log(`[Library Loading] Imported '${file}'`)
+	console.log(`[Library Injector] Imported '${file}'`)
 };
 
 function loadJS(file) {
@@ -24,8 +24,18 @@ function loadJS(file) {
 	script.src = file;
 	document.head.appendChild(script);
 
-	console.log(`[Javascript Loading] Imported '${file}'`)
+	console.log(`[Javascript Injector] Imported '${file}'`)
 };
+
+function unloadPackage(file) {
+    const script = document.querySelector(`script[src="pkgs/${file}"]`);
+    if (script) {
+        script.remove();
+        console.log(`[Package Injector] Unloaded '${file}'.`);
+    } else {
+        console.error(`[Package Injector] Can't locate '${file}' for unloading.`);
+    }
+}
 
 function loadCSS(file) {
     var link = document.createElement('link');
@@ -34,15 +44,17 @@ function loadCSS(file) {
     link.href = file;
 
     document.head.appendChild(link);
+    console.log(`[CSS Injector] Imported '${file}'`)
 }
 
 // Generate by ChatGTP
+// However I still can't figure it out
 function unloadCSS(file) {
     const link = document.querySelector(`link[href="${file}"]`);
     if (link) {
         link.remove();
-        console.log(`Removed CSS file: ${file}`);
+        console.log(`[CSS Injector] Removed CSS file: ${file}`);
     } else {
-        console.log(`CSS file not found: ${file}`);
+        console.error(`[CSS Injector] CSS file not found: ${file}`);
     }
 }

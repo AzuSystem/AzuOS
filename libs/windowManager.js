@@ -2,14 +2,15 @@
 // Portions of this code is from TwinBox v10.0
 // (C) datkat21, Envy ISDX 2024
 
-function newWindow(title, maximized, url) {
+console.log('[Window Manager] Module Imported');
+
+function newWindow(title, url) {
   let obj = {};
 
   var winbox = new WinBox({
       title: title,
-      max: maximized,
       url: url,
-      root: document.querySelector("desktop"),
+      root: document.getElementById('desktop'),
       overflow: true,
       onclose: function(){
         this.g.classList.add("windowClose");

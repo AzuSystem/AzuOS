@@ -47,7 +47,7 @@ startButton.onclick = 'openStartMenu()';
 const startImg = document.createElement('img');
 startImg.width = 30;
 startImg.height = 30;
-startImg.src = '../assets/logo.svg';
+startImg.src = 'assets/logo.svg';
 startButton.appendChild(startImg);
 taskbar.appendChild(startButton);
 

@@ -33,6 +33,7 @@ document.addEventListener('DOMContentLoaded', function() {
 	bootloaderImport('logindisplay.js');
 	bootloaderImportLibrary('loadmodule.js');
 	bootloaderImportLibrary('datetime.js')
+	bootloaderImport('system.js')
 });
 
 // function __activateBootloader() {

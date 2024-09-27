@@ -6,15 +6,16 @@
 
 var boot = document.getElementById('boot');
 var welcome = document.getElementById('welcome');
-var __skipStart = false; // please remove in production, probably
+var __skipBoot = false; // please remove in production, probably
 
-if (__skipStart === true) {
+if (__skipBoot === true) {
 	boot.classList.add("fadeout");
 	welcome.classList.add("fadeout");
 	boot.remove();
 	welcome.remove();
 	setTimeout(function() {
 		openLogin();
+		document.body.style.cursor = 'auto';
 	}, 150);
 } else {
 	setTimeout(function() {

@@ -56,13 +56,13 @@
 
 @font-face {
   font-family: 'Inter';
-  src: url('../assets/fonts/inter/Inter-Regular.ttf');
+  src: url('assets/fonts/inter/Inter-Regular.ttf');
 }
 
 .wb-title {
     font-size: 13px;
     font-weight: 600;
-    font-family: inter;
+    font-family: 'Inter';
 }
 
 

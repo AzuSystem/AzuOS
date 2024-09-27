@@ -1,16 +1,17 @@
 @font-face {
   font-family: 'Inter';
-  src: url('../assets/fonts/inter/Inter-Regular.ttf');
+  src: url('assets/fonts/inter/Inter-Regular.ttf');
 }
 
 @font-face {
   font-family: 'InterThin';
-  src: url('../assets/fonts/inter/Inter-Thin.ttf');
+  src: url('assets/fonts/inter/Inter-Thin.ttf');
 }
 
 p, h1, h2, h3, h4, h5, h6 {
   font-family: 'Inter';
   color: white;
+  text-shadow: 0px 0px 20px #ffffffcc;
 }
 
 .login {
@@ -77,6 +78,7 @@ p, h1, h2, h3, h4, h5, h6 {
 .login-title {
   font-size: 24px;
   margin-bottom: 0;
+  text-shadow: 0px 0px 10px #ffffff40;
 }
 
 .center-title {
@@ -205,6 +207,8 @@ button:hover {
   margin-bottom: 75px;
   width: 100%;
   position: fixed;
+  font-family: 'Inter';
+  text-shadow: 0px 0px 30px #000000aa;
 }
 
 .date {
@@ -213,6 +217,8 @@ button:hover {
   margin-top: 75px;
   position: fixed;
   width: 100%;
+  font-family: 'InterThin' !important;
+  text-shadow: 0px 0px 15px #000000;
 }
 
 .top-fade {
@@ -231,4 +237,55 @@ button:hover {
   position: fixed;
   bottom: 0;
   z-index: -5;
+}
+
+.login-status {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  backdrop-filter: blur(20px);
+  background: #000000aa;
+  z-index: 5;
+  pointer-events: none;
+  opacity: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+@keyframes login-start {
+  from {
+    opacity: 0;
+    pointer-events: none;
+    scale: 1;
+
+  }
+  to {
+    opacity: 1;
+    pointer-events: all;
+    scale: 1.05;
+
+  }
+}
+
+.login-animation-start {
+  animation: login-start 0.5s ease-out forwards;
+}
+
+@keyframes login-end {
+  from {
+    opacity: 1;
+    pointer-events: all;
+    scale: 1.05;
+  }
+  to {
+    opacity: 0;
+    pointer-events: none;
+    scale: 1;
+  }
+}
+
+.login-animation-end {
+  animation: login-end 0.5s ease-in forwards;
 }

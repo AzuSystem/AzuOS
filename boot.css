@@ -4,12 +4,12 @@ body {
 
 @font-face {
   font-family: 'Inter';
-  src: url('../assets/fonts/inter/Inter-Regular.ttf');
+  src: url('assets/fonts/inter/Inter-Regular.ttf');
 }
 
 @font-face {
   font-family: 'InterThin';
-  src: url('../assets/fonts/inter/Inter-Thin.ttf');
+  src: url('assets/fonts/inter/Inter-Thin.ttf');
 }
 
 p, h1, h2, h3, h4, h5, h6 {
@@ -101,4 +101,9 @@ p, h1, h2, h3, h4, h5, h6 {
 .welcometext {
   font-size: 45px;
   font-family: 'InterThin'
+}
+
+/* Issue caused by login.css */
+.no-glow {
+  text-shadow: none;
 }

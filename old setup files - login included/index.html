@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>AzuOS</title>
+		<link rel="stylesheet" href="index.css">
+		<script src=setup.js></script>
+	</head>
+	<body>
+		<div id="window" class="window">
+			<p>Setup</p>
+				<div id=contents class=content>
+					<div id="home" class="container">
+						<h1>Welcome to AzuOS!</h1>
+						<p>This Setup will guide you throughout the Setup Process.</p>
+						<p>No worries though because the setup is Quick & Easy to Understand! <3</p>
+						<p>The Setup will help you through installation, please click 'Proceed'.</p>
+						<br>
+						<button onclick="utilswin()">Proceed</button>
+						<script>
+						    /*function utilswin(){
+						        var windw = document.getElementById("window");
+						        var winContain = document.getElementById("home");
+						        windw.style.opacity = "0";
+								var delayInMilliseconds = 200;
+								setTimeout(function() {
+							        home.remove()
+							        windw.classList.add("utilSize");
+							        winContain.classList.add("utilSize");
+							        windw.style.opacity = "1";
+							        utils.style.display = "block";
+							        utils.style.opacity = "1";
+								}, delayInMilliseconds);
+						    } */
+						</script>
+					</div>
+					<div id="utilities" class="container">
+						<h1>Installation Utilities</h1>
+						<h3>What do you wanna do?</h3>
+						<div class="list">
+							<a onclick="partition('install')">
+								<div id=install class="listOption">
+									<img width=30 src=desktop/assets/icons/download.svg>
+									<div class=listOptionText>
+										<p>Install AzuOS</p>
+										<p class="mini">Install the Operating System</p>
+									</div>
+								</div>
+							</a>
+							<a onclick="partition('repair')">
+								<div id=install class="listOption">
+									<img width=30 src=desktop/assets/icons/wrench.svg>
+									<div class=listOptionText>
+										<p>Repair AzuOS</p>
+										<p class="mini">Repair system files</p>
+									</div>
+								</div>
+							</a>
+							<a onclick="desktop('live')">
+								<div id=install class="listOption">
+									<img width=30 src=desktop/assets/icons/usb.svg>
+									<div class=listOptionText>
+										<p>Live Preview</p>
+										<p class="mini">Use AzuOS without Installation</p>
+									</div>
+								</div>
+							</a>
+							<a onclick="shutdown()">
+								<div id=install class="listOption">
+									<img width=30 src=desktop/assets/icons/power.svg>
+									<div class=listOptionText>
+										<p>Shutdown</p>
+										<p class="mini">Shutdown your computer</p>
+									</div>
+								</div>
+							</a>
+						</div>
+					</div>
+					<script>
+						var utils = document.getElementById("utilities");
+						utils.style.opacity = "0";
+						utils.style.display = "none";
+					</script>
+				</div>
+		</div>
+	</body>
+</html>
