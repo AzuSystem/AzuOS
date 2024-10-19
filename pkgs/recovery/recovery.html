@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>AzuOS System Recovery</title>
+		<link rel="stylesheet" href="recovery.css">
+	</head>
+	<body>
+		<div class=window>
+			<div class=title-bar>
+				<p>Recovery</p>
+			</div>
+			<div class=window-content>
+				<p>AzuOS has experienced a crash!</p>
+				<a>View the error log...</a>
+				<a onclick="partition('install')">
+					<div id=install class="listOption">
+						<img width=30 src=desktop/assets/icons/download.svg>
+						<div class=listOptionText>
+							<p>Return to AzuOS</p>
+							<p class="mini">Resume back to your AzuOS Session.</p>
+						</div>
+					</div>
+				</a>
+			</div>
+		</div>
+	</body>
+</html>

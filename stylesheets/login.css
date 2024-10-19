@@ -1,11 +1,11 @@
 @font-face {
   font-family: 'Inter';
-  src: url('assets/fonts/inter/Inter-Regular.ttf');
+  src: url('../assets/fonts/inter/Inter-Regular.ttf');
 }
 
 @font-face {
   font-family: 'InterThin';
-  src: url('assets/fonts/inter/Inter-Thin.ttf');
+  src: url('../assets/fonts/inter/Inter-Thin.ttf');
 }
 
 p, h1, h2, h3, h4, h5, h6 {
@@ -16,7 +16,7 @@ p, h1, h2, h3, h4, h5, h6 {
 
 .login {
   background-color: #110b17;
-  background-image: url('assets/wallpapers/palm tree near dome.jpg');
+  background-image: url('../assets/wallpapers/palm tree near dome.jpg');
   background-size: cover;
   background-attachment: fixed;
   top: 0px;

@@ -1,0 +1,13 @@
+/*
+	AzuOS Default Theme (Purple)
+	Written By: MTSyntho @ AzuSystem 2024
+*/
+
+:root {
+	--azu-color-background: hsla(270, 35%, 7%);
+	--azu-color-main: hsla(270, 44%, 12%);
+	--azu-color-light: hsla(270, 40%, 18%);
+	--azu-color-shadow: 0, 0%, 0%;
+	--azu-taskbar-width: 80%;
+	--azu-button-color-main: hsla(270, 44%, 12%);
+}

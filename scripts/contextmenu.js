@@ -1,6 +1,6 @@
 /*
 	Context Menu Library for AzuOS
-	Written by: MTSyntho @ AzuSystem 2024
+	Written by: MTSyntho @ AzuSystem 2024 (Mostly by ChatGPT)
 */
 
 // test variable (worked)

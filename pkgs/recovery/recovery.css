@@ -1,0 +1,77 @@
+body {
+	background-color: #110b17;
+}
+
+@font-face {
+	font-family: 'Inter';
+	src: url('assets/fonts/inter/Inter-Regular.ttf');
+}
+
+@font-face {
+	font-family: 'InterThin';
+	src: url('assets/fonts/inter/Inter-Thin.ttf');
+}
+
+p, h1, h2, h3, a {
+	font-family: inter;
+	color: white;
+}
+
+.window {
+	background-color: #1e112c;
+	position: fixed;
+	width: 45%;
+	height: 60%;
+	padding: 0px;
+	padding-left: 20px;
+	padding-right: 20px;
+	border: 2px solid #2d1b40;
+	border-radius: 5px;
+	margin: auto;
+	inset: 0px;
+	box-shadow: 0px 0px 30px #000000;
+	transition-duration: 0.2s;
+} 
+
+.title-bar {
+	margin: 0;
+	height: 35px;
+	border-bottom: 2px solid #2d1b40;
+	text-align: center;
+}
+
+.listOption {
+  background-color: #311f47;
+  border-radius: 15px;
+  padding: 5px;
+  margin: auto;
+  margin-top: 10px;
+  width: 95%;
+  height: 48px;
+  display: flex;
+  box-shadow: 0px 0px 20px #00000030;
+  transition-duration: 0.2s;
+}
+
+.listOptionText {
+  text-align: left;
+  margin-top: -10px;
+  margin-left: 5px;
+  display: flex;
+  flex-direction: column;
+}
+
+.listOption:hover {
+  scale: 1.02;
+  background-color: #35224d;
+}
+
+.listOption:active {
+  scale: 0.99;
+  background-color: #2e1d42;
+}
+
+.mini {
+  margin-top: -12px;
+  font-size: 10px;
+}

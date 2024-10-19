@@ -36,4 +36,16 @@ function addDesktopApp(name, icon, src) {
 	desktopIcons.appendChild(link);
 };
 
-addDesktopApp('Settings', 'assets/icons/settings.svg', 'settings/index.html');
+// addDesktopApp('Settings', 'assets/icons/settings.svg', 'settings/index.html');
+// console.log(fetch_directory('~/Desktop'));
+fetch_directory('~/Desktop').then(([files, folders]) => {
+    // Process files
+    files.forEach(file => {
+        addDesktopApp(file, 'assets/icons/questionmark.svg', 'settings/index.html');
+    });
+
+    // Optionally, process folders if needed
+    folders.forEach(folder => {
+        addDesktopApp(folder, 'assets/icons/folderopen.svg', 'settings/index.html'); // Adjust as necessary
+    });
+});

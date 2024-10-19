@@ -7,6 +7,7 @@ function openLogin() {
 	var login = document.getElementById('login');
 	login.classList.add("fadein");
 	console.log('[Login Display] Opened Login Display')
+	windowManager('start');
 }
 
 function quickApps(state) {
@@ -22,6 +23,7 @@ function quickApps(state) {
 };
 
 function login() {
+	// console.log(fetch_file('../test.py', 'plain'));
 	var boot = document.getElementById('boot');
 	var welcome = document.getElementById('welcome');
 	var login = document.getElementById('login');
@@ -44,7 +46,7 @@ function login() {
 				login.remove();
 				unloadBootloader();
 
-				loadPackage('desktop.js');
+				loadPackage('apps:desktop.js');
 			}, 1000);
 	}, 1000);
 	} else {
@@ -57,6 +59,18 @@ function login() {
 		}, 1000)
 	}
 }
+
+document.getElementById('name').addEventListener('keydown', (event) => {
+    if (event.key === 'Enter') {
+    	document.getElementById('pwd').focus();
+    }
+});
+
+document.getElementById('pwd').addEventListener('keydown', (event) => {
+    if (event.key === 'Enter') {
+    	login();
+    }
+});
 
 // Fetch Date n Time and apply it
 window.logindaterefresh = setInterval(function() {
