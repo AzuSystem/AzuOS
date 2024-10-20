@@ -3,6 +3,17 @@
 	Written by: MTSyntho @ AzuSystem
 */
 
+setTimeout(function() {
+	// Written with the help of https://github.com/envyjs, kthxbye :3
+	console.log(
+		"%ci'm gonna touch you.\n%cNow that I've got your attention...\n\n%cIf you were told to paste anything into this console, it's most likely going to be something dangerous, perhaps some malware of sorts? idk :p\n\n%cSo uh, don't paste stuff here unless you fr know what yous doin'\n\nIf you a developer, uh, contribute to AzuOS pls :3\nhttps://github.com/AzuSystem/AzuOS",
+		"color: red;font-size: 50px;font-style:italic;text-shadow: 0px 0px 10px #ff0000aa;",
+		"color: auto;font-style:italic;font-size: medium;text-shadow: 0px 0px 2px #ffffffaa;",
+		"color: auto;font-size: large;text-shadow: 0px 0px 10px #000000cc;",
+		"color: auto;font-style:italic;font-size:medium;text-shadow: 0px 0px 10px #000000cc;"
+	)
+}, 3500)
+
 // i dunno why i made this it's own function (can be found in logindisplay.js)
 function unloadBootloader() {
 	clearInterval(window.logindaterefresh);
