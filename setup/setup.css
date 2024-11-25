@@ -1,0 +1,104 @@
+@font-face {
+	font-family: 'Inter';
+	src: url('../assets/fonts/inter/Inter-Regular.ttf');
+}
+
+@font-face {
+	font-family: 'InterThin';
+	src: url('../assets/fonts/inter/Inter-Thin.ttf');
+}
+
+p, h1, h2, h3, h4, h5, h6 {
+	font-family: 'Inter';
+	color: white;
+	text-shadow: 0px 0px 20px #ffffffcc;
+}
+
+body {
+	background-color: #8b86ea;
+	top: 0px;
+	bottom: 0px;
+	left: 0px;
+	right: 0px;
+	margin: 0px;
+	padding: 0px;
+	position: absolute;
+}
+
+.background {
+	background-image: url('../assets/wallpapers/palm tree near dome.jpg');
+	background-size: cover;
+	background-attachment: scroll;
+	top: 0px;
+	bottom: 0px;
+	left: 0px;
+	right: 0px;
+	margin: 0px;
+	padding: 0px;
+	position: absolute;
+	z-index: -5;
+}
+
+.background-gradient {
+	width: 100%;
+	height: 30%;
+	background: linear-gradient(to top, transparent, #8b86ea);
+	z-index: -4;
+}
+
+.top-fade {
+	width: 100%;
+	height: 15%;
+	background: linear-gradient(to top, transparent, rgba(0, 0, 0, 0.2));
+	position: fixed;
+	top: 0;
+	z-index: 20;
+}
+
+.bottom-fade {
+	width: 100%;
+	height: 15%;
+	background: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.5));
+	position: fixed;
+	bottom: 0;
+	z-index: 20;
+}
+
+@keyframes background-animation {
+	from {
+		top: 0px;
+	}
+	to {
+		top: 40%;
+	}
+}
+
+.background-animation {
+	animation: background-animation 1.5s ease-in-out forwards;
+}
+
+@keyframes welcome {
+	from {
+		opacity: 0;
+		top: 60%
+	}
+	to {
+		opacity: 1;
+		top: 50%;
+	}
+}
+
+.welcome {
+	background-color: #1e112caa;
+	backdrop-filter: blur(20px);
+	border: 2px solid #2d1b4050;
+	border-radius: 5px;
+	box-shadow: 0px 0px 30px #000000;
+	width: 50%;
+	height: 70%;
+	position: fixed;
+	left: 50%; /* Center horizontally */
+	top: 50%;
+	transform: translate(-50%, -50%); /* Offset by half its width and height */
+	animation: welcome 1s ease-out forwards;
+}
