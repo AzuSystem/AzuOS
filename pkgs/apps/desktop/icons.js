@@ -12,7 +12,7 @@ document.getElementById('desktop').appendChild(desktopIcons);
 function addDesktopApp(name, icon, src) {
 	// Create <a> for icon interaction
 	const link = document.createElement('a');
-	link.onclick = () => newWindow(name, `pkgs/${src}`);
+	link.onclick = () => loadScript(src)
 
 	// Create deskIcon div for the... app icon
 	const desktopIcon = document.createElement('div');
@@ -35,6 +35,9 @@ function addDesktopApp(name, icon, src) {
 	link.appendChild(desktopIcon);
 	desktopIcons.appendChild(link);
 };
+
+
+addDesktopApp('SDK Test', 'exclamation.svg', 'apps:dynamic-test.js');
 
 // addDesktopApp('Settings', 'assets/icons/settings.svg', 'settings/index.html');
 // console.log(fetch_directory('~/Desktop'));
