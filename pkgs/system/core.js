@@ -3,6 +3,9 @@
 	Written by: MTSyntho @ AzuSystem
 */
 
+
+loadCSS('sdk.css')
+
 setTimeout(function() {
 	// Written with the help of https://github.com/envyjs, kthxbye :3
 	console.log(

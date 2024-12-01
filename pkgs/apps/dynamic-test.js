@@ -1,17 +1,26 @@
-win.create("penas penas peans", "root").then(win => win
-	.setWidth(200)
-	.setHeight(300)
-	.setMax(true)
+win.create("sdk testing", "root").then(win => win
+	.setWidth(700)
+	.setHeight(500)
 	.confirm()
 );
 
-element.create("h2", "Good Day!", "text").then(elm => elm
-	.window("root")
-	.align('center')
-	.color('red')
-	.background('blue')
+element.create('img', '', 'logo').then(elm => elm
+	.window('root')
+	.source('assets/logo.svg')
 );
 
-element.create('p', 'pedos r bad bad', "tes").then(elm => elm
+element.create("h2", "AzuOS", "text").then(elm => elm
 	.window("root")
+	.textalign('center')
+	.shadow('0px 0px 50px #ffffffcc')
+);
+
+element.create('p', 'This script is used to test the AzuOS SDK', "tes").then(elm => elm
+	.window("root")
+	.textalign('center')
+);
+
+element.create('p', 'Copyright @ AzuSystem 2024 - AzuOS Alpha 7', "tes").then(elm => elm
+	.window("root")
+	.textalign('center')
 );

@@ -30,11 +30,11 @@ document.addEventListener('DOMContentLoaded', function() {
 	console.log('[Bootloader] Initilizing AzuOS...')
 	document.body.style.cursor = 'none';
 	bootloaderImport('system/bootscreen.js');
-	bootloaderImport('system/core.js')
-	bootloaderImport('system/logindisplay.js');
 	bootloaderImportLibrary('loadmodule.js');
 	bootloaderImportLibrary('api/fileManagement.js');
 	bootloaderImportLibrary('api/datetime.js')
+	bootloaderImport('system/core.js')
+	bootloaderImport('system/logindisplay.js');
 });
 
 // function __activateBootloader() {

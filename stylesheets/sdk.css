@@ -1,0 +1,6 @@
+.__azuos-sdk-center {
+  position: fixed;
+  left: 50%; /* Center horizontally */
+  top: 50%;
+  transform: translate(-50%, -50%); /* Offset by half its width and height */
+}

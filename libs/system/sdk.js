@@ -105,8 +105,16 @@ const element = {
                     elm.style.color = color;
                     return elementObject;
                 },
+                shadow: (shadow) => {
+                    elm.style.textshadow = shadow;
+                    return elementObject;
+                },
                 background: (color) => {
                     elm.style.background = color;
+                    return elementObject;
+                },
+                source: (srcimg) => {
+                    elm.src = srcimg;
                     return elementObject;
                 },
 				window: (windowid) => {
