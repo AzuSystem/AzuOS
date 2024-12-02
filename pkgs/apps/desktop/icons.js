@@ -12,7 +12,7 @@ document.getElementById('desktop').appendChild(desktopIcons);
 function addDesktopApp(name, icon, src) {
 	// Create <a> for icon interaction
 	const link = document.createElement('a');
-	link.onclick = () => loadScript(src)
+	link.onclick = () => loadPackage(src)
 
 	// Create deskIcon div for the... app icon
 	const desktopIcon = document.createElement('div');
@@ -37,7 +37,8 @@ function addDesktopApp(name, icon, src) {
 };
 
 
-addDesktopApp('SDK Test', 'exclamation.svg', 'apps:dynamic-test.js');
+addDesktopApp('SDK Test', 'assets/icons/exclamation.svg', 'apps:dynamic-test.js');
+addDesktopApp('About AzuOS', 'assets/icons/questionmark.svg', 'apps:sysver.js');
 
 // addDesktopApp('Settings', 'assets/icons/settings.svg', 'settings/index.html');
 // console.log(fetch_directory('~/Desktop'));

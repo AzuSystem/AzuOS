@@ -105,24 +105,71 @@ const element = {
                     elm.style.color = color;
                     return elementObject;
                 },
-                shadow: (shadow) => {
+                textshadow: (shadow) => {
                     elm.style.textshadow = shadow;
                     return elementObject;
                 },
-                background: (color) => {
+                backgroundcolor: (color) => {
                     elm.style.background = color;
+                    return elementObject;
+                },
+                backgroundimage: (image) => {
+                    elm.style.backgroundimage = image;
                     return elementObject;
                 },
                 source: (srcimg) => {
                     elm.src = srcimg;
                     return elementObject;
                 },
-				window: (windowid) => {
-					var parentWindow = document.querySelector('[codename]')
-					parentWindow.querySelector('.wb-body').appendChild(elm);
-					return elementObject;
-				}
+                width: (width) => {
+                    if (elm.tagName === 'IMG' || elm.tagName === 'VIDEO' || elm.tagName === 'CANVAS') {
+                        elm.width = width;
+                    } else {
+                        elm.style.width = width;
+                    }
+                    return elementObject;
+                },
+
+                height: (height) => {
+                    if (elm.tagName === 'IMG' || elm.tagName === 'VIDEO' || elm.tagName === 'CANVAS') {
+                        elm.height = height;
+                    } else {
+                        elm.style.height = height;
+                    }
+                    return elementObject;
+                },
+                top: (top) => {
+                    elm.style.top = top;
+                    return elementObject;
+                },
+                left: (left) => {
+                    elm.style.left = left;
+                    return elementObject;
+                },
+                position: (pos) => {
+                    elm.style.position = pos;
+                    return elementObject;
+                },
+                parent: (elementcodename) => {
+                    var parent = document.querySelector(`[codename="${elementcodename}"]`);
+                    if (parent) {
+                        parent.appendChild(elm);  // Append the element to the parent
+                    } else {
+                        console.error(`[AzuOS SDK] Cannot append '${elm.tagName}' element (Codename: '${elementObject.codename}') to "${elementcodename}"`);
+                    }
+                    return elementObject;
+                },
+                window: (windowid) => {
+                    var parentWindow = document.querySelector(`[codename="${windowid}"]`);
+                    if (parentWindow) {
+                        parentWindow.querySelector('.wb-body').appendChild(elm);
+                    } else {
+                        console.error(`[AzuOS SDK] Cannot append '${elm.tagName}' element (Codename: '${elementObject.codename}') to window with codename "${windowid}".`);
+                    }
+                    return elementObject;
+                }
 			};
+            elm.setAttribute("codename", codename);
 			resolve(elementObject);
 		});
 	}

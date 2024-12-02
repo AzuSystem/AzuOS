@@ -11,7 +11,6 @@
 p, h1, h2, h3, h4, h5, h6 {
 	font-family: 'Inter';
 	color: white;
-	text-shadow: 0px 0px 20px #ffffffcc;
 }
 
 body {
@@ -91,11 +90,11 @@ body {
 .welcome {
 	background-color: #0d0514cc;
 	backdrop-filter: blur(20px);
-	border: 2px solid #2d1b4050;
+	border: 0.5px solid #ffffff30;
 	border-radius: 5px;
 	box-shadow: 0px 0px 30px #000000;
 	width: 50%;
-	height: 70%;
+	height: 460px;
 	position: fixed;
 	left: 50%; /* Center horizontally */
 	top: 50%;
@@ -122,22 +121,25 @@ body {
 
 .welcome-content {
 	margin-top: 180px;
-	font-size: 17px;
+	font-size: 20px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 20px;
+  text-shadow: 0px 0px 20px #ffffffcc;
 }
 
 .get-started {
 	display: flex;
 	flex-direction: row;
-	font-size: 20px;
+	font-size: 16px;
 	gap: 10px;
 	background-color: #00000000;
 	border: 2px solid #00000050;
 	border-radius: 35px;	
+	width: 250px;
+	height: 50px;
   display: flex;
   justify-content: center;
   align-items: center;
