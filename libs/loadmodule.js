@@ -15,16 +15,25 @@ function loadPackage(packagePath) {
     console.log(`[Package Injector] Imported '${scriptPath}'`);
 }
 
-function loadLibrary(libraryPath) {
+function loadLibrary(libraryPath, type = "none") {
     const splitPath = libraryPath.split(':', 2);
     const scriptPath = `libs/${splitPath[0]}/${splitPath[1]}`;
     // console.log(`result: ${libraryPath}`)
 
 	var script = document.createElement("script");
 	script.src = scriptPath;
+
+    if (type === "module") {
+        script.type = "module";
+    }
+
 	document.head.appendChild(script);
 
-	console.log(`[Library Injector] Imported '${libraryPath}'`)
+    if (type == "module") {
+        console.log(`[Library Injector] Imported '${libraryPath}' as an ECMAScript module.`)
+    } else {
+        console.log(`[Library Injector] Imported '${libraryPath}' as a normal script.`)
+    }
 }
 
 function loadPromisedPackage(packagePath) {

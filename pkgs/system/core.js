@@ -4,7 +4,8 @@
 */
 
 
-loadCSS('sdk.css')
+loadCSS('sdk.css');
+loadLibrary('system:appInfo.js', 'module');
 
 setTimeout(function() {
 	// Written with the help of https://github.com/envyjs, kthxbye :3

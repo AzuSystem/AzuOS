@@ -1,3 +1,10 @@
+export default {
+	name: "About AzuOS",
+	description: "Basic information on AzuOS.",
+	version: "v1.0.0",
+	icon: "icons:questionmark.svg"
+}
+
 win.create("About AzuOS", "root").then(win => win
 	.setWidth(700)
 	.setHeight(500)
