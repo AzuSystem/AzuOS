@@ -5,6 +5,7 @@
 
 
 loadCSS('sdk.css');
+loadLibrary('system:thememanager.js');
 // loadLibrary('system:appInfo.js', 'module');
 
 setTimeout(function() {
@@ -21,7 +22,7 @@ setTimeout(function() {
 // i dunno why i made this it's own function (can be found in logindisplay.js)
 function unloadBootloader() {
 	clearInterval(window.logindaterefresh);
-	unloadPackage('bootloader.js');
+	unloadPackage(':bootloader.js');
 };
 
 async function windowManager(state) {

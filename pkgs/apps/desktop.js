@@ -5,6 +5,7 @@
 
 loadCSS('index.css');
 loadTheme('default-theme.css');
+// loadTheme('light-theme.css'); // oh no
 unloadCSS('boot.css');
 unloadCSS('login.css');
 unloadPackage('system:bootscreen.js');

@@ -121,23 +121,3 @@ function unloadCSS(file) {
         console.error(`[CSS Injector] CSS file not found: ${file}`);
     }
 }
-
-function loadTheme(file) {
-    var link = document.createElement('link');
-    link.rel = 'stylesheet'; 
-    link.type = 'text/css';
-    link.href = `themes/${file}`;
-
-    document.head.appendChild(link);
-    console.log(`[Theme Manager] Imported '${file}'`)
-}
-
-function unloadTheme(file) {
-    const link = document.querySelector(`link[href="themes/${file}"]`);
-    if (link) {
-        link.remove();
-        console.log(`[Theme Manager] Removed Theme: ${file}`);
-    } else {
-        console.error(`[Theme Manager] Theme not found: ${file}`);
-    }
-}
