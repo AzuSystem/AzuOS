@@ -1,6 +1,18 @@
-.__azuos-sdk-center {
-  position: fixed;
-  left: 50%; /* Center horizontally */
+.__azuos-sdk-align-center {
+  position: absolute;
+  left: 50%;
   top: 50%;
-  transform: translate(-50%, -50%); /* Offset by half its width and height */
+  transform: translate(-50%, -50%);
+} 
+
+.__azuos-sdk-alignx-center {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+} 
+
+.__azuos-sdk-aligny-center {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
 }

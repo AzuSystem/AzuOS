@@ -94,9 +94,17 @@ const element = {
 					return elementObject;
 				},
 				align: (alignment) => {
-					elm.classList.add('__azuos-sdk-center');
+					elm.classList.add('__azuos-sdk-align-center');
 					return elementObject;
 				},
+                alignx: (alignment) => {
+                    elm.classList.add('__azuos-sdk-alignx-center');
+                    return elementObject;
+                },
+                aligny: (alignment) => {
+                    elm.classList.add('__azuos-sdk-aligny-center');
+                    return elementObject;
+                },
 				textalign: (textalignment) => {
 					elm.style.textAlign = textalignment;
 					return elementObject;
@@ -109,12 +117,81 @@ const element = {
                     elm.style.textshadow = shadow;
                     return elementObject;
                 },
+                boxshadow: (shadow) => {
+                    elm.style.boxShadow = shadow;
+                    return elementObject;
+                },
+                dropshadow: (shadow) => {
+                    elm.style.filter = `drop-shadow(${shadow})`;
+                    return elementObject;
+                },
+                opacity: (opacity) => {
+                    elm.style.opacity = opacity;
+                    return elementObject;
+                },
                 backgroundcolor: (color) => {
                     elm.style.background = color;
                     return elementObject;
                 },
                 backgroundimage: (image) => {
-                    elm.style.backgroundimage = image;
+                    elm.style.backgroundImage = `url(${image.replace(/ /g, '%20')})`;
+                    // console.log(`url(${image.replace(/ /g, '%20')})`)
+                    return elementObject;
+                },
+                backgroundrepeat: (repeat) => {
+                    elm.style.backgroundRepeat = repeat;
+                    return elementObject;
+                },
+                backgroundposition: (pos) => {
+                    elm.style.backgroundRepeat = pos;
+                    return elementObject;
+                },
+                backgroundsize: (size) => {
+                    elm.style.backgroundSize = size;
+                    return elementObject;
+                },
+                backgroundattachment: (attach) => {
+                    elm.style.backgroundAttachment = attach;
+                    return elementObject;
+                },
+                backgroundclip: (clip) => {
+                    elm.style.backgroundClip = cliprepeat;
+                    return elementObject;
+                },
+                backgroundorigin: (origin) => {
+                    elm.style.backgroundOrigin = origin;
+                    return elementObject;
+                },
+                backgroundblend: (mode) => {
+                    elm.style.backgroundBlendMode = mode;
+                    return elementObject;
+                },
+                backdropfilter: (filter) => {
+                    elm.style.backdropFilter = filter;
+                    return elementObject;
+                },
+                filter: (filter) => {
+                    elm.style.filter = filter;
+                    return elementObject;
+                },
+                overflow: (overflow) => {
+                    elm.style.overflow = overflow;
+                    return elementObject;
+                },
+                overflowx: (overflow) => {
+                    elm.style.overflowx = overflow;
+                    return elementObject;
+                },
+                overflowy: (overflow) => {
+                    elm.style.overflowy = overflow;
+                    return elementObject;
+                },
+                scale: (scale) => {
+                    elm.style.scale = scale;
+                    return elementObject;
+                },
+                clippath: (clip) => {
+                    elm.style.clipPath = clip;
                     return elementObject;
                 },
                 source: (srcimg) => {
@@ -146,8 +223,36 @@ const element = {
                     elm.style.left = left;
                     return elementObject;
                 },
+                bottom: (bottom) => {
+                    elm.style.bottom = bottom;
+                    return elementObject;
+                },
+                right: (right) => {
+                    elm.style.right = right;
+                    return elementObject;
+                },
                 position: (pos) => {
                     elm.style.position = pos;
+                    return elementObject;
+                },
+                padding: (padding) => {
+                    elm.style.padding = padding;
+                    return elementObject;
+                },
+                paddingtop: (top) => {
+                    elm.style.paddingTop = top;
+                    return elementObject;
+                },
+                paddingleft: (left) => {
+                    elm.style.paddingLeft = left;
+                    return elementObject;
+                },
+                paddingbottom: (bottom) => {
+                    elm.style.paddingBottom = bottom;
+                    return elementObject;
+                },
+                paddingright: (right) => {
+                    elm.style.paddingRight = right;
                     return elementObject;
                 },
                 parent: (elementcodename) => {
