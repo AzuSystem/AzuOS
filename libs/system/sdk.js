@@ -259,6 +259,26 @@ const element = {
                     elm.style.paddingRight = right;
                     return elementObject;
                 },
+                margin: (margin) => {
+                    elm.style.margin = margin;
+                    return elementObject;
+                },
+                margintop: (top) => {
+                    elm.style.marginTop = top;
+                    return elementObject;
+                },
+                marginleft: (left) => {
+                    elm.style.marginLeft = left;
+                    return elementObject;
+                },
+                marginbottom: (bottom) => {
+                    elm.style.marginBottom = bottom;
+                    return elementObject;
+                },
+                marginright: (right) => {
+                    elm.style.marginRight = right;
+                    return elementObject;
+                },
                 css: (string) => {
                     elm.style.cssText = string;
                     return elementObject;

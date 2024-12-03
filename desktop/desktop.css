@@ -119,3 +119,99 @@ p, h1, h2, h3, h4, h5, h6{
   bottom: 0;
   z-index: -5;
 }
+
+.notification {
+  background-color: hsla(270, 44%, 12%, 75%);
+  outline: 1px solid rgba(255, 255, 255, 0.125);
+  /*border-radius: 4px;*/
+  position: fixed;
+  bottom: 60px;
+  right: 0px;
+  width: 400px;
+  margin: 15px;
+  /*height: 300px;*/
+  height: auto;
+  padding: 17px;
+  box-shadow: 0 0 10px 2px #000000cc;
+  display: flex;
+  z-index: 50;
+  backdrop-filter: blur(16px) saturate(200%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  max-height: 270px;
+  transition-duration: 0.2s;
+}
+
+.notification:hover {
+  scale: 1.02;
+  background-color: hsla(270, 44%, 15%, 75%)
+}
+
+.notification:active {
+  scale: 0.98;
+  background-color: hsla(270, 44%, 10%, 75%)
+}
+
+.notification-title {
+  margin: 0;
+}
+
+.notification-description {
+  margin: 0;
+  opacity: 0.5;
+}
+
+.notification-close {
+  position: fixed;
+  right: 0;
+  top: 0;
+  margin: 17px;
+  margin-top: 14px;
+  background: none;
+  width: 30px;
+  height: 30px;
+  border: 0px;
+  border-radius: 12px;
+  transition-duration: 0.1s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.notification-close:hover {
+  background-color: #ffffff10;
+}
+
+/*.notification-image {
+  color: #000000cc;
+}*/
+
+/*.notification {
+  background-color: hsla(270, 44%, 12%, 75%);
+  outline: 1px solid rgba(255, 255, 255, 0.125);
+  position: fixed;
+  bottom: 60px;
+  width: 500px;
+  margin: 15px;
+  height: 45px;
+  padding: 0px;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  box-shadow: 0 0 10px 2px #000000cc;
+  display: flex;
+  z-index: 50;
+  backdrop-filter: blur(16px) saturate(200%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  border-radius: 12px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: left;
+  text-align: center;
+}*/

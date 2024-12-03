@@ -78,3 +78,9 @@ element.create('p', 'AzuOS is an Operating System written primarily with Web Tec
 element.create('p', 'Copyright @ AzuSystem 2024 - AzuOS Alpha 8', "tes").then(elm => elm
 	.parent('contents')
 );
+
+azuapi.call('notification').then(api => api
+    .title('About AzuOS')
+    .description('learn.')
+    .confirm()
+);

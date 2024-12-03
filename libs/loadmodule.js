@@ -3,31 +3,37 @@
 	Written by: Someone on StackOverflow - https://stackoverflow.com/a/950146
 */
 
-function loadPackage(packagePath) {
+function loadPackage(packagePath, args = '') {
     const splitPath = packagePath.split(':', 2);
     const scriptPath = `pkgs/${splitPath[0]}/${splitPath[1]}`;
     // console.log(`result: ${splitPath}`)
 
     var script = document.createElement("script");
     script.src = scriptPath;
+
+    script.setAttribute('script-arguments', args);
+
     document.head.appendChild(script);
 
     console.log(`[Package Injector] Imported '${scriptPath}'`);
 }
 
-function loadLibrary(libraryPath) {
+function loadLibrary(libraryPath, args = '') {
     const splitPath = libraryPath.split(':', 2);
     const scriptPath = `libs/${splitPath[0]}/${splitPath[1]}`;
     // console.log(`result: ${libraryPath}`)
 
 	var script = document.createElement("script");
 	script.src = scriptPath;
+
+    script.setAttribute('script-arguments', args);
+
 	document.head.appendChild(script);
 
 	console.log(`[Library Injector] Imported '${libraryPath}'`)
 }
 
-function loadPromisedPackage(packagePath) {
+function loadPromisedPackage(packagePath, args = '') {
     return new Promise((resolve, reject) => {
         const splitPath = packagePath.split(':', 2);
         const scriptPath = `pkgs/${splitPath[0]}/${splitPath[1]}`;
@@ -45,11 +51,13 @@ function loadPromisedPackage(packagePath) {
             reject(new Error(`[Package Injector] Failed to load package: '${scriptPath}'`));
         };
 
+        script.setAttribute('script-arguments', args);
+
         document.head.appendChild(script);
     });
 }
 
-function loadPromisedLibrary(file) {
+function loadPromisedLibrary(file, args = '') {
     return new Promise((resolve, reject) => {
         var script = document.createElement("script");
         script.src = `libs/${file}`;
@@ -64,6 +72,8 @@ function loadPromisedLibrary(file) {
             reject(new Error(`[Library Injector] Failed to load library: ${file}`));
         };
 
+        script.setAttribute('script-arguments', args);
+        
         document.head.appendChild(script);
     });
 }
