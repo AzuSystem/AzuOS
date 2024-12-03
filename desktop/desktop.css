@@ -1,0 +1,121 @@
+body {
+  background-color: var(--azu-color-background);
+}
+
+@font-face {
+  font-family: 'Inter';
+  src: url('../assets/fonts/inter/Inter-Regular.ttf');
+}
+
+p, h1, h2, h3, h4, h5, h6{
+  font-family: 'Inter';
+  color: white;
+
+}
+
+.desktop {
+  background-image: url('../assets/wallpapers/palm tree near dome.jpg');
+  background-size: cover;
+  background-attachment: fixed;
+  top: 0px;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  margin: 0px;
+  padding: 0px;
+  position: absolute;
+}
+
+.taskbar {
+  background-color: hsla(270, 44%, 12%, 75%);
+  outline: 1px solid rgba(255, 255, 255, 0.125);
+  /*border-radius: 4px;*/
+  position: fixed;
+  bottom: 0px;
+  width: 80%;
+  margin: 15px;
+  height: 45px;
+  padding: 0px;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  box-shadow: 0 0 10px 2px #000000cc;
+  display: flex;
+  z-index: 50;
+  backdrop-filter: blur(16px) saturate(200%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  border-radius: 12px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: left;
+  text-align: center;
+}
+
+.taskbar-component {
+  border: 0px;
+  border-radius: 0px;
+  width: 45px;
+  height: 45px;
+  padding: 5px 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  z-index: 50;
+  background: none;
+  border: 0;
+  transition-duration: 0.1s
+}
+
+.taskbar-component:hover {
+	background-color: #ffffff10;
+}
+
+.taskbar-start {
+	border-top-left-radius: 12px;
+	border-bottom-left-radius: 12px;
+}
+
+.taskbar-divider {
+	border-left: 1px solid #ffffff20;
+	width: 0;
+	height: 80%;
+	box-shadow: 0 0 25px #ffffffcc;
+}
+
+.taskbar-dropshadow {
+	filter: drop-shadow(0px 4px 5px #00000050);
+}
+
+.taskbar-right {
+	display: flex;
+	flex-direction: row;
+	position: fixed;
+	right: 12px;
+}
+
+.taskbar-extras {
+	/*margin: 0px;*/
+	width: 37px;
+}
+
+.taskbar-processes {
+	width: calc(100% - 180px);
+}
+
+.taskbar-time {
+	/*margin: 0px;*/
+	width: 47px;
+	text-shadow: 0px 4px 5px #00000050
+}
+
+.bottom-fade {
+  width: 100%;
+  height: 15%;
+  background: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.5));
+  position: fixed;
+  bottom: 0;
+  z-index: -5;
+}

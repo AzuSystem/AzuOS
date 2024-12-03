@@ -3,13 +3,13 @@
   from {
     opacity: 0;
     scale: 0.95;
-    rotateX: -5;
+    rotate: x -10deg;
     perspective: 1000px;
   }
   to {                                                                                                                                                                                                                                                                                                                         
     opacity: 1;
     scale: 1;
-    rotateX: 0;
+    rotate: x 0deg;
     perspective: 1000px;
   }
 }
@@ -18,13 +18,13 @@
   from {
     opacity: 1;
     scale: 1;
-    rotateX: 0;
+    rotate: x 0deg;
     perspective: 1000px;
   }
   to {
     opacity: 0;
     scale: 0.95;
-    rotateX: -5;
+    rotate: x -10deg;
     perspective: 1000px;
   }
 }
@@ -35,10 +35,11 @@
 }
 
 .winbox {
-    background-color: #1e112cee;
-    backdrop-filter: blur(5px);
-    border: 2px solid #2d1b40;
-    border-radius: 5px;
+    backdrop-filter: blur(16px) saturate(180%);
+    -webkit-backdrop-filter: blur(16px) saturate(180%);
+    background-color: rgba(30, 17, 44, 0.75);
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.125);
     box-shadow: 0px 0px 30px #000000;
     animation: windowOpen 0.2s ease-out forwards;
 }

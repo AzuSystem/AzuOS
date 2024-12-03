@@ -198,6 +198,10 @@ const element = {
                     elm.src = srcimg;
                     return elementObject;
                 },
+                src: (srcimg) => {
+                    elm.src = srcimg;
+                    return elementObject;
+                },
                 width: (width) => {
                     if (elm.tagName === 'IMG' || elm.tagName === 'VIDEO' || elm.tagName === 'CANVAS') {
                         elm.width = width;
@@ -253,6 +257,16 @@ const element = {
                 },
                 paddingright: (right) => {
                     elm.style.paddingRight = right;
+                    return elementObject;
+                },
+                css: (string) => {
+                    elm.style.cssText = string;
+                    return elementObject;
+                },
+                style: (string) => {
+                    const style = document.createElement("style");
+                    style.innerHTML = string;
+                    document.head.appendChild(style);
                     return elementObject;
                 },
                 parent: (elementcodename) => {

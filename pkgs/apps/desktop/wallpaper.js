@@ -15,6 +15,14 @@ if (!document.getElementById('desktop')) {
 	// Set the class attribute
 	desktop.className = 'desktop fadein';
 
+	desktop.setAttribute("codename", 'desktop');
+
 	// Add desktop to body
 	document.body.appendChild(desktop);
+
+	var fade = document.createElement('div');
+
+	fade.className = 'bottom-fade';
+
+	desktop.appendChild(fade);
 };

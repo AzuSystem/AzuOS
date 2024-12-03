@@ -10,7 +10,7 @@ var watermark = document.createElement('p');
 watermark.className = 'sysver';
 
 // Set the inner HTML
-watermark.innerHTML = 'AzuOS Alpha 7<br>By AzuSystem';
+watermark.innerHTML = 'AzuOS Alpha 8<br>By AzuSystem';
 
 // Add to desktop
 var desktop = document.getElementById('desktop');
