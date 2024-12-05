@@ -15,7 +15,6 @@ loadPackage('apps:desktop/watermark.js');
 loadPackage('apps:desktop/taskbar.js');
 loadPackage('apps:desktop/icons.js');
 
-loadLibrary('api:notification.js')
 // windowManager('start');
 
 // I asked ChatGPT to remake each HTML component into JS

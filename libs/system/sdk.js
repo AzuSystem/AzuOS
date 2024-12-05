@@ -68,6 +68,7 @@ const win = {
                         properties.min,
                         properties.autosize,
                         properties.fullscreen
+                        // document.currentScript
                     );
                 }
 			};

@@ -37,7 +37,7 @@ function newWindow(title, url) {
 	console.log("Window ID:", winbox.id);
 }
 
-function createDynamicWindow(title, codename, width, height, x, y, max, min, autosize, fullscreen) {
+function createDynamicWindow(title, codename, width, height, x, y, max, min, autosize, fullscreen, script) {
   // Checking if desktop exists :3
   var desktop = document.getElementById('desktop');
   if (!desktop) {
@@ -65,6 +65,7 @@ function createDynamicWindow(title, codename, width, height, x, y, max, min, aut
 					this.onclose = null;
 					this.close();
 					document.getElementById(winbox.id).remove();
+					unloadPackage(script);
 				}, 200);
 
 				return true;

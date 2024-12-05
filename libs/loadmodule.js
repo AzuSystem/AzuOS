@@ -12,6 +12,16 @@ function loadPackage(packagePath, args = '') {
     script.src = scriptPath;
 
     script.setAttribute('script-arguments', args);
+    try {
+        script.setAttribute('process-id', azuapi.call('uuid'));
+    } catch (error) {
+        if (error instanceof ReferenceError) {
+                console.error(`[Package Injector] Package will be imported without a Process ID (UUID API likely isn't loaded): ${error}`)
+            } else {
+                console.error(`[Package Injector] Package will be imported, however an error has occured upon assigning a Process ID to this package: ${error}`);
+            }
+        
+    }
 
     document.head.appendChild(script);
 

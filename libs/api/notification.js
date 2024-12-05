@@ -1,35 +1,23 @@
 /*
 	Notification API of AzuOS Desktop
-	Written by: MTSyntho @ AzuSystem 2024
+	AzuSystem 2024 (ChatGPT ;-;)
 */
 
-const azuapi = {
-	call: (name, description) => {
-		return new Promise((resolve) => {
-			// Default Values if none provided
-            const properties = {
-                name,
-                description
-            };
-
-			const azuapi = {
-				name,
-                description,
-                title: (title) => {
-                    properties.name = title;
-                    return azuapi;
-                },
-                description: (desc) => {
-                    properties.description = desc;
-                    return azuapi;
-                },
-                confirm: () => {
-                    // console.log(properties.name)
-                    // console.log(properties.description)
-                    loadPackage('apps:desktop/notification.js', `${properties.name}||${properties.description}`);
-                }
-			};
-			resolve(azuapi);
-		});
-	}
-};
+azuapi.call = (originalCall => {
+  return function (name, args) {
+    return originalCall(name, args).then(api => {
+      api.title = (title) => {
+        api.name = title;
+        return api;
+      };
+      api.description = (desc) => {
+        api.args = desc;
+        return api;
+      };
+      api.confirm = () => {
+        loadPackage('apps:desktop/notification.js', `${api.name}||${api.args}`);
+      };
+      return api;
+    });
+  };
+})(azuapi.call);

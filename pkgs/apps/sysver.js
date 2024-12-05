@@ -11,17 +11,6 @@ win.create("About AzuOS", "root").then(win => win
 	.confirm()
 );
 
-// element.create('div', '', 'background').then(elm => elm
-// 	.window('root')
-// 	.width('220px')
-// 	.height('100%')
-// 	.position('fixed')
-// 	.top(0)
-// 	.left(0)
-// 	// .overflow('hidden')
-// 	.class('no-overflow')
-// );
-
 // Background
 element.create('div', '', '').then(elm => elm
 	.window('root')
@@ -84,3 +73,5 @@ azuapi.call('notification').then(api => api
     .description('learn.')
     .confirm()
 );
+
+console.log(azuapi.call('uuid'));

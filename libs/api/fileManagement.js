@@ -9,6 +9,8 @@
 // 	console.log('[File Interaction API] Returned Directory Items')
 // }
 
+// to be adapted to new azuapi.call... function
+
 async function fetch_directory(path) {
     try {
         const result = await pywebview.api.fetch_directory(path);
