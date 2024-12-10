@@ -520,6 +520,7 @@ hr.menuhr {
   opacity: 0.5;
   text-align: right;
   text-shadow: 0px 0px 25px #000000cc;
+  pointer-events: none;
 }
 
 .contextmenu {

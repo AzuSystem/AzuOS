@@ -7,7 +7,7 @@
 
 var systemversion = system.version().toString();
 
-win.create("About AzuOS", "root").then(win => win
+win.create("About " + system.name(), "root").then(win => win
 	.setWidth(700)
 	.setHeight(500)
 	.confirm()
@@ -57,16 +57,16 @@ element.create('img', '', 'logo').then(elm => elm
 	.parent('sidebar')
 );
 
-element.create("h2", "AzuOS", "").then(elm => elm
+element.create("h2", system.name(), "").then(elm => elm
 	.parent('contents')
 	.textshadow('0px 0px 50px #ffffffcc')
 );
 
-element.create('p', 'AzuOS is an Operating System written primarily with Web Technologies.', "").then(elm => elm
+element.create('p', system.name() + ' is an Operating System written primarily with Web Technologies.', "").then(elm => elm
 	.parent('contents')
 );
 
-element.create('p', 'Copyright @ AzuSystem 2024 - AzuOS Alpha ' + systemversion, "tes").then(elm => elm
+element.create('p', system.copyright() + ' - ' + system.name() + ' Alpha ' + system.version().toString(), "tes").then(elm => elm
 	.parent('contents')
 );
 
