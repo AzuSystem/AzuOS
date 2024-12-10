@@ -5,6 +5,8 @@
 // 	type: "process"
 // }
 
+var systemversion = system.version().toString();
+
 win.create("About AzuOS", "root").then(win => win
 	.setWidth(700)
 	.setHeight(500)
@@ -64,7 +66,7 @@ element.create('p', 'AzuOS is an Operating System written primarily with Web Tec
 	.parent('contents')
 );
 
-element.create('p', 'Copyright @ AzuSystem 2024 - AzuOS Alpha 8', "tes").then(elm => elm
+element.create('p', 'Copyright @ AzuSystem 2024 - AzuOS Alpha ' + systemversion, "tes").then(elm => elm
 	.parent('contents')
 );
 

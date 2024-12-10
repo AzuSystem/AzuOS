@@ -1,3 +1,5 @@
+var systemversion = system.version().toString();
+
 win.create("sdk testing", "root2").then(win => win
 	.setWidth(700)
 	.setHeight(500)
@@ -20,7 +22,7 @@ element.create('p', 'This script is used to test the AzuOS SDK', "tes").then(elm
 	.textalign('center')
 );
 
-element.create('p', 'Copyright @ AzuSystem 2024 - AzuOS Alpha 7', "tes").then(elm => elm
+element.create('p', 'Copyright @ AzuSystem 2024 - AzuOS Alpha ' + systemversion, "tes").then(elm => elm
 	.window("root2")
 	.textalign('center')
 );
