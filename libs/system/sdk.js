@@ -314,3 +314,9 @@ const element = {
 		});
 	}
 };
+
+const system = {
+    version: () => {
+        return 8;
+    }
+}

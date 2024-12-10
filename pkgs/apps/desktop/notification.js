@@ -4,7 +4,7 @@
 */
 
 const notificationcss = (`
-  background-color: hsla(270, 44%, 12%, 75%);
+  background-color: hsla(270, 0%, 12%, 75%);
   outline: 1px solid rgba(255, 255, 255, 0.125);
   position: fixed;
   bottom: 60px;
