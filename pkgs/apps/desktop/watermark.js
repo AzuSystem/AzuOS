@@ -3,9 +3,6 @@
 	Written by: MTSyntho @ AzuSystem 2024
 */
 
-// Gets system version
-var systemversion = system.version().toString();
-
 // Create a <p> element
 var watermark = document.createElement('p');
 
@@ -13,7 +10,7 @@ var watermark = document.createElement('p');
 watermark.className = 'sysver';
 
 // Set the inner HTML
-watermark.innerHTML = 'AzuOS Alpha ' + systemversion + '<br>By AzuSystem';
+watermark.innerHTML = system.name() + ' Alpha ' + system.version().toString() + '<br>By ' + system.maker();
 
 // Add to desktop
 var desktop = document.getElementById('desktop');

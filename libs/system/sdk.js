@@ -318,5 +318,14 @@ const element = {
 const system = {
     version: () => {
         return 8;
+    },
+    name: () => {
+        return "AzuOS";
+    },
+    copyright: () => {
+        return "Copyright @ AzuSystem 2024";
+    },
+    maker: () => {
+        return "AzuSystem";
     }
 }
