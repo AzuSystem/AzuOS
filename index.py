@@ -2,6 +2,7 @@ import webview
 import subprocess
 import os
 import pathlib
+from screeninfo import get_monitors
 
 class Api:
 	def get_wifi_networks(self):
@@ -42,6 +43,8 @@ class Api:
 			else:
 				return 'file://' + path
 
+primaryMonitor = next((m for m in get_monitors() if
+m.is_primary), None)
 
 print('Starting AzuOS...')
 
@@ -49,10 +52,12 @@ print('Starting AzuOS...')
 api = Api()
 
 webview.settings = {
-  'ALLOW_FILE_URLS': True
+  'ALLOW_FILE_URLS': True,
+  'ALLOW_DOWNLOADS': True,
+  'OPEN_DEVTOOLS_IN_DEBUG': False
 }
-# webview.create_window('AzuOS', url="index.html", background_color='#000000', fullscreen=True, js_api=api)
+webview.create_window('AzuOS', url="index.html", background_color='#000000', fullscreen=True, js_api=api, width=primaryMonitor.width, height=primaryMonitor.height)
 
-webview.create_window('AzuOS', url="index.html", background_color='#000000', js_api=api)
+# webview.create_window('AzuOS', url="index.html", background_color='#000000', js_api=api)
 
 webview.start(debug=True)
