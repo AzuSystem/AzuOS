@@ -52,7 +52,7 @@
 
 .wb-body {
     /* set the width of window border via margin: */
-    background: hsla(267, 0%, 9%, 0.0); /* Originally 0.314 */
+    background: hsla(267, 0%, 9%, 0.312);
 }
 
 @font-face {
