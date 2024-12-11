@@ -86,6 +86,10 @@ const element = {
 			const elementObject = {
 				codename,
 				element: elm,
+                attribute: (name, value) => {
+                    elm.setAttribute(name, value);
+                    return elementObject;
+                },
 				class: (className) => {
 					elm.classList.add(className);
 					return elementObject;
@@ -278,6 +282,10 @@ const element = {
                 },
                 marginright: (right) => {
                     elm.style.marginRight = right;
+                    return elementObject;
+                },
+                radius: (radius) => {
+                    elm.style.radius = radius;
                     return elementObject;
                 },
                 css: (string) => {
