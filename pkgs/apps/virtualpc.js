@@ -1,6 +1,6 @@
 webwin.create("VirtualPC via v86", "https://copy.sh/v86", "v86webwin").then(webwin => webwin
-    .setWidth(1280)
-    .setHeight(720)
+    .setWidth(1280*0.75)
+    .setHeight(720*0.75)
     .confirm()
 );
 
