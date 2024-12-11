@@ -50,7 +50,7 @@ element.create('div', '', 'contents').then(elm => elm
 );
 
 element.create('img', '', 'logo').then(elm => elm
-	.source('assets/logo.svg')
+	.source('assets/logo_white.svg')
 	.width(100)
 	.align('center')
 	.dropshadow('0px 5px 5px #000000aa')

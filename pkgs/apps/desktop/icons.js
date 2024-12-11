@@ -38,7 +38,8 @@ function addDesktopApp(name, icon, src) {
 
 
 addDesktopApp('SDK Test', 'assets/icons/exclamation.svg', 'apps:dynamic-test.js');
-addDesktopApp('About AzuOS', 'assets/icons/questionmark.svg', 'apps:sysver.js');
+addDesktopApp('About', 'assets/icons/questionmark.svg', 'apps:sysver.js');
+addDesktopApp('VirtualPC', 'assets/icons/questionmark.svg', 'apps:virtualpc.js');
 
 // addDesktopApp('Settings', 'assets/icons/settings.svg', 'settings/index.html');
 // console.log(fetch_directory('~/Desktop'));
