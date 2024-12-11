@@ -478,3 +478,89 @@ const system = {
         }
     }
 }
+
+const webwin = {
+    create: (title, url, codename) => {
+        return new Promise((resolve) => {
+            // Default Values if none provided
+            const properties = {
+                title,
+                url,
+                codename,
+                width: 850,
+                height: 480,
+                x: 100,
+                y: 100,
+                max: false,
+                min: false,
+                autosize: false,
+                fullscreen: false,
+            };
+
+            const webwin = {
+                title: (titletext) => {
+                    title = titletext;
+                    return webwin;
+                },
+                url: (urltext) => {
+                    url = urltext;
+                    return webwin;
+                },
+                setWidth: (w) => {
+                    properties.width = w;
+                    return webwin;
+                },
+                setHeight: (h) => {
+                    properties.height = h;
+                    return webwin;
+                },
+                setX: (xpos) => {
+                    properties.x = xpos;
+                    return webwin;
+                },
+                setY: (ypos) => {
+                    properties.y = ypos;
+                    return webwin;
+                },
+                setMax: (maximize) => {
+                    properties.max = maximize;
+                    return webwin;
+                },
+                setMin: (minimize) => {
+                    properties.min = minimize;
+                    return webwin;
+                },
+                setAutosize: (auto) => {
+                    properties.autosize = auto;
+                    return webwin;
+                },
+                setFullscreen: (fullscreenapp) => {
+                    properties.fullscreen = fullscreenapp;
+                    return webwin;
+                },
+                confirm: () => {
+                    win.create(properties.title, properties.codename).then(win => win
+                        .setWidth(properties.width)
+                        .setHeight(properties.height)
+                        .setX(properties.x)
+                        .setY(properties.y)
+                        .setMax(properties.max)
+                        .setMin(properties.min)
+                        .setAutosize(properties.autosize)
+                        .setFullscreen(properties.fullscreen)
+                        .confirm()
+                    );
+                    element.create('iframe', '', 'webframe').then(elm => elm
+                        .window(properties.codename)
+                        .width("100%")
+                        .height("100%")
+                        .radius("12px")
+                        .source(url)
+                        .attribute('allowfullscreen', 'true')
+                    );
+                }
+            }
+            resolve(webwin);
+        });
+    }
+}

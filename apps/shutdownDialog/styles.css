@@ -24,7 +24,7 @@ h1 {
 }
 
 .list {
-  background-color: #261838;
+  background-color: hsl(266, 0%, 16%);
   border-radius: 15px;
   margin: auto;
   margin-top: 0;
@@ -34,7 +34,7 @@ h1 {
 }
 
 .listOption {
-  background-color: #311f47;
+  background-color: hsl(267, 0%, 20%);
   border-radius: 15px;
   padding: 5px;
   margin: auto;
@@ -56,12 +56,12 @@ h1 {
 
 .listOption:hover {
   scale: 1.02;
-  background-color: #35224d;
+  background-color: hsl(267, 0%, 22%);
 }
 
 .listOption:active {
   scale: 0.99;
-  background-color: #2e1d42;
+  background-color: hsl(268, 0%, 19%);
 }
 
 .mini {

@@ -38,12 +38,12 @@ function newWindow(title, url) {
 }
 
 function createDynamicWindow(title, codename, width, height, x, y, max, min, autosize, fullscreen, script) {
-  // Checking if desktop exists :3
-  var desktop = document.getElementById('desktop');
-  if (!desktop) {
-      console.error('[Window Manager] Desktop is missing, Window will be created on HTML Body');
-      desktop = document.body;
-  }
+  	// Checking if desktop exists :3
+  	var desktop = document.getElementById('desktop');
+  	if (!desktop) {
+  	    console.error('[Window Manager] Desktop is missing, Window will be created on HTML Body');
+  	    desktop = document.body;
+  	}
 
 	var winbox = new WinBox({
 			title: title,
@@ -115,69 +115,69 @@ function createDynamicWindow(title, codename, width, height, x, y, max, min, aut
 //     });
 // }
 
-function AzuDialog(title, note, modal) {
-	new WinBox({
-			title: title,
-			html: '<p>' + note + '</p>',
-			root: document.querySelector("desktop"),
-			overflow: true,
-			modal: modal,
-			class: 'azudialog',
-			onclose: function(){
-				this.g.classList.add("windowClose");
+// function AzuDialog(title, note, modal) {
+// 	new WinBox({
+// 			title: title,
+// 			html: '<p>' + note + '</p>',
+// 			root: document.querySelector("desktop"),
+// 			overflow: true,
+// 			modal: modal,
+// 			class: 'azudialog',
+// 			onclose: function(){
+// 				this.g.classList.add("windowClose");
 	
-				setTimeout(() => {
-					this.onclose = null;
-					this.close();
-				}, 200);
+// 				setTimeout(() => {
+// 					this.onclose = null;
+// 					this.close();
+// 				}, 200);
 	
-				return true;
-				}
-	});
-};
+// 				return true;
+// 				}
+// 	});
+// };
 
-function powerDialog() {
-	new WinBox({
-			title: 'Choose an Action',
-			url: 'apps/shutdownDialog/index.html',
-			root: document.querySelector("desktop"),
-			overflow: true,
-			modal: true,
-			class: 'poweroff',
-			width: 500,
-			height: 400,
-			onclose: function(){
-				this.g.classList.add("windowClose");
+// function powerDialog() {
+// 	new WinBox({
+// 			title: 'Choose an Action',
+// 			url: 'apps/shutdownDialog/index.html',
+// 			root: document.querySelector("desktop"),
+// 			overflow: true,
+// 			modal: true,
+// 			class: 'poweroff',
+// 			width: 500,
+// 			height: 400,
+// 			onclose: function(){
+// 				this.g.classList.add("windowClose");
 	
-				setTimeout(() => {
-					this.onclose = null;
-					this.close();
-				}, 200);
+// 				setTimeout(() => {
+// 					this.onclose = null;
+// 					this.close();
+// 				}, 200);
 	
-				return true;
-				}
-	});
-};
+// 				return true;
+// 				}
+// 	});
+// };
 
-function wifiPanel() {
-	new WinBox({
-			title: 'Find a Network',
-			url: 'apps/wifipanel/index.html',
-			root: document.querySelector("desktop"),
-			overflow: true,
-			modal: true,
-			class: 'wifipanel',
-			width: 500,
-			height: 400,
-			onclose: function(){
-				this.g.classList.add("windowClose");
+// function wifiPanel() {
+// 	new WinBox({
+// 			title: 'Find a Network',
+// 			url: 'apps/wifipanel/index.html',
+// 			root: document.querySelector("desktop"),
+// 			overflow: true,
+// 			modal: true,
+// 			class: 'wifipanel',
+// 			width: 500,
+// 			height: 400,
+// 			onclose: function(){
+// 				this.g.classList.add("windowClose");
 	
-				setTimeout(() => {
-					this.onclose = null;
-					this.close();
-				}, 200);
+// 				setTimeout(() => {
+// 					this.onclose = null;
+// 					this.close();
+// 				}, 200);
 	
-				return true;
-				}
-	});
-};
+// 				return true;
+// 				}
+// 	});
+// };

@@ -12,7 +12,7 @@ element.create('img', '', 'logo').then(elm => elm
 element.create("h2", "AzuOS", "text").then(elm => elm
 	.window("root2")
 	.textalign('center')
-	.shadow('0px 0px 50px #ffffffcc')
+	.textshadow('0px 0px 50px #ffffffcc')
 );
 
 element.create('p', 'This script is used to test the AzuOS SDK', "tes").then(elm => elm
@@ -24,3 +24,12 @@ element.create('p', system.copyright() + ' - ' + system.name() + ' Alpha ' + sys
 	.window("root2")
 	.textalign('center')
 );
+// element.create('div', '', 'centerdiv').then(elm => elm
+// 	.window("root2")
+// 	.contentalign("center", "center")
+// 	.flexbox()
+// )
+// element.create('button', 'Learn More', '').then(elm => elm
+// 	.root("centerdiv")
+// 	.textalign('center')
+// )
