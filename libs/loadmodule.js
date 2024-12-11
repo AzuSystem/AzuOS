@@ -6,27 +6,53 @@
 function loadPackage(packagePath, args = '') {
     const splitPath = packagePath.split(':', 2);
     const scriptPath = `pkgs/${splitPath[0]}/${splitPath[1]}`;
-    // console.log(`result: ${splitPath}`)
-
+    
+    // Create the script element
     var script = document.createElement("script");
     script.src = scriptPath;
-
     script.setAttribute('script-arguments', args);
-    try {
-        script.setAttribute('process-id', azuapi.call('uuid'));
-    } catch (error) {
-        if (error instanceof ReferenceError) {
-                console.error(`[Package Injector] Package will be imported without a Process ID (UUID API likely isn't loaded): ${error}`)
+
+    // Function to set process ID before appending the script
+    function setProcessId() {
+        try {
+            const processId = azuapi.call('uuid');
+            script.setAttribute('process-id', processId);
+        } catch (error) {
+            if (error instanceof ReferenceError) {
+                console.error(`[Package Injector] Package will be imported without a Process ID (UUID API likely isn't loaded): ${error}`);
             } else {
-                console.error(`[Package Injector] Package will be imported, however an error has occured upon assigning a Process ID to this package: ${error}`);
+                console.error(`[Package Injector] Package will be imported, but there was an error assigning a Process ID to this package: ${error}`);
             }
-        
+        }
     }
 
-    document.head.appendChild(script);
+    // Function to load the script with retry logic
+    function tryLoad(retryCount) {
+        script.onload = function () {
+            document.head.appendChild(script);
+            console.log(`[Package Injector] Imported '${scriptPath}'`);
+        };
 
-    console.log(`[Package Injector] Imported '${scriptPath}'`);
+        script.onerror = function () {
+            if (retryCount > 0) {
+                console.log(`[Package Injector] Import failed for '${scriptPath}', Retrying... (${retryCount}/7)`);
+                setTimeout(function () {
+                    tryLoad(retryCount - 1);
+                }, 20);  // Retry with a delay
+            } else {
+                console.error(`[Package Injector] Import failed for '${scriptPath}' after 7 attempts.`);
+            }
+        };
+
+        // First attempt: set the process ID and load the script
+        setProcessId();
+        document.head.appendChild(script);
+    }
+
+    // Start the first attempt with 7 retries
+    tryLoad(7);
 }
+
 
 function loadLibrary(libraryPath, args = '') {
     const splitPath = libraryPath.split(':', 2);
@@ -108,6 +134,19 @@ function unloadPackage(packagePath) {
         console.log(`[Package Injector] Unloaded '${scriptPath}'.`);
     } else {
         console.error(`[Package Injector] Can't locate '${scriptPath}' for unloading.`);
+    }
+}
+
+function unloadLibrary(libraryPath) {
+    const splitPath = libraryPath.split(':', 2);
+    const scriptPath = `libs/${splitPath[0]}/${splitPath[1]}`;
+
+    const script = document.querySelector(`script[src="${scriptPath}"]`);
+    if (script) {
+        script.remove();
+        console.log(`[Library Injector] Unloaded '${scriptPath}'.`);
+    } else {
+        console.error(`[Library Injector] Can't locate '${scriptPath}' for unloading.`);
     }
 }
 

@@ -5,9 +5,11 @@
 // 	type: "process"
 // }
 
-var systemversion = system.version().toString();
+var osname = azuapi.call('sysinfo', 'os')
+var osver = azuapi.call('sysinfo', 'version')
+var osdev = azuapi.call('sysinfo', 'developer')
 
-win.create("About " + system.name(), "root").then(win => win
+win.create("About " + osname, "root").then(win => win
 	.setWidth(700)
 	.setHeight(500)
 	.confirm()
@@ -57,23 +59,23 @@ element.create('img', '', 'logo').then(elm => elm
 	.parent('sidebar')
 );
 
-element.create("h2", system.name(), "").then(elm => elm
+element.create("h2", osname, "").then(elm => elm
 	.parent('contents')
 	.textshadow('0px 0px 50px #ffffffcc')
 );
 
-element.create('p', system.name() + ' is an Operating System written primarily with Web Technologies.', "").then(elm => elm
+element.create('p', osname + ' is an Operating System written primarily with Web Technologies.', "").then(elm => elm
 	.parent('contents')
 );
 
-element.create('p', system.copyright() + ' - ' + system.name() + ' Alpha ' + system.version().toString(), "tes").then(elm => elm
+element.create('p', `Copyright @ ${osdev} - ${osname} ${osver}`, "tes").then(elm => elm
 	.parent('contents')
 );
 
-azuapi.call('notification').then(api => api
-    .title('About AzuOS')
-    .description('learn.')
-    .confirm()
-);
+// azuapi.call('notification').then(api => api
+//     .title('About AzuOS')
+//     .description('learn.')
+//     .confirm()
+// );
 
 console.log(azuapi.call('uuid'));
