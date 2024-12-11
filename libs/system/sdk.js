@@ -323,6 +323,65 @@ const element = {
 	}
 };
 
+const math = {
+    gcd: (a, b) => {
+        while (b !== 0) {
+            let temp = b;
+            b = a % b;
+            a = temp;
+        }
+        return a;
+    },
+
+    isClose: (a, b, rel_tol = 1e-9, abs_tol = 0.0) => {
+        return Math.abs(a - b) <= Math.max(rel_tol * Math.max(Math.abs(a), Math.abs(b)), abs_tol);
+    },
+
+    factorial: (n) => {
+        if (n === 0 || n === 1) return 1;
+        return n * math.factorial(n - 1);
+    },
+
+    combinations: (n, r) => {
+        return math.factorial(n) / (math.factorial(r) * math.factorial(n - r));
+    },
+
+    permutations: (n, r) => {
+        return math.factorial(n) / math.factorial(n - r);
+    },
+
+    lcm: (a, b) => {
+        return (a * b) / math.gcd(a, b);
+    },
+
+    copysign: (x, y) => {
+        return Math.abs(x) * Math.sign(y);
+    },
+
+    product: (arr) => {
+        return arr.reduce((acc, val) => acc * val, 1);
+    },
+
+    hypot: (...args) => {
+        return Math.sqrt(args.reduce((sum, val) => sum + val ** 2, 0));
+    },
+
+    distance: (point1, point2) => {
+        if (point1.length !== point2.length) throw new Error("Points must have the same dimension.");
+        return Math.sqrt(point1.reduce((sum, _, i) => sum + (point1[i] - point2[i]) ** 2, 0));
+    },
+
+    erf: (x) => {
+        const sign = Math.sign(x);
+        const absX = Math.abs(x);
+        const t = 1 / (1 + 0.3275911 * absX);
+        const a1 = 0.254829592, a2 = -0.284496736, a3 = 1.421413741, a4 = -1.453152027, a5 = 1.061405429;
+        const poly = t * (a1 + t * (a2 + t * (a3 + t * (a4 + t * a5))));
+        return sign * (1 - poly * Math.exp(-absX * absX));
+    }
+};
+
+
 const system = {
     version: () => {
         return 8;
@@ -335,5 +394,23 @@ const system = {
     },
     maker: () => {
         return "AzuSystem";
+    },
+    screen: () => {
+        const screen = window.screen;
+        const divisor = math.gdc(screen.width, screen.height);
+        const widthRatio = screen.width / divisor;
+        const heightRatio = screen.height / divisor;
+
+        return {
+            "width": screen.width,
+            "height": screen.height,
+            "colorDepth": screen.colorDepth,
+            "orientation": screen.orientation,
+            "pixelDepth": screen.pixelDepth,
+            "aspectRatio": {
+                "width": widthRatio,
+                "height": heightRatio
+            }
+        }
     }
 }
