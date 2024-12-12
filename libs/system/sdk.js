@@ -434,7 +434,6 @@ const math = {
         if (point1.length !== point2.length) throw new Error("Points must have the same dimension.");
         return Math.sqrt(point1.reduce((sum, _, i) => sum + (point1[i] - point2[i]) ** 2, 0));
     },
-
     erf: (x) => {
         const sign = Math.sign(x);
         const absX = Math.abs(x);
@@ -442,7 +441,49 @@ const math = {
         const a1 = 0.254829592, a2 = -0.284496736, a3 = 1.421413741, a4 = -1.453152027, a5 = 1.061405429;
         const poly = t * (a1 + t * (a2 + t * (a3 + t * (a4 + t * a5))));
         return sign * (1 - poly * Math.exp(-absX * absX));
-    }
+    },
+	circleSurfaceArea: (radius) => {
+		return Math.pow(radius, 2) * Math.PI;
+	},
+	circleCircumference: (diameter) => {
+		return diameter * Math.PI;
+	},
+	pyramidVolume: (baseLength, height) => {
+		const baseArea = baseLength * baseLength;
+		return (1/3) * baseArea * height;
+	},
+	pyramidSurfaceArea: (baseLength, sideLength) => {
+		// Assuming a square base pyramid
+		const baseArea = baseLength * baseLength;
+		const slantHeight = Math.sqrt(Math.pow(sideLength/2, 2) + Math.pow(height, 2)); // height needs to be passed as an argument
+		const lateralArea = 2 * baseLength * slantHeight;
+		return baseArea + lateralArea;
+	},
+	sphereVolume: (radius) => {
+		return (4/3) * Math.PI * Math.pow(radius, 3);
+	},
+	sphereSurfaceArea: (radius) => {
+		return 4 * Math.PI * Math.pow(radius, 2);
+	},
+	cylinderVolume: (radius, height) => {
+		return Math.PI * Math.pow(radius, 2) * height;
+	},
+	cylinderSurfaceArea: (radius, height) => {
+		return 2 * Math.PI * radius * (radius + height);
+	},
+	coneVolume: (radius, height) => {
+		return (1/3) * Math.PI * Math.pow(radius, 2) * height;
+	},
+	coneSurfaceArea: (radius, height) => {
+		const slantHeight = Math.sqrt(Math.pow(radius, 2) + Math.pow(height, 2));
+		return Math.PI * radius * (radius + slantHeight);
+	},
+	cuboidVolume: (length, width, height) => {
+		return length * width * height;
+	},
+	cuboidSurfaceArea: (length, width, height) => {
+		return 2 * (length * width + length * height + width * height);
+	}
 };
 
 
