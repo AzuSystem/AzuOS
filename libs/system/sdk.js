@@ -653,3 +653,20 @@ const strings = {
         return greeting;
     }
 }
+
+const audio = {
+	load: (file) => {
+		return new Audio(file);
+	},
+	setProgress: (audiosource, progress) => {
+		audiosource.currentTime = progress;
+	}
+}
+
+const soundsPath = `assets/sounds/`;
+const sounds = {
+	debugsound: () => {
+		let sfx = audio.load(soundsPath + "Different.mp3");
+		sfx.play();
+	}
+}
