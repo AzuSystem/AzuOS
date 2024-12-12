@@ -292,6 +292,22 @@ const element = {
 					elm.style.marginRight = right;
 					return elementObject;
 				},
+				marginTop: (top) => {
+					elm.style.marginTop = top;
+					return elementObject;
+				},
+				marginLeft: (left) => {
+					elm.style.marginLeft = left;
+					return elementObject;
+				},
+				marginBottom: (bottom) => {
+					elm.style.marginBottom = bottom;
+					return elementObject;
+				},
+				marginRight: (right) => {
+					elm.style.marginRight = right;
+					return elementObject;
+				},				
 				radius: (radius) => {
 					elm.style.radius = radius;
 					return elementObject;
