@@ -141,3 +141,23 @@ function unloadCSS(file) {
         console.error(`[CSS Injector] CSS file not found: ${file}`);
     }
 }
+
+function unloadRawPathCSS(file) {
+    const link = document.querySelector(`link[href="${file}"]`);
+    if (link) {
+        link.remove();
+        console.log(`[CSS Injector] Removed CSS file: ${file}`);
+    } else {
+        console.error(`[CSS Injector] CSS file not found: ${file}`);
+    }
+}
+
+function loadTheme(file) {
+    const themesPath = "themes/";
+    loadRawPathCSS(themesPath + file);
+}
+
+function unloadTheme(file) {
+    const themesPath = "themes/";
+    unloadRawPathCSS(themesPath + file);
+}
