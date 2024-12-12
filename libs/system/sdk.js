@@ -78,7 +78,7 @@ const win = {
 };
 
 const element = {
-	create: (type, innerHTML, codename) => {
+	create: (type, innerHTML, codename, manualIsElementOverwrite = false) => {
 		return new Promise((resolve) => {
 			const elm = document.createElement(type);
 			elm.innerHTML = innerHTML;
@@ -382,8 +382,22 @@ const element = {
 				}
 			};
 			elm.setAttribute("codename", codename);
+			if (!manualIsElementOverwrite) {
+				elm.setAttribute("isElement", "");
+			}
 			resolve(elementObject);
 		});
+	},
+	get: (codename, returnAsJSON = false) => {
+		const elm = document.querySelector(`[codename="${codename}"]`);
+		
+		if (!elm) {
+		  	return returnAsJSON ? { element: null, hasAttribute: false } : [null, false];
+		}
+		
+		const hasAttr = elm.hasAttribute("isElement");
+		
+		return returnAsJSON ? { element: elm, hasAttribute: hasAttr } : [elm, hasAttr];
 	}
 };
 
@@ -612,13 +626,13 @@ const strings = {
         let greeting;
 
         if (currentHour >= 5 && currentHour < 12) {
-            greeting = "Good Morning";
+            greeting = "Good morning";
         } else if (currentHour >= 12 && currentHour < 18) {
-            greeting = "Good Afternoon";
+            greeting = "Good afternoon";
         } else if (currentHour >= 18 && currentHour < 22) {
-            greeting = "Good Evening";
+            greeting = "Good evening";
         } else {
-            greeting = "Good Night";
+            greeting = "Good night";
         }
         return greeting;
     }

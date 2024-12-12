@@ -79,11 +79,10 @@ const taskbarprocesses = (`
 	width: calc(100% - 180px);
 `)
 
-element.create('div', '', 'taskbar').then(elm => elm
+element.create('div', '', 'taskbar', true).then(elm => elm
 	.css(taskbarcss)
 	.parent('desktop')
 );
-
 
 // Start Button
 element.create('button', '', 'start-btn').then(elm => elm
