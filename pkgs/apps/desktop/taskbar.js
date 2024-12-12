@@ -4,52 +4,52 @@
 */
 
 const taskbarcss = (`
-	background-color: hsla(270, 0%, 12%, 75%);
-	outline: 1px solid rgba(255, 255, 255, 0.125);
-	/*border-radius: 4px;*/
-	position: fixed;
-	bottom: 0px;
-	width: 80%;
-	margin: 15px;
-	height: 45px;
-	padding: 0px;
-	left: 0;
-	right: 0;
-	margin-left: auto;
-	margin-right: auto;
-	box-shadow: 0 0 10px 2px #000000cc;
-	display: flex;
-	z-index: 50;
-	backdrop-filter: blur(16px) saturate(200%);
-	-webkit-backdrop-filter: blur(16px) saturate(180%);
-	border-radius: 12px;
-	display: flex;
-	flex-direction: row;
-	align-items: center;
-	justify-content: left;
-	text-align: center;
+	  background-color: var(--azu-taskbar-background);
+	  outline: var(--azu-taskbar-outline);
+	  /*border-radius: 4px;*/
+	  position: fixed;
+	  bottom: 0px;
+	  width: var(--azu-taskbar-width);
+	  margin: 15px;
+	  height: 45px;
+	  padding: 0px;
+	  left: 0;
+	  right: 0;
+	  margin-left: auto;
+	  margin-right: auto;
+	  box-shadow: var(--azu-taskbar-shadow);
+	  display: flex;
+	  z-index: 50;
+	  backdrop-filter: var(--azu-taskbar-blur);
+	  -webkit-backdrop-filter: var(--azu-taskbar-blur);
+	  border-radius: var(--azu-taskbar-border-radius);
+	  display: flex;
+	  flex-direction: row;
+	  align-items: center;
+	  justify-content: left;
+	  text-align: center;
 `)
 
 const taskbarcomponent = (`
-  	border: 0px;
-  	border-radius: 0px;
-  	/* width: 45px; */
-  	height: 45px;
-  	padding: 5px 5px;
-  	display: flex;
-  	align-items: center;
-  	justify-content: center;
-  	text-align: center;
-  	z-index: 50;
-  	background: none;
-  	border: 0;
-  	transition-duration: 0.1s
+  border: 0px;
+  border-radius: 0px;
+  /* width: 45px; */
+  height: 45px;
+  padding: 5px 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  z-index: 50;
+  background: none;
+  border: 0;
+  transition-duration: 0.1s
 `)
 
 const taskbarstart = (`
 	width: 45;
-	border-top-left-radius: 12px;
-	border-bottom-left-radius: 12px;
+	border-top-left-radius: var(--azu-taskbar-border-radius);
+	border-bottom-left-radius: var(--azu-taskbar-border-radius);
 `)
 
 const taskbardivider = (`
@@ -92,7 +92,7 @@ element.create('button', '', 'start-btn').then(elm => elm
 );
 
 element.create('img', '', '').then(elm => elm
-	.src('assets/logo_white.svg')
+	.src('assets/logo.svg')
 	.width(30)
 	.height(30)
 	.dropshadow('0px 4px 5px #00000050')
