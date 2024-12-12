@@ -517,7 +517,7 @@ const math = {
 };
 
 
-// const system = {
+const system = {
 //     version: () => {
 //         return 8;
 //     },
@@ -530,25 +530,25 @@ const math = {
 //     maker: () => {
 //         return "AzuSystem";
 //     },
-//     screen: () => {
-//         const screen = window.screen;
-//         const divisor = math.gdc(screen.width, screen.height);
-//         const widthRatio = screen.width / divisor;
-//         const heightRatio = screen.height / divisor;
+    screen: () => {
+        const screen = window.screen;
+        const divisor = math.gdc(screen.width, screen.height);
+        const widthRatio = screen.width / divisor;
+        const heightRatio = screen.height / divisor;
 
-//         return {
-//             "width": screen.width,
-//             "height": screen.height,
-//             "colorDepth": screen.colorDepth,
-//             "orientation": screen.orientation,
-//             "pixelDepth": screen.pixelDepth,
-//             "aspectRatio": {
-//                 "width": widthRatio,
-//                 "height": heightRatio
-//             }
-//         }
-//     }
-// }
+        return {
+            "width": screen.width,
+            "height": screen.height,
+            "colorDepth": screen.colorDepth,
+            "orientation": screen.orientation,
+            "pixelDepth": screen.pixelDepth,
+            "aspectRatio": {
+                "width": widthRatio,
+                "height": heightRatio
+            }
+        }
+    }
+}
 
 const webwin = {
     create: (title, url, codename) => {
