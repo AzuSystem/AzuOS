@@ -668,5 +668,9 @@ const sounds = {
 	debugsound: () => {
 		let sfx = audio.load(soundsPath + "Different.mp3");
 		sfx.play();
+	},
+	play: (sound) => {
+		let sfx = audio.load(soundsPath + sound + ".mp3");
+		sfx.play();
 	}
 }

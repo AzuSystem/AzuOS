@@ -14,6 +14,7 @@ loadPackage('apps:desktop/wallpaper.js');
 loadPackage('apps:desktop/watermark.js');
 loadPackage('apps:desktop/taskbar.js');
 loadPackage('apps:desktop/icons.js');
+sounds.play("login")
 
 // windowManager('start');
 
