@@ -26,6 +26,21 @@ if (__skipBoot === true) {
 			document.body.style.cursor = 'auto';
 			boot.remove();
 
+			const currentHour = new Date().getHours();
+        	let greeting;
+
+        	if (currentHour >= 5 && currentHour < 12) {
+        	    greeting = "Good Morning";
+        	} else if (currentHour >= 12 && currentHour < 18) {
+        	    greeting = "Good Afternoon";
+        	} else if (currentHour >= 18 && currentHour < 22) {
+        	    greeting = "Good Evening";
+        	} else {
+        	    greeting = "Good Night";
+        	}
+
+			document.getElementById("welcometextobject").innerHTML = greeting;
+
 			setTimeout(function() {
 				welcome.classList.remove("fadein");
 				welcome.classList.add("fadeout");
