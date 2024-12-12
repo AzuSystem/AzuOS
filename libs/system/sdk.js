@@ -517,38 +517,38 @@ const math = {
 };
 
 
-const system = {
-    version: () => {
-        return 8;
-    },
-    name: () => {
-        return "AzuOS";
-    },
-    copyright: () => {
-        return "Copyright @ AzuSystem 2024";
-    },
-    maker: () => {
-        return "AzuSystem";
-    },
-    screen: () => {
-        const screen = window.screen;
-        const divisor = math.gdc(screen.width, screen.height);
-        const widthRatio = screen.width / divisor;
-        const heightRatio = screen.height / divisor;
+// const system = {
+//     version: () => {
+//         return 8;
+//     },
+//     name: () => {
+//         return "AzuOS";
+//     },
+//     copyright: () => {
+//         return "Copyright @ AzuSystem 2024";
+//     },
+//     maker: () => {
+//         return "AzuSystem";
+//     },
+//     screen: () => {
+//         const screen = window.screen;
+//         const divisor = math.gdc(screen.width, screen.height);
+//         const widthRatio = screen.width / divisor;
+//         const heightRatio = screen.height / divisor;
 
-        return {
-            "width": screen.width,
-            "height": screen.height,
-            "colorDepth": screen.colorDepth,
-            "orientation": screen.orientation,
-            "pixelDepth": screen.pixelDepth,
-            "aspectRatio": {
-                "width": widthRatio,
-                "height": heightRatio
-            }
-        }
-    }
-}
+//         return {
+//             "width": screen.width,
+//             "height": screen.height,
+//             "colorDepth": screen.colorDepth,
+//             "orientation": screen.orientation,
+//             "pixelDepth": screen.pixelDepth,
+//             "aspectRatio": {
+//                 "width": widthRatio,
+//                 "height": heightRatio
+//             }
+//         }
+//     }
+// }
 
 const webwin = {
     create: (title, url, codename) => {

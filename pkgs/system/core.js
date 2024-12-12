@@ -1,5 +1,5 @@
 /*
-	AzuOS Core (Modifed)
+	AzuOS Core
 	Written by: MTSyntho @ AzuSystem
 */
 

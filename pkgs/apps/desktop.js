@@ -4,8 +4,8 @@
 */
 
 loadCSS('index.css');
-loadTheme('default-theme.css');
-// loadTheme('light-theme.css'); // oh no
+// loadTheme('default-theme.css');
+loadTheme('dark-mode.css');
 unloadCSS('boot.css');
 unloadCSS('login.css');
 unloadPackage('system:bootscreen.js');
