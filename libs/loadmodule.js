@@ -114,7 +114,19 @@ function loadPromisedLibrary(file, args = '') {
     });
 }
 
+function loadScript(path) {
+    var script = document.createElement("script");
+    // script.src = `file:///${path}`;
+    fetch_file(path, "plain")
+        .then(result => {
+            script.innerHTML = result
+        }
+    );
 
+    document.head.appendChild(script);
+
+    console.log(`[Javascript Injector] Imported '${path}'`)
+};
 
 function loadJS(file) {
     var script = document.createElement("script");
