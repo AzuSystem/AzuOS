@@ -27,7 +27,7 @@
   --azu-taskbar-border-radius: 12px;
 }
 
-@keyframes notification-in {
+/* @keyframes notification-in {
   from {
     right: -400px;
     opacity: 0;
@@ -59,4 +59,4 @@
 
 .__azuos-notification-out {
   animation: notification-out 0.2s ease-in forwards;
-}
+} */

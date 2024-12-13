@@ -196,6 +196,12 @@ function loadTheme(file) {
     loadRawPathCSS(themesPath + file);
 }
 
+function reloadTheme(file) {
+    const themesPath = "themes/";
+    unloadRawPathCSS(themesPath + file);
+    loadRawPathCSS(themesPath + file);
+}
+
 function unloadTheme(file) {
     const themesPath = "themes/";
     unloadRawPathCSS(themesPath + file);

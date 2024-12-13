@@ -5,7 +5,9 @@
 
 loadCSS('index.css');
 // loadTheme('default-theme.css');
-loadTheme('dark-mode.css');
+// loadTheme('dark-mode.css');
+loadTheme('light-mode.css');
+loadCSS('notification.css');
 unloadCSS('boot.css');
 unloadCSS('login.css');
 unloadPackage('system:bootscreen.js');
