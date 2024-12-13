@@ -6,6 +6,7 @@
 :root {
 	--azu-color-background: hsla(270, 35%, 7%);
   --azu-wallpaper: url('../assets/wallpapers/palm tree near dome.jpg');
+  --azu-startbutton: url('../assets/logo_white.svg');
 	--azu-color-main: hsla(270, 44%, 12%);
 	--azu-color-light: hsla(270, 40%, 18%);
 	--azu-color-shadow: hsla(0, 0%, 0%);

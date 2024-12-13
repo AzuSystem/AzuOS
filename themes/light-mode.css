@@ -7,6 +7,7 @@
 :root {
     --azu-color-background: hsla(0, 0%, 95%); /* Lighter background */
     --azu-wallpaper: url('../assets/wallpapers/blue\ pink\ 3d\ circles.jpg'); /* Light wallpaper */
+    --azu-startbutton: url('../assets/logo_black.svg');
     --azu-color-main: hsla(270, 0%, 18%); /* Lighter main color */
     --azu-color-light: hsla(270, 0%, 28%); /* Lighter secondary color */
     --azu-color-shadow: hsla(0, 0%, 80%); /* Lighter shadow */
@@ -17,7 +18,7 @@
     --azu-window-background: hsla(269, 0%, 98%, 0.75); /* Lighter window background */
     --azu-window-border-radius: 12px;
     --azu-window-border: 1px solid rgba(0, 0, 0, 0.125); /* Lighter border */
-    --azu-taskbar-shadow: 0 0 10px 2px #00000022;
+    --azu-window-shadow: 0 0 10px 2px #00000022;
     --azu-window-inner-background: hsla(267, 0%, 95%, 0.312); /* Lighter inner background */
   
     --azu-taskbar-background: hsla(270, 0%, 88%, 75%); /* Lighter taskbar */

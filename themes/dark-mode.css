@@ -7,6 +7,7 @@
 :root {
 	--azu-color-background: hsla(0, 0, 30%);
   --azu-wallpaper: url('../assets/wallpapers/dark waves.jpg');
+  --azu-startbutton: url('../assets/logo_white.svg');
 	--azu-color-main: hsla(270, 0%, 12%);
 	--azu-color-light: hsla(270, 0%, 18%);
 	--azu-color-shadow: hsla(0, 0%, 0%);

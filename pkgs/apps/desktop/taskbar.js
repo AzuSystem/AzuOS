@@ -91,7 +91,7 @@ element.create('button', '', 'start-btn').then(elm => elm
 );
 
 element.create('img', '', '').then(elm => elm
-	.src('assets/logo_white.svg')
+	.src('assets/logo.svg')
 	.width(30)
 	.height(30)
 	.dropshadow('0px 4px 5px #00000050')
