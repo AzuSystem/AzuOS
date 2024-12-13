@@ -3,13 +3,14 @@ var styling = (`
     font-family: 'Inter';
     resize: none;
     box-sizing: border-box;
+    color: var(--azu-text-color);
 `)
 
 var filename = document.currentScript.getAttribute('script-arguments')
 // let textdata;
 
 if (filename) {
-    win.create(`${filename} - AzuText`, "root").then(win => win
+    win.create(`${filename} - AzuText`, "azutextwin").then(win => win
         .setWidth(700)
         .setHeight(500)
         .confirm()
@@ -17,7 +18,7 @@ if (filename) {
     fetch_file(filename, "plain")
         .then(result => {
             element.create('textarea', result, '').then(elm => elm
-                .window('root')
+                .window('azutextwin')
                 .css(styling)
                 .position('fixed')
                 .width('calc(100% - 6px)')
@@ -25,7 +26,7 @@ if (filename) {
                 .placeholder('Write Something :3')
                 .align('center')
                 .attribute('wrap', 'soft')
-                .color('white')
+                // .color('white')
                 .backgroundcolor('transparent')
                 .border('none')
                 .outline('none')
@@ -36,14 +37,14 @@ if (filename) {
             console.error("[AzuText] Error:", error);
         });
 } else {
-    win.create('AzuText', "root").then(win => win
+    win.create('AzuText', "azutextwin").then(win => win
         .setWidth(700)
         .setHeight(500)
         .confirm()
     );
 
 	element.create('textarea', '', '').then(elm => elm
-        .window('root')
+        .window('azutextwin')
         .css(styling)
         .position('fixed')
         .width('calc(100% - 6px)')

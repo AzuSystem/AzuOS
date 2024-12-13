@@ -9,7 +9,7 @@ var osname = azuapi.call('sysinfo', 'os')
 var osver = azuapi.call('sysinfo', 'version')
 var osdev = azuapi.call('sysinfo', 'developer')
 
-win.create("About " + osname, "root").then(win => win
+win.create("About " + osname, "sysverwin").then(win => win
 	.setWidth(700)
 	.setHeight(500)
 	.confirm()
@@ -17,7 +17,7 @@ win.create("About " + osname, "root").then(win => win
 
 // Background
 element.create('div', '', '').then(elm => elm
-	.window('root')
+	.window('sysverwin')
 	.width('220px')
 	.height('100%')
 	.position('fixed')
@@ -33,7 +33,7 @@ element.create('div', '', '').then(elm => elm
 );
 
 element.create('div', '', 'sidebar').then(elm => elm
-	.window('root')
+	.window('sysverwin')
 	.width('220px')
 	.height('100%')
 	.position('fixed')
@@ -42,7 +42,7 @@ element.create('div', '', 'sidebar').then(elm => elm
 );
 
 element.create('div', '', 'contents').then(elm => elm
-	.window('root')
+	.window('sysverwin')
 	.width('calc(100% - 240px)')
 	.height('100%')
 	.position('fixed')
