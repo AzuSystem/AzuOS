@@ -27,3 +27,28 @@ element.create('h6', `
 	.parent('azuthemediv')
 	.opacity(0.4)
 )
+
+element.create('div', '', 'tempthemeswitch').then(elm => elm
+	.flex()
+	.gap("8px")
+	.horizontal()
+	.parent('azuthemediv')
+)
+
+element.create('button', 'Light -> Dark', '').then(elm => elm
+	.attribute('onclick', `unloadTheme("light-mode.css"); 
+		unloadCSS("index.css");
+		loadTheme("dark-mode.css");
+		loadCSS("index.css");
+		`)
+	.parent('tempthemeswitch')
+)
+
+element.create('button', 'Dark -> Light', '').then(elm => elm
+	.attribute('onclick', `unloadTheme("dark-mode.css");
+		unloadCSS("index.css");
+		loadTheme("light-mode.css");
+		loadCSS("index.css");
+		`)
+	.parent('tempthemeswitch')
+)

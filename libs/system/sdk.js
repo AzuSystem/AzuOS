@@ -98,6 +98,22 @@ const element = {
 					elm.id(id);
 					return elementObject;
 				},
+				flex: () => {
+					elm.style.display = 'flex';
+					return elementObject;
+				},
+				gap: (gap) => {
+					elm.style.gap = gap;
+					return elementObject;
+				},
+				horizontal: () => {
+					elm.style.flexDirection = 'row';
+					return elementObject;
+				},
+				vertical: () => {
+					elm.style.flexDirection = 'column';
+					return elementObject;
+				},
 				align: (alignment) => {
 					elm.classList.add('__azuos-sdk-align-center');
 					return elementObject;

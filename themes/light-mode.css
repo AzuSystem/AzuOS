@@ -13,6 +13,10 @@
     --azu-color-shadow: hsla(0, 0%, 80%); /* Lighter shadow */
     --azu-button-color-main: hsla(270, 0%, 20%); /* Lighter button color */
     --azu-text-color: hsla(0, 0%, 20%); /* Dark text on light background */
+
+    --azu-button-bg: hsla(0, 0%, 7%, 0.05);
+    --azu-button-bg-hover: hsla(0, 0%, 7%, 10%);
+    --azu-button-text: hsla(0, 0%, 7%, 100%);
   
     --azu-window-blur: blur(16px);
     --azu-window-background: hsla(269, 0%, 98%, 0.75); /* Lighter window background */

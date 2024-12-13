@@ -14,6 +14,10 @@
 	--azu-button-color-main: hsla(270, 0%, 12%);
 	--azu-text-color: hsla(0, 0%, 100%);
 
+  --azu-button-bg: hsla(0, 0%, 100%, 5%);
+  --azu-button-bg-hover: hsla(0, 0%, 100%, 10%);
+  --azu-button-text: hsla(0, 0%, 100%, 100%);
+
   --azu-window-blur: blur(16px);
   --azu-window-background: hsla(269, 0%, 12%, 0.75);
   --azu-window-border-radius: 12px;

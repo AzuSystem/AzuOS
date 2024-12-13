@@ -191,18 +191,23 @@ function unloadRawPathCSS(file) {
     }
 }
 
-function loadTheme(file) {
-    const themesPath = "themes/";
-    loadRawPathCSS(themesPath + file);
-}
+// function loadTheme(file) {
+//     const themesPath = "themes/";
+//     const link = document.querySelector(`link[href="${themesPath + file}"]`);
+//     if (!link) {
+//         loadRawPathCSS(themesPath + file);
+//     } else {
+//         console.error(`[CSS Injector] Theme already loaded: ${file}`)
+//     }
+// }
 
-function reloadTheme(file) {
-    const themesPath = "themes/";
-    unloadRawPathCSS(themesPath + file);
-    loadRawPathCSS(themesPath + file);
-}
+// function reloadTheme(file) {
+//     const themesPath = "themes/";
+//     unloadRawPathCSS(themesPath + file);
+//     loadRawPathCSS(themesPath + file);
+// }
 
-function unloadTheme(file) {
-    const themesPath = "themes/";
-    unloadRawPathCSS(themesPath + file);
-}
+// function unloadTheme(file) {
+//     const themesPath = "themes/";
+//     unloadRawPathCSS(themesPath + file);
+// }

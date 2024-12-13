@@ -8,6 +8,10 @@ loadCSS('index.css');
 // loadTheme('dark-mode.css');
 loadTheme('light-mode.css');
 loadCSS('notification.css');
+
+// Load all the individial CSS files for elements.
+loadCSS('ui/button.css');
+
 unloadCSS('boot.css');
 unloadCSS('login.css');
 unloadPackage('system:bootscreen.js');
