@@ -16,7 +16,7 @@ I know... it seems weird having a Desktop Environment based on Javascript and Py
 A Web-Based Desktop makes development faster and easier, even for those just forking the project. Although admittly, a desktop not written primarily with such languages is better.
 
 ## What does AzuOS run on?
-AzuOS is built using Javascript & Python, however runs on top of [Arch Linux](https://archlinux.net). _~~so I can say 'I use Arch btw :3'~~_
+AzuOS is built using Javascript & Python, however runs on top of [Arch Linux](https://archlinux.org). _~~so I can say 'I use Arch btw :3'~~_
 
 Theoretically, AzuOS can run on other linux systems, assuming they also use bash, you may need to replace some shell scripts with ones that work on your linux distro of choice.
 
