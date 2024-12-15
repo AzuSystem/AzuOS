@@ -52,6 +52,8 @@ cpu_data.then(result => {
                 element.create('div', '', "drvInfo" + drive.device.slice(0, 1) + "div").then(elm => elm
                     .flex()
                     .backgroundcolor("var(--azu-button-bg)")
+                    .vertical()
+                    .gap("4px")
                     .padding("8px")
                     .radius("8px")
                     .parent("hwinfodiv")
@@ -60,6 +62,20 @@ cpu_data.then(result => {
                     .margin(0)
                     .parent("drvInfo" + drive.device.slice(0, 1) + "div")
                 );
+                element.create('div', '', "drv" + drive.device.slice(0, 1) + 'progdiv').then(elm => elm
+                    .height("8px")
+                    .radius("4px")
+                    .backgroundcolor("var(--azu-button-bg)")
+                    .parent("drvInfo" + drive.device.slice(0, 1) + "div")
+                )
+                element.create('div', '', '').then(elm => elm
+                    .backgroundcolor("var(--azu-button-text)")
+                    .position("relative")
+                    .height("8px")
+                    .radius("4px")
+                    .width(((drive.usedSpaceRaw / drive.totalSpaceRaw)*100).toString() + "%")
+                    .parent("drv" + drive.device.slice(0, 1) + 'progdiv')
+                )
             }
         });
     });
