@@ -56,7 +56,7 @@ cpu_data.then(result => {
                     .radius("8px")
                     .parent("hwinfodiv")
                 )
-                element.create('p', drive.device + " (" + drive.usedSpace + "GB / " + drive.totalSpace + "GB", '').then(elm => elm
+                element.create('p', drive.device + " (" + drive.usedSpace + "GB / " + drive.totalSpace + "GB)", '').then(elm => elm
                     .margin(0)
                     .parent("drvInfo" + drive.device.slice(0, 1) + "div")
                 );
