@@ -69,6 +69,7 @@ addDesktopApp('About', 'assets/icons/computer.svg', 'apps:sysver.js');
 addDesktopApp('VirtualPC', 'assets/icons/questionmark.svg', 'apps:virtualpc.js');
 addDesktopApp('AzuText', 'assets/icons/questionmark.svg', 'apps:azutext.js');
 addDesktopApp('AzuTheme', 'assets/icons/questionmark.svg', 'settings:azutheme.js');
+addDesktopApp('Video Demo', 'assets/icons/questionmark.svg', 'apps:videodemo.js');
 
 // addDesktopApp('Settings', 'assets/icons/settings.svg', 'settings/index.html');
 // console.log(fetch_directory('~/Desktop'));
