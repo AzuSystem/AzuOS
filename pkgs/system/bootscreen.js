@@ -33,10 +33,8 @@ if (__skipBoot === true) {
         	    greeting = "Good Morning";
         	} else if (currentHour >= 12 && currentHour < 18) {
         	    greeting = "Good Afternoon";
-        	} else if (currentHour >= 18 && currentHour < 22) {
-        	    greeting = "Good Evening";
         	} else {
-        	    greeting = "Good Night";
+        	    greeting = "Good Evening";
         	}
 
 			document.getElementById("welcometextobject").innerHTML = greeting;
