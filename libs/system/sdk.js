@@ -325,7 +325,7 @@ const element = {
 					return elementObject;
 				},				
 				radius: (radius) => {
-					elm.style.radius = radius;
+					elm.style.borderRadius = radius;
 					return elementObject;
 				},
 				css: (string) => {
@@ -667,7 +667,13 @@ const strings = {
             greeting = "Good night";
         }
         return greeting;
-    }
+    },
+	trim_to_length: (str, maxLength) => {
+		if (str.length > maxLength) {
+			return str.slice(0, maxLength) + "..."; // Keep only the first `maxLength` characters
+		}
+		return str; // Return the string unchanged if within the limit
+	}
 }
 
 const audio = {

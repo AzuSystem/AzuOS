@@ -6,8 +6,8 @@
 
 :root {
     --azu-color-background: hsla(0, 0%, 95%); /* Lighter background */
-    --azu-wallpaper: url('../assets/wallpapers/blue\ pink\ 3d\ circles.jpg'); /* Light wallpaper */
-    --azu-startbutton: url('../assets/logo_black.svg');
+    --azu-wallpaper: url('../assets/wallpapers/blue\ pink\ 3d\ circles.jpg');
+    /* --azu-wallpaper: url('https://media.discordapp.net/attachments/1146907940570284074/1317937507807133706/img25.jpg?ex=67608073&is=675f2ef3&hm=ad88d1fea608f4cf6acd71623f62d796cd2dba8e43fd031f30d1fb563c057170&=&format=webp'); */
     --azu-color-main: hsla(270, 0%, 18%); /* Lighter main color */
     --azu-color-light: hsla(270, 0%, 28%); /* Lighter secondary color */
     --azu-color-shadow: hsla(0, 0%, 80%); /* Lighter shadow */

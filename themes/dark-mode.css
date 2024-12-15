@@ -6,7 +6,8 @@
 
 :root {
 	--azu-color-background: hsla(0, 0, 30%);
-  --azu-wallpaper: url('../assets/wallpapers/dark waves.jpg');
+  --azu-wallpaper: url('../assets/wallpapers/macos.png');
+  /* --azu-wallpaper: url('https://cdn.discordapp.com/attachments/1146907940570284074/1317937509262688426/img28.jpg?ex=67608074&is=675f2ef4&hm=4a8762cc7a24b071c95f21b83fd0efa9f0e03105c40c07e3b8ffe7cfdefeefff&'); */
   --azu-startbutton: url('../assets/logo_white.svg');
 	--azu-color-main: hsla(270, 0%, 12%);
 	--azu-color-light: hsla(270, 0%, 18%);
