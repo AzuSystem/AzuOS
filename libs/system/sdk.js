@@ -98,8 +98,12 @@ const element = {
 					elm.id(id);
 					return elementObject;
 				},
-				display: display => {
+				display: (display) => {
 					elm.style.display = display;
+					return elementObject;
+				},
+				position: (position) => {
+					elm.style.position = position;
 					return elementObject;
 				},
 				flex: () => {
