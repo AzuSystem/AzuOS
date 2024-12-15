@@ -98,6 +98,10 @@ const element = {
 					elm.id(id);
 					return elementObject;
 				},
+				display: display => {
+					elm.style.display = display;
+					return elementObject;
+				},
 				flex: () => {
 					elm.style.display = 'flex';
 					return elementObject;
