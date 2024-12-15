@@ -354,12 +354,12 @@ const element = {
 					}
 					return elementObject;
 				},
-				autoplay: (boolean) => {
-					elm.autoplay = boolean;
+				autoplay: () => {
+					elm.autoplay = true;
 					return elementObject;
 				},
-				controls: (boolean) => {
-					elm.controls = boolean;
+				controls: () => {
+					elm.controls = true;
 					return elementObject;
 				},
 				placeholder: (string) => {
