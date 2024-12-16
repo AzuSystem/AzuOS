@@ -1,3 +1,7 @@
+:root {
+  --transition-quick-out: cubic-bezier(0, 0, 0, 1) 150ms;
+}
+
 body {
   background-color: var(--azu-color-background);
 }

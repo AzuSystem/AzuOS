@@ -1,0 +1,33 @@
+@keyframes notification-in {
+    from {
+      right: -400px;
+      opacity: 0;
+      pointer-events: none;
+    }
+    to {
+      right: 0px;
+      opacity: 1;
+      pointer-events: all;
+    }
+  }
+  
+  @keyframes notification-out {
+    from {
+      right: 0px;
+      opacity: 1;
+      pointer-events: all;
+    }
+    to {
+      right: -400px;
+      opacity: 0;
+      pointer-events: none;
+    }
+  }
+  
+  .__azuos-notification-in {
+    animation: notification-in 0.2s ease-out forwards;
+  }
+  
+  .__azuos-notification-out {
+    animation: notification-out 0.2s ease-in forwards;
+  }

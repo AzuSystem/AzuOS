@@ -30,16 +30,24 @@ if (__skipBoot === true) {
         	let greeting;
 
         	if (currentHour >= 5 && currentHour < 12) {
-        	    greeting = "Good Morning";
+        	    greeting = "Good morning";
         	} else if (currentHour >= 12 && currentHour < 18) {
-        	    greeting = "Good Afternoon";
+        	    greeting = "Good afternoon";
         	} else if (currentHour >= 18 && currentHour < 22) {
-        	    greeting = "Good Evening";
+        	    greeting = "Good evening";
         	} else {
-        	    greeting = "Good Night";
+        	    greeting = "Good night";
         	}
 
 			document.getElementById("welcometextobject").innerHTML = greeting;
+
+			// ! Doesn't work due to autoplay. Boot.mp3 renamed to login.mp3 
+			// let sfx = new Audio("assets/sounds/boot.mp3");
+			// sfx.play().then(() => {
+			// 	console.log("Audio played successfully!");
+			// }).catch((error) => {
+			// 	console.error("Autoplay was blocked:", error);
+			// });
 
 			setTimeout(function() {
 				welcome.classList.remove("fadein");
