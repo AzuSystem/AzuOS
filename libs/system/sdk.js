@@ -102,16 +102,20 @@ const element = {
 					elm.style.display = display;
 					return elementObject;
 				},
-				position: (position) => {
-					elm.style.position = position;
-					return elementObject;
-				},
 				flex: () => {
 					elm.style.display = 'flex';
 					return elementObject;
 				},
 				gap: (gap) => {
 					elm.style.gap = gap;
+					return elementObject;
+				},
+				objectfit: (type) => {
+					elm.style.objectFit = type;
+					return elementObject;
+				},
+				objectFit: (type) => {
+					elm.style.objectFit = type;
 					return elementObject;
 				},
 				horizontal: () => {

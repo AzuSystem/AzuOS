@@ -6,6 +6,7 @@ import pathlib
 import psutil, cpuinfo
 import platform
 from screeninfo import get_monitors
+import base64
 
 class Api:
 	def collect_platform_info(self):
@@ -64,6 +65,14 @@ class Api:
 				pass
 
 		return drives
+
+	def resolve_full_path(self, path):
+		return str(pathlib.Path(path).expanduser())
+	
+	def convert_image_to_data_url(self, image_path):
+		with open(image_path, "rb") as image_file:
+			encoded_string = base64.b64encode(image_file.read()).decode('utf-8')
+		return f"data:image/png;base64,{encoded_string}"
 
 	def get_wifi_networks(self):
 		print('not implemented')
