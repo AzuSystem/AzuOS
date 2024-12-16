@@ -354,6 +354,14 @@ const element = {
 					}
 					return elementObject;
 				},
+				autoplay: () => {
+					elm.autoplay = true;
+					return elementObject;
+				},
+				controls: () => {
+					elm.controls = true;
+					return elementObject;
+				},
 				placeholder: (string) => {
 					elm.placeholder = string
 					return elementObject;
@@ -574,10 +582,8 @@ const strings = {
             greeting = "Good Morning";
         } else if (currentHour >= 12 && currentHour < 18) {
             greeting = "Good Afternoon";
-        } else if (currentHour >= 18 && currentHour < 22) {
-            greeting = "Good Evening";
         } else {
-            greeting = "Good Night";
+            greeting = "Good Evening";
         }
         return greeting;
     }
