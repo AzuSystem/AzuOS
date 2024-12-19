@@ -1,0 +1,35 @@
+/*
+	AzuOS Default Theme (Light)
+	Written By: MTSyntho @ AzuSystem 2024
+	Your eyes are cooked :'3
+*/
+
+:root {
+    --azu-color-background: hsla(0, 0%, 95%); /* Lighter background */
+    --azu-wallpaper: url('../assets/wallpapers/blue\ pink\ 3d\ circles.jpg');
+    /* --azu-wallpaper: url('https://media.discordapp.net/attachments/1146907940570284074/1317937507807133706/img25.jpg?ex=67608073&is=675f2ef3&hm=ad88d1fea608f4cf6acd71623f62d796cd2dba8e43fd031f30d1fb563c057170&=&format=webp'); */
+    --azu-color-main: hsla(270, 0%, 18%); /* Lighter main color */
+    --azu-color-light: hsla(270, 0%, 28%); /* Lighter secondary color */
+    --azu-color-shadow: hsla(0, 0%, 80%); /* Lighter shadow */
+    --azu-button-color-main: hsla(270, 0%, 20%); /* Lighter button color */
+    --azu-text-color: hsla(0, 0%, 20%); /* Dark text on light background */
+
+    --azu-button-bg: hsla(0, 0%, 7%, 0.05);
+    --azu-button-bg-hover: hsla(0, 0%, 7%, 10%);
+    --azu-button-text: hsla(0, 0%, 7%, 100%);
+  
+    --azu-window-blur: blur(16px);
+    --azu-window-background: hsla(269, 0%, 98%, 0.75); /* Lighter window background */
+    --azu-window-border-radius: 12px;
+    --azu-window-border: 1px solid rgba(0, 0, 0, 0.125); /* Lighter border */
+    --azu-window-shadow: 0 0 10px 2px #00000022;
+    --azu-window-inner-background: hsla(267, 0%, 95%, 0.312); /* Lighter inner background */
+  
+    --azu-taskbar-background: hsla(270, 0%, 88%, 75%); /* Lighter taskbar */
+    --azu-taskbar-outline: 1px solid rgba(0, 0, 0, 0.125); /* Lighter outline */
+    --azu-taskbar-width: 80%;
+    --azu-taskbar-shadow: 0 0 10px 2px #00000022;
+    --azu-taskbar-blur: blur(16px);
+    --azu-taskbar-border-radius: 12px;
+  }
+  

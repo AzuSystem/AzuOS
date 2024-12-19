@@ -28,6 +28,8 @@ azuapi.call = (originalCall => {
 		                "height": heightRatio
 		            }
 		        }
+			} else if (name === 'platinfo') {
+				return pywebview.api.collect_platform_info();
 			}
 		}
 		

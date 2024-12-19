@@ -4,13 +4,18 @@
 */
 
 function loadTheme(file) {
-    var link = document.createElement('link');
-    link.rel = 'stylesheet'; 
-    link.type = 'text/css';
-    link.href = `themes/${file}`;
+    const existing = document.querySelector(`link[href="themes/${file}"]`);
+    if (!existing) {
+        var link = document.createElement('link');
+        link.rel = 'stylesheet'; 
+        link.type = 'text/css';
+        link.href = `themes/${file}`;
 
-    document.head.appendChild(link);
-    console.log(`[Theme Manager] Imported '${file}'`)
+        document.head.appendChild(link);
+        console.log(`[Theme Manager] Imported '${file}'`);
+    } else {
+        console.error(`[Theme Manager] Failed to import '${file}': Theme already loaded.`);
+    }
 }
 
 function unloadTheme(file) {

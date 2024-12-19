@@ -1,0 +1,18 @@
+button {
+    background: var(--azu-button-bg);
+    color: var(--azu-button-text);
+    outline: none;
+    border: none;
+    padding: 12px 16px;
+    border-radius: 10px;
+    transition: var(--transition-quick-out);
+}
+
+button:hover {
+    background: var(--azu-button-bg-hover);
+}
+
+button:active {
+    background: var(--azu-button-bg);
+    scale: 0.95;
+}
