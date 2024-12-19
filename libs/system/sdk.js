@@ -398,6 +398,14 @@ const element = {
 					}
 					return elementObject;
 				},
+				autoplay: () => {
+					elm.autoplay = true;
+					return elementObject;
+				},
+				controls: () => {
+					elm.controls = true;
+					return elementObject;
+				},
 				placeholder: (string) => {
 					elm.placeholder = string
 					return elementObject;
