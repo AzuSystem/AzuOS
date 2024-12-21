@@ -4,30 +4,30 @@
 */
 
 const taskbarcss = (`
-	  background-color: var(--azu-taskbar-background);
-	  outline: var(--azu-taskbar-outline);
-	  /*border-radius: 4px;*/
-	  position: fixed;
-	  bottom: 0px;
-	  width: var(--azu-taskbar-width);
-	  margin: 15px;
-	  height: 45px;
-	  padding: 0px;
-	  left: 0;
-	  right: 0;
-	  margin-left: auto;
-	  margin-right: auto;
-	  box-shadow: var(--azu-taskbar-shadow);
-	  display: flex;
-	  z-index: 50;
-	  backdrop-filter: var(--azu-taskbar-blur);
-	  -webkit-backdrop-filter: var(--azu-taskbar-blur);
-	  border-radius: var(--azu-taskbar-border-radius);
-	  display: flex;
-	  flex-direction: row;
-	  align-items: center;
-	  justify-content: left;
-	  text-align: center;
+	background-color: var(--azu-taskbar-background);
+	outline: var(--azu-taskbar-outline);
+	/*border-radius: 4px;*/
+	position: fixed;
+	bottom: 0px;
+	width: var(--azu-taskbar-width);
+	margin: 15px;
+	height: 45px;
+	padding: 0px;
+	left: 0;
+	right: 0;
+	margin-left: auto;
+	margin-right: auto;
+	box-shadow: var(--azu-taskbar-shadow);
+	display: flex;
+	z-index: 50;
+	backdrop-filter: var(--azu-taskbar-blur);
+	-webkit-backdrop-filter: var(--azu-taskbar-blur);
+	border-radius: var(--azu-taskbar-border-radius);
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: left;
+	text-align: center;
 `)
 
 const taskbarcomponent = (`
@@ -79,11 +79,10 @@ const taskbarprocesses = (`
 	width: calc(100% - 180px);
 `)
 
-element.create('div', '', 'taskbar').then(elm => elm
+element.create('div', '', 'taskbar', true).then(elm => elm
 	.css(taskbarcss)
 	.parent('desktop')
 );
-
 
 // Start Button
 element.create('button', '', 'start-btn').then(elm => elm

@@ -3,6 +3,27 @@
 	Written by: MTSyntho @ AzuSystem 2024
 */
 
+let platform_info = {};
+
+try {
+	platform_info = azuapi.call("platinfo", "");
+} catch (error) {
+	platform_info = {
+		"system": null,
+		"node": null,
+		"release": null,
+		"version": null,
+		"machine": null,
+		"processor": null,
+		"architecture": null,
+		"python_version": null,
+		"python_implementation": null,
+		"python_build": null,
+		"python_compiler": null,
+		"uname": null,
+	}
+}
+
 // Create the container for all desktop icons
 const desktopIcons = document.createElement('div');
 desktopIcons.className = 'desktop-icons';
@@ -68,6 +89,7 @@ addDesktopApp('SDK Test', 'assets/icons/exclamation.svg', 'apps:dynamic-test.js'
 addDesktopApp('About', 'assets/icons/computer.svg', 'apps:sysver.js');
 addDesktopApp('VirtualPC', 'assets/icons/questionmark.svg', 'apps:virtualpc.js');
 addDesktopApp('AzuText', 'assets/icons/questionmark.svg', 'apps:azutext.js');
+addDesktopApp('Hardware', 'assets/icons/questionmark.svg', 'apps:hwinfo.js');
 addDesktopApp('AzuTheme', 'assets/icons/questionmark.svg', 'settings:azutheme.js');
 addDesktopApp('Video Demo', 'assets/icons/questionmark.svg', 'apps:videodemo.js');
 addDesktopApp('AzuFile', 'assets/icons/questionmark.svg', 'apps:azufile.js');
@@ -77,7 +99,15 @@ addDesktopApp('AzuFile', 'assets/icons/questionmark.svg', 'apps:azufile.js');
 fetch_directory('~/Desktop').then(([files, folders]) => {
     // Process files
     files.forEach(file => {
-        addDesktopFiles(file, 'assets/icons/questionmark.svg');
+		// if (file.endsWith(".txt")) {
+			
+		// } else {
+
+		// }
+
+		if (platform_info !== "Windows" && !(file.endsWith(".lnk") || file.endsWith(".url")) || !(file.startsWith(".")) ) {
+        	addDesktopFiles(file, 'assets/icons/questionmark.svg');
+		}
     });
 
     folders.forEach(folder => {

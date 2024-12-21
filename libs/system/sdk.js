@@ -78,7 +78,7 @@ const win = {
 };
 
 const element = {
-	create: (type, innerHTML, codename) => {
+	create: (type, innerHTML, codename, manualIsElementOverwrite = false) => {
 		return new Promise((resolve) => {
 			const elm = document.createElement(type);
 			elm.innerHTML = innerHTML;
@@ -96,6 +96,34 @@ const element = {
 				},
 				id: (id) => {
 					elm.id = (id);
+					return elementObject;
+				},
+				display: (display) => {
+					elm.style.display = display;
+					return elementObject;
+				},
+				flex: () => {
+					elm.style.display = 'flex';
+					return elementObject;
+				},
+				gap: (gap) => {
+					elm.style.gap = gap;
+					return elementObject;
+				},
+				objectfit: (type) => {
+					elm.style.objectFit = type;
+					return elementObject;
+				},
+				objectFit: (type) => {
+					elm.style.objectFit = type;
+					return elementObject;
+				},
+				horizontal: () => {
+					elm.style.flexDirection = 'row';
+					return elementObject;
+				},
+				vertical: () => {
+					elm.style.flexDirection = 'column';
 					return elementObject;
 				},
 				align: (alignment) => {
@@ -292,6 +320,22 @@ const element = {
 					elm.style.marginRight = right;
 					return elementObject;
 				},
+				marginTop: (top) => {
+					elm.style.marginTop = top;
+					return elementObject;
+				},
+				marginLeft: (left) => {
+					elm.style.marginLeft = left;
+					return elementObject;
+				},
+				marginBottom: (bottom) => {
+					elm.style.marginBottom = bottom;
+					return elementObject;
+				},
+				marginRight: (right) => {
+					elm.style.marginRight = right;
+					return elementObject;
+				},				
 				radius: (radius) => {
 					elm.style.borderRadius = radius;
 					return elementObject;
@@ -413,6 +457,9 @@ const element = {
 			// }
 
 			elm.setAttribute("codename", codename);
+			if (!manualIsElementOverwrite) {
+				elm.setAttribute("isElement", "");
+			}
 			resolve(elementObject);
 
 			// console.log(elm.classList)
@@ -420,6 +467,17 @@ const element = {
 				elm.classList.add('__azuos-button-small');
 			}
 		});
+	},
+	get: (codename, returnAsJSON = false) => {
+		const elm = document.querySelector(`[codename="${codename}"]`);
+		
+		if (!elm) {
+		  	return returnAsJSON ? { element: null, hasAttribute: false } : [null, false];
+		}
+		
+		const hasAttr = elm.hasAttribute("isElement");
+		
+		return returnAsJSON ? { element: elm, hasAttribute: hasAttr } : [elm, hasAttr];
 	}
 };
 
@@ -470,7 +528,6 @@ const math = {
         if (point1.length !== point2.length) throw new Error("Points must have the same dimension.");
         return Math.sqrt(point1.reduce((sum, _, i) => sum + (point1[i] - point2[i]) ** 2, 0));
     },
-
     erf: (x) => {
         const sign = Math.sign(x);
         const absX = Math.abs(x);
@@ -478,11 +535,53 @@ const math = {
         const a1 = 0.254829592, a2 = -0.284496736, a3 = 1.421413741, a4 = -1.453152027, a5 = 1.061405429;
         const poly = t * (a1 + t * (a2 + t * (a3 + t * (a4 + t * a5))));
         return sign * (1 - poly * Math.exp(-absX * absX));
-    }
+    },
+	circleSurfaceArea: (radius) => {
+		return Math.pow(radius, 2) * Math.PI;
+	},
+	circleCircumference: (diameter) => {
+		return diameter * Math.PI;
+	},
+	pyramidVolume: (baseLength, height) => {
+		const baseArea = baseLength * baseLength;
+		return (1/3) * baseArea * height;
+	},
+	pyramidSurfaceArea: (baseLength, sideLength) => {
+		// Assuming a square base pyramid
+		const baseArea = baseLength * baseLength;
+		const slantHeight = Math.sqrt(Math.pow(sideLength/2, 2) + Math.pow(height, 2)); // height needs to be passed as an argument
+		const lateralArea = 2 * baseLength * slantHeight;
+		return baseArea + lateralArea;
+	},
+	sphereVolume: (radius) => {
+		return (4/3) * Math.PI * Math.pow(radius, 3);
+	},
+	sphereSurfaceArea: (radius) => {
+		return 4 * Math.PI * Math.pow(radius, 2);
+	},
+	cylinderVolume: (radius, height) => {
+		return Math.PI * Math.pow(radius, 2) * height;
+	},
+	cylinderSurfaceArea: (radius, height) => {
+		return 2 * Math.PI * radius * (radius + height);
+	},
+	coneVolume: (radius, height) => {
+		return (1/3) * Math.PI * Math.pow(radius, 2) * height;
+	},
+	coneSurfaceArea: (radius, height) => {
+		const slantHeight = Math.sqrt(Math.pow(radius, 2) + Math.pow(height, 2));
+		return Math.PI * radius * (radius + slantHeight);
+	},
+	cuboidVolume: (length, width, height) => {
+		return length * width * height;
+	},
+	cuboidSurfaceArea: (length, width, height) => {
+		return 2 * (length * width + length * height + width * height);
+	}
 };
 
 
-// const system = {
+const system = {
 //     version: () => {
 //         return 8;
 //     },
@@ -495,25 +594,25 @@ const math = {
 //     maker: () => {
 //         return "AzuSystem";
 //     },
-//     screen: () => {
-//         const screen = window.screen;
-//         const divisor = math.gdc(screen.width, screen.height);
-//         const widthRatio = screen.width / divisor;
-//         const heightRatio = screen.height / divisor;
+    screen: () => {
+        const screen = window.screen;
+        const divisor = math.gdc(screen.width, screen.height);
+        const widthRatio = screen.width / divisor;
+        const heightRatio = screen.height / divisor;
 
-//         return {
-//             "width": screen.width,
-//             "height": screen.height,
-//             "colorDepth": screen.colorDepth,
-//             "orientation": screen.orientation,
-//             "pixelDepth": screen.pixelDepth,
-//             "aspectRatio": {
-//                 "width": widthRatio,
-//                 "height": heightRatio
-//             }
-//         }
-//     }
-// }
+        return {
+            "width": screen.width,
+            "height": screen.height,
+            "colorDepth": screen.colorDepth,
+            "orientation": screen.orientation,
+            "pixelDepth": screen.pixelDepth,
+            "aspectRatio": {
+                "width": widthRatio,
+                "height": heightRatio
+            }
+        }
+    }
+}
 
 const webwin = {
     create: (title, url, codename) => {
@@ -607,12 +706,41 @@ const strings = {
         let greeting;
 
         if (currentHour >= 5 && currentHour < 12) {
-            greeting = "Good Morning";
+            greeting = "Good morning";
         } else if (currentHour >= 12 && currentHour < 18) {
-            greeting = "Good Afternoon";
+            greeting = "Good afternoon";
+        } else if (currentHour >= 18 && currentHour < 22) {
+            greeting = "Good evening";
         } else {
-            greeting = "Good Evening";
+            greeting = "Good night";
         }
         return greeting;
-    }
+    },
+	trim_to_length: (str, maxLength) => {
+		if (str.length > maxLength) {
+			return str.slice(0, maxLength) + "..."; // Keep only the first `maxLength` characters
+		}
+		return str; // Return the string unchanged if within the limit
+	}
+}
+
+const audio = {
+	load: (file) => {
+		return new Audio(file);
+	},
+	setProgress: (audiosource, progress) => {
+		audiosource.currentTime = progress;
+	}
+}
+
+const soundsPath = `assets/sounds/`;
+const sounds = {
+	debugsound: () => {
+		let sfx = audio.load(soundsPath + "Different.mp3");
+		sfx.play();
+	},
+	play: (sound) => {
+		let sfx = audio.load(soundsPath + sound + ".mp3");
+		sfx.play();
+	}
 }
