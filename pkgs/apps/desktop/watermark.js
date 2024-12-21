@@ -14,7 +14,7 @@ var watermark = document.createElement('p');
 watermark.className = 'sysver';
 
 // Set the inner HTML
-watermark.innerHTML = osname + ' Alpha ' + osver + '<br>By ' + osdev;
+watermark.innerHTML = `${osname} ${osver}<br>By ${osdev}`
 
 // Add to desktop
 var desktop = document.getElementById('desktop');
