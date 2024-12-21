@@ -3,6 +3,10 @@
 	Written by: MTSyntho @ AzuSystem 2024
 */
 
+var osname = azuapi.call('sysinfo', 'os')
+var osver = azuapi.call('sysinfo', 'version')
+var osdev = azuapi.call('sysinfo', 'developer')
+
 // Create a <p> element
 var watermark = document.createElement('p');
 
@@ -10,7 +14,7 @@ var watermark = document.createElement('p');
 watermark.className = 'sysver';
 
 // Set the inner HTML
-watermark.innerHTML = system.name() + ' Alpha ' + system.version().toString() + '<br>By ' + system.maker();
+watermark.innerHTML = `${osname} ${osver}<br>By ${osdev}`
 
 // Add to desktop
 var desktop = document.getElementById('desktop');

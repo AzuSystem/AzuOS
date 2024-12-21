@@ -1,0 +1,52 @@
+.__azuos-button-small {
+  background-color: var(--azu-button-small-color);
+  border: var(--azu-button-small-border);
+  border-radius: var(--azu-button-small-border-radius);
+  color: var(--azu-text-color);
+  font-family: inter;
+  padding: var(--azu-button-small-padding);
+  text-align: center;
+/*  display: inline-block;*/
+  font-size: var(--azu-button-small-font-size);
+  box-shadow: var(--azu-button-small-shadow);
+  transition-duration: var(--azu-button-small-animation-duration);
+  cursor: pointer;
+  scale: 1;
+}
+
+.__azuos-button-small:hover {
+  background-color: var(--azu-button-small-hover-color);
+  font-size: 17px;
+}
+
+.__azuos-button-small:active {
+  background-color: var(--azu-button-small-clicked-color);
+  scale: 0.95;
+}
+
+.__azuos-button-large {
+  background-color: var(--azu-button-large-color);
+  border: var(--azu-button-large-border);
+  border-radius: var(--azu-button-large-border-radius);
+  color: var(--azu-text-color);
+  font-family: inter;
+  padding: var(--azu-button-large-padding);
+  text-align: center;
+/*  display: inline-block;*/
+  font-size: var(--azu-button-large-font-size);
+  box-shadow: var(--azu-button-large-shadow);
+  transition-duration: var(--azu-button-large-animation-duration);
+  cursor: pointer;
+  scale: 1;
+}
+
+.__azuos-button-large:hover {
+  background-color: var(--azu-button-large-hover-color);
+  font-size: 17px;
+  scale: 1.05;
+}
+
+.__azuos-button-large:active {
+  background-color: var(--azu-button-large-clicked-color);
+  scale: 0.95;
+}

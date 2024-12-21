@@ -4,6 +4,7 @@
 */
 
 loadCSS('index.css');
+loadCSS('button.css');
 // loadTheme('default-theme.css');
 loadTheme('dark-mode.css');
 unloadCSS('boot.css');

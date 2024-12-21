@@ -95,7 +95,7 @@ const element = {
 					return elementObject;
 				},
 				id: (id) => {
-					elm.id(id);
+					elm.id = (id);
 					return elementObject;
 				},
 				align: (alignment) => {
@@ -168,7 +168,7 @@ const element = {
 					return elementObject;
 				},
 				backgroundclip: (clip) => {
-					elm.style.backgroundClip = cliprepeat;
+					elm.style.backgroundClip = clip;
 					return elementObject;
 				},
 				backgroundorigin: (origin) => {
@@ -293,29 +293,19 @@ const element = {
 					return elementObject;
 				},
 				radius: (radius) => {
-					elm.style.radius = radius;
+					elm.style.borderRadius = radius;
 					return elementObject;
 				},
 				css: (string) => {
 					elm.style.cssText = string;
+					elm.classList.remove('__azuos-button-large');
 					return elementObject;
 				},
-				// style: (string, overwrite = false) => {
-				// 	const style = document.createElement("style");
-				// 	style.innerHTML = string;
-
-				// 	if (typeof overwrite === 'boolean') {
-				// 		if (overwrite === true) {
-
-				// 		}
-				// 	}
-				// 	document.head.appendChild(style);
-				// 	return elementObject;
-				// },
 				style: (string) => {
 					const style = document.createElement("style");
 					style.innerHTML = string;
 					document.head.appendChild(style);
+					elm.classList.remove('__azuos-button-large');
 					return elementObject;
 				},
 				type: (string) => {
@@ -366,9 +356,25 @@ const element = {
 					elm.placeholder = string
 					return elementObject;
 				},
-				placeholder: (string) => {
-					elm.placeholder = string
-					return elementObject;
+				// usesystemcss: (boolean) => {
+				// 	if (typeof boolean === 'boolean') {
+				// 		elm.setAttribute('system-css', boolean)
+				// 	} else if (boolean === 'true') {
+				// 		elm.setAttribute('system-css', 'true')
+				// 	} else if (boolean === 'false') {
+				// 		elm.setAttribute('system-css', 'false')
+				// 	}
+				// 	return elementObject;
+				// },
+				buttontype: (string) => {
+					if (string === 'default' || string === 'small') {
+						elm.classList.add('__azuos-button-small');
+					} else if (string === 'large') {
+						elm.classList.add('__azuos-button-large');
+					} else {
+						elm.classList.add('__azuos-button-small')
+					}
+					return elementObject;					
 				},
 				parent: (elementcodename) => {
 					var parent = document.querySelector(`[codename="${elementcodename}"]`);
@@ -389,8 +395,30 @@ const element = {
 					return elementObject;
 				}
 			};
+			// if (elm.getAttribute('system-css') === '') {
+			// 	elm
+			// }
+			// if (elm.tagName === 'BUTTON' && ((elm.getAttribute('ignore-system-css') === null || elm.getAttribute('ignore-system-css') == 'false'))) {
+			// 	elm.classList.add('__azuos-button-large')
+			// };
+			// const useSystemCSS = elm.getAttribute('system-css');
+			// console.log('ignore-system-css value:', useSystemCSS);
+
+			// if (elm.tagName === 'BUTTON') {
+			// 	if (useSystemCSS === null || useSystemCSS === 'true') {
+			// 		elm.classList.add('__azuos-button-large');
+			// 	} if (useSystemCSS === 'false') {
+			// 		console.log(useSystemCSS)
+			// 	}
+			// }
+
 			elm.setAttribute("codename", codename);
 			resolve(elementObject);
+
+			// console.log(elm.classList)
+			if (elm.tagName === 'BUTTON' && elm.classList.length === 0) {
+				elm.classList.add('__azuos-button-small');
+			}
 		});
 	}
 };

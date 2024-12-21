@@ -26,6 +26,25 @@
   --azu-taskbar-shadow: 0 0 10px 2px #000000cc;
   --azu-taskbar-blur: blur(16px);
   --azu-taskbar-border-radius: 12px;
+
+  --azu-button-small-color: hsla(0, 0%, 100%, 5%);
+  --azu-button-small-hover-color: hsla(0, 0%, 100%, 10%);
+  --azu-button-small-clicked-color: hsla(0, 0%, 100%, 5%);
+  --azu-button-small-border-radius: 10px;
+  --azu-button-small-padding: 12px 16px;
+  --azu-button-small-font-size: 12px;
+  --azu-button-small-shadow: none;
+  --azu-button-small-animation-duration: 0.1s;
+
+  --azu-button-large-color: hsla(270, 0%, 12%);
+  --azu-button-large-hover-color: hsla(270, 0%, 17%);
+  --azu-button-large-clicked-color: hsla(270, 0%, 7%);
+  --azu-button-large-border: 2px solid hsla(270, 0%, 17%);
+  --azu-button-large-border-radius: 5px;
+  --azu-button-large-padding: 10px 26px;
+  --azu-button-large-font-size: 16px;
+  --azu-button-large-shadow: 0px 0px 7px #000000;
+  --azu-button-large-animation-duration: 0.2s;
 }
 
 @keyframes notification-in {
