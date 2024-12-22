@@ -1,7 +1,6 @@
-var cpu_data = pywebview.api.cpu_data()
-var memory_data = pywebview.api.memory_data()
-var drive_data = pywebview.api.drive_data()
-
+var cpu_data = azuapi.call('hardware', 'cpu')
+var memory_data = azuapi.call('hardware', 'ram')
+var drive_data = azuapi.call('hardware', 'disk')
 
 win.create('Hardware Info', 'hwinfowin').then(win => win
     .setWidth(640)

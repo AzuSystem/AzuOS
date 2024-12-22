@@ -19,3 +19,4 @@ const azuapi = {
 loadLibrary('api:notification.js');
 loadLibrary('api:uuid.js');
 loadLibrary('api:systeminfo.js')
+loadLibrary('api:hwinfo.js')

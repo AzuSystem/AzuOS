@@ -1,6 +1,6 @@
 /*
-	Start Menu Component of AzuOS Desktop
-	Written by: MTSyntho @ AzuSystem 2024
+	Dashboard Component of AzuOS Desktop
+	AzuSystem 2024
 */
 
 const dashboardcss = (`

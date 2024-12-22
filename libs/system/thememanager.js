@@ -10,6 +10,7 @@ function loadTheme(file) {
         link.rel = 'stylesheet'; 
         link.type = 'text/css';
         link.href = `themes/${file}`;
+        link.setAttribute('theme', '')
 
         document.head.appendChild(link);
         console.log(`[Theme Manager] Imported '${file}'`);
@@ -26,4 +27,11 @@ function unloadTheme(file) {
     } else {
         console.error(`[Theme Manager] Theme not found: ${file}`);
     }
+}
+
+function unloadAllThemes() {
+    const themes = document.querySelectorAll('link[theme]');
+    themes.forEach(theme => theme.remove());
+
+    console.log('[Theme Manager] Unloaded All Themes')
 }
