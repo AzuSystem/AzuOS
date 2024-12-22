@@ -91,6 +91,8 @@ addDesktopApp('VirtualPC', 'assets/icons/questionmark.svg', 'apps:virtualpc.js')
 addDesktopApp('AzuText', 'assets/icons/questionmark.svg', 'apps:azutext.js');
 addDesktopApp('Hardware', 'assets/icons/questionmark.svg', 'apps:hwinfo.js');
 addDesktopApp('AzuTheme', 'assets/icons/questionmark.svg', 'settings:azutheme.js');
+addDesktopApp('Video Demo', 'assets/icons/questionmark.svg', 'apps:videodemo.js');
+addDesktopApp('AzuFile', 'assets/icons/questionmark.svg', 'apps:azufile.js');
 
 // addDesktopApp('Settings', 'assets/icons/settings.svg', 'settings/index.html');
 // console.log(fetch_directory('~/Desktop'));
