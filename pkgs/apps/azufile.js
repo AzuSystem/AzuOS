@@ -6,9 +6,18 @@
 var entryCSS = (`
 	display: flex;
 	flex-direction: row;
-`)
+`);
 
-var defaultdir = ''
+var defaultdir = '';
+var iswindows = azuapi.call('sysinfo', 'is_running_windows');
+
+iswindows.then(result => {
+	if (result) {
+		defaultdir = "C:\\";
+	} else {
+		defaultdir = "/";
+	}
+})
 
 win.create("AzuFile", "azufile").then(win => win
 	.setWidth(700)
