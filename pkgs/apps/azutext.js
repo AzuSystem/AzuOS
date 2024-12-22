@@ -23,7 +23,7 @@ element.create('textarea', '', 'azutextinput').then(elm => elm
     .placeholder('Write Something :3')
     .align('center')
     .attribute('wrap', 'soft')
-    .color('white')
+    .color('var(--azu-text-color)')
     .backgroundcolor('transparent')
     .border('none')
     .outline('none')

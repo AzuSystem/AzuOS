@@ -69,7 +69,7 @@ cpu_data.then(result => {
                     .parent("drvInfo" + drive.device.slice(0, 1) + "div")
                 )
                 element.create('div', '', '').then(elm => elm
-                    .backgroundcolor("var(--azu-button-text)")
+                    .backgroundcolor("var(--azu-text-color)")
                     .position("relative")
                     .height("8px")
                     .radius("4px")
