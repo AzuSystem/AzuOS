@@ -122,6 +122,8 @@ class Api:
 				with open(path, 'w') as file:
 					file.write(content)
 
+	def isWindows(): return True if platform.system() == 'Windows' else False
+
 
 primaryMonitor = next((m for m in get_monitors() if
 m.is_primary), None)
