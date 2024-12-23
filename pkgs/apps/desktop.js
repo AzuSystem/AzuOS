@@ -14,13 +14,12 @@ loadCSS('ui/button.css');
 
 unloadCSS('boot.css');
 unloadCSS('login.css');
-
 unloadPackage('system:bootscreen.js');
 unloadPackage('system:logindisplay.js');
-
 loadPackage('apps:desktop/wallpaper.js');
 loadPackage('apps:desktop/watermark.js');
 loadPackage('apps:desktop/taskbar.js');
 loadPackage('apps:desktop/icons.js');
+loadPackage('apps:desktop/startmenu.js');
 
 sounds.play("login")
