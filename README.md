@@ -24,6 +24,7 @@ FreeBSD could probably work too, although shell scripts may require rewriting to
 
 ## 💻 Getting Started
 If you're interested in contributing to AzuOS or forking the project, you first need to setup up your workspace!
+
 ***Disclaimer: AzuOS is likely going to error out on any non-unix-like platforms (I'm talking to you Windows 10/11) so if AzuOS doesn't work, please do not make a GitHub issue as I will not be handling it, you're likely going to need to wait for someone else to resolve it for you, or otherwise take matters into your own hands and make it work. To make things easier, just use a Unix-like Platform, like any Linux Distro, or perhaps BSD (untested), you have better chances of using AzuOS with no errors than you have on Windows.
 Thank you in advance 🎩***
 
