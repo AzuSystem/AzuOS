@@ -30,7 +30,7 @@ Thank you in advance 🎩***
 
 So here's how:
 
-First confirm you have `git`, `python3`, `python3-pip`
+First confirm you have `git`, `python3`, `python3-pip` and `xorg`
 
 ### Installing Git
 
@@ -137,7 +137,7 @@ After installing, somewhere in your home directory (/home/username or ~/) you'll
 Open/create this file in a text editor of your choice (i'll use vim)
 
 ```bash
-sudo nano ./.xinitrc
+sudo vim ./.xinitrc
 ```
 
 And write
@@ -150,6 +150,7 @@ And save
 
 ```bash
 :wq!
+#yes you can in fact close vim :0
 ```
 
 Afterwards, if you wanna start X server with AzuOS running, just run
