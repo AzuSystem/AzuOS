@@ -110,7 +110,7 @@ Once python and pip have been installed, we need to install a few modules
 This command in most cases, should be universal across operating systems, if it doesn't work, you may need to google for solutions :'(
 
 ```bash
-pip install pywebview screeninfo psutil py-cpuinfo
+pip install pywebview psutil py-cpuinfo
 ```
 
 ### X11 Server
@@ -149,8 +149,7 @@ python {azuos directory}
 And save
 
 ```bash
-:wq!
-#yes you can in fact close vim :0
+:wq
 ```
 
 Afterwards, if you wanna start X server with AzuOS running, just run
