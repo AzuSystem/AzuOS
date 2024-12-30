@@ -30,6 +30,8 @@ azuapi.call = (originalCall => {
 		        }
 			} else if (name === 'platinfo') {
 				return pywebview.api.collect_platform_info();
+			} else if (name === 'is_running_windows') {
+				return pywebview.api.isWindows();
 			}
 		}
 		
