@@ -3,11 +3,6 @@
 	Written by: MTSyntho @ AzuSystem
 */
 
-const test = (`
-	color: red;
-	border: 5px solid white
-`)
-
 win.create("AzuTheme", "azutheme").then(win => win
 	.setWidth(700)
 	.setHeight(500)
@@ -45,11 +40,6 @@ element.create('div', '', '').then(elm => elm
 	.opacity(0.2)
 );
 
-element.create('button', 'AzuOS Default', '').then(elm => elm
-	.parent('azuthemediv')
-	.opacity(0.4)
-)
-
 element.create('div', '', 'tempthemeswitch').then(elm => elm
 	.flex()
 	.gap("8px")
@@ -57,20 +47,28 @@ element.create('div', '', 'tempthemeswitch').then(elm => elm
 	.parent('azuthemediv')
 )
 
-element.create('button', 'Light -> Dark', '').then(elm => elm
-	.attribute('onclick', `unloadTheme("light-mode.css"); 
-		unloadCSS("index.css");
-		loadTheme("dark-mode.css");
-		loadCSS("index.css");
-		`)
+element.create('button', 'AzuOS Default', '').then(elm => elm
+	.parent('azuthemediv')
+	.opacity(0.4)
+	.attribute('onclick', `
+		unloadAllThemes();
+		loadTheme("default-theme.css");
+	`)
 	.parent('tempthemeswitch')
 )
 
-element.create('button', 'Dark -> Light', '').then(elm => elm
-	.attribute('onclick', `unloadTheme("dark-mode.css");
-		unloadCSS("index.css");
+element.create('button', 'Dark Theme', '').then(elm => elm
+	.attribute('onclick', `
+		unloadAllThemes();
+		loadTheme("dark-mode.css");
+	`)
+	.parent('tempthemeswitch')
+)
+
+element.create('button', 'Light Mode', '').then(elm => elm
+	.attribute('onclick', `
+		unloadAllThemes();
 		loadTheme("light-mode.css");
-		loadCSS("index.css");
-		`)
+	`)
 	.parent('tempthemeswitch')
 )

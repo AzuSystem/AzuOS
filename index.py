@@ -5,7 +5,7 @@ import pathlib
 # Hardware and Platform Related Imports
 import psutil, cpuinfo
 import platform
-from screeninfo import get_monitors
+import tkinter as tk
 import base64
 
 class Api:
@@ -125,8 +125,10 @@ class Api:
 	def isWindows(): return True if platform.system() == 'Windows' else False
 
 
-primaryMonitor = next((m for m in get_monitors() if
-m.is_primary), None)
+root = tk.Tk()
+
+displayWidth = root.winfo_screenwidth()
+displayHeight = root.winfo_screenheight()
 
 print('Starting AzuOS...')
 
@@ -138,7 +140,7 @@ webview.settings = {
   'ALLOW_DOWNLOADS': True,
   'OPEN_DEVTOOLS_IN_DEBUG': False
 }
-webview.create_window('AzuOS', url="index.html", background_color='#000000', fullscreen=True, js_api=api, width=primaryMonitor.width, height=primaryMonitor.height)
+webview.create_window('AzuOS', url="index.html", background_color='#000000', js_api=api, fullscreen=True, width=displayWidth, height=displayHeight)
 
 # webview.create_window('AzuOS', url="index.html", background_color='#000000', js_api=api)
 

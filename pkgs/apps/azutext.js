@@ -14,6 +14,15 @@ win.create('AzuText', "azutextwin").then(win => win
     .setHeight(500)
     .confirm()
 );
+
+win.menubar('azutextwin').then(win => win
+    .item('File', `
+        'New', 'console.log('hi')'
+        'Open', 'console.log('hi')'
+    `)
+    .confirm()
+)
+
 element.create('textarea', '', 'azutextinput').then(elm => elm
     .window('azutextwin')
     .css(styling)

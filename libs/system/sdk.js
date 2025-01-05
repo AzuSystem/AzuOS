@@ -72,9 +72,78 @@ const win = {
 					);
 				}
 			};
+		   resolve(win);
+		});
+	},
+	menubar: (codename) => {
+		return new Promise((resolve) => {
+			const menuItems = {};
+
+			const win = {
+				item: (menuName, itemsDefinition) => {
+					if (!menuItems[menuName]) {
+						menuItems[menuName] = [];
+					}
+
+					// Parse and add menu items
+					const items = itemsDefinition.trim().split('\n').map((line) => {
+						const [label, funcName] = line.split(',').map((str) => str.trim().replace(/'/g, ''));
+						return { label, funcName };
+					});
+
+					menuItems[menuName].push(...items);
+					return win; // Enable method chaining
+				},
+				confirm: () => {
+					// var parentWindow = document.querySelector(`[codename="${codename}"]`);
+
+					element.create('div', '', 'menubar').then(elm => elm
+						.window(codename)
+						.backgroundcolor('#ffffff20')
+						.width('100%')
+						.height('15px')
+						// .padding('2px')
+					);
+
+					var menubar = document.querySelector(`[codename="menubar"]`);
+
+					// Iterate through menus and create HTML
+					for (const [menuName, items] of Object.entries(menuItems)) {
+						const menu = document.createElement('div');
+						menu.className = 'menu';
+						menu.setAttribute('data-menu', menuName);
+
+						const menuLabel = document.createElement('span');
+						menuLabel.className = 'menu-label';
+						menuLabel.innerText = menuName;
+						menu.appendChild(menuLabel);
+
+						const submenu = document.createElement('div');
+						submenu.className = 'submenu';
+						menu.appendChild(submenu);
+
+						// Add menu items
+						items.forEach(({ label, funcName }) => {
+							const menuItem = document.createElement('div');
+							menuItem.className = 'menu-item';
+							menuItem.innerText = label;
+							menuItem.onclick = () => {
+								if (typeof window[funcName] === 'function') {
+									window[funcName]();
+								} else {
+									console.error(`Function "${funcName}" not defined.`);
+								}
+							};
+							submenu.appendChild(menuItem);
+						});
+
+					menubar.appendChild(menu);
+					}
+				},
+			};
 			resolve(win);
 		});
-	}
+	},
 };
 
 const element = {
@@ -472,7 +541,7 @@ const element = {
 		const elm = document.querySelector(`[codename="${codename}"]`);
 		
 		if (!elm) {
-		  	return returnAsJSON ? { element: null, hasAttribute: false } : [null, false];
+			return returnAsJSON ? { element: null, hasAttribute: false } : [null, false];
 		}
 		
 		const hasAttr = elm.hasAttribute("isElement");
@@ -482,60 +551,60 @@ const element = {
 };
 
 const math = {
-    gcd: (a, b) => {
-        while (b !== 0) {
-            let temp = b;
-            b = a % b;
-            a = temp;
-        }
-        return a;
-    },
+	gcd: (a, b) => {
+		while (b !== 0) {
+			let temp = b;
+			b = a % b;
+			a = temp;
+		}
+		return a;
+	},
 
-    isClose: (a, b, rel_tol = 1e-9, abs_tol = 0.0) => {
-        return Math.abs(a - b) <= Math.max(rel_tol * Math.max(Math.abs(a), Math.abs(b)), abs_tol);
-    },
+	isClose: (a, b, rel_tol = 1e-9, abs_tol = 0.0) => {
+		return Math.abs(a - b) <= Math.max(rel_tol * Math.max(Math.abs(a), Math.abs(b)), abs_tol);
+	},
 
-    factorial: (n) => {
-        if (n === 0 || n === 1) return 1;
-        return n * math.factorial(n - 1);
-    },
+	factorial: (n) => {
+		if (n === 0 || n === 1) return 1;
+		return n * math.factorial(n - 1);
+	},
 
-    combinations: (n, r) => {
-        return math.factorial(n) / (math.factorial(r) * math.factorial(n - r));
-    },
+	combinations: (n, r) => {
+		return math.factorial(n) / (math.factorial(r) * math.factorial(n - r));
+	},
 
-    permutations: (n, r) => {
-        return math.factorial(n) / math.factorial(n - r);
-    },
+	permutations: (n, r) => {
+		return math.factorial(n) / math.factorial(n - r);
+	},
 
-    lcm: (a, b) => {
-        return (a * b) / math.gcd(a, b);
-    },
+	lcm: (a, b) => {
+		return (a * b) / math.gcd(a, b);
+	},
 
-    copysign: (x, y) => {
-        return Math.abs(x) * Math.sign(y);
-    },
+	copysign: (x, y) => {
+		return Math.abs(x) * Math.sign(y);
+	},
 
-    product: (arr) => {
-        return arr.reduce((acc, val) => acc * val, 1);
-    },
+	product: (arr) => {
+		return arr.reduce((acc, val) => acc * val, 1);
+	},
 
-    hypot: (...args) => {
-        return Math.sqrt(args.reduce((sum, val) => sum + val ** 2, 0));
-    },
+	hypot: (...args) => {
+		return Math.sqrt(args.reduce((sum, val) => sum + val ** 2, 0));
+	},
 
-    distance: (point1, point2) => {
-        if (point1.length !== point2.length) throw new Error("Points must have the same dimension.");
-        return Math.sqrt(point1.reduce((sum, _, i) => sum + (point1[i] - point2[i]) ** 2, 0));
-    },
-    erf: (x) => {
-        const sign = Math.sign(x);
-        const absX = Math.abs(x);
-        const t = 1 / (1 + 0.3275911 * absX);
-        const a1 = 0.254829592, a2 = -0.284496736, a3 = 1.421413741, a4 = -1.453152027, a5 = 1.061405429;
-        const poly = t * (a1 + t * (a2 + t * (a3 + t * (a4 + t * a5))));
-        return sign * (1 - poly * Math.exp(-absX * absX));
-    },
+	distance: (point1, point2) => {
+		if (point1.length !== point2.length) throw new Error("Points must have the same dimension.");
+		return Math.sqrt(point1.reduce((sum, _, i) => sum + (point1[i] - point2[i]) ** 2, 0));
+	},
+	erf: (x) => {
+		const sign = Math.sign(x);
+		const absX = Math.abs(x);
+		const t = 1 / (1 + 0.3275911 * absX);
+		const a1 = 0.254829592, a2 = -0.284496736, a3 = 1.421413741, a4 = -1.453152027, a5 = 1.061405429;
+		const poly = t * (a1 + t * (a2 + t * (a3 + t * (a4 + t * a5))));
+		return sign * (1 - poly * Math.exp(-absX * absX));
+	},
 	circleSurfaceArea: (radius) => {
 		return Math.pow(radius, 2) * Math.PI;
 	},
@@ -594,128 +663,128 @@ const system = {
 //     maker: () => {
 //         return "AzuSystem";
 //     },
-    screen: () => {
-        const screen = window.screen;
-        const divisor = math.gdc(screen.width, screen.height);
-        const widthRatio = screen.width / divisor;
-        const heightRatio = screen.height / divisor;
+	screen: () => {
+		const screen = window.screen;
+		const divisor = math.gdc(screen.width, screen.height);
+		const widthRatio = screen.width / divisor;
+		const heightRatio = screen.height / divisor;
 
-        return {
-            "width": screen.width,
-            "height": screen.height,
-            "colorDepth": screen.colorDepth,
-            "orientation": screen.orientation,
-            "pixelDepth": screen.pixelDepth,
-            "aspectRatio": {
-                "width": widthRatio,
-                "height": heightRatio
-            }
-        }
-    }
+		return {
+			"width": screen.width,
+			"height": screen.height,
+			"colorDepth": screen.colorDepth,
+			"orientation": screen.orientation,
+			"pixelDepth": screen.pixelDepth,
+			"aspectRatio": {
+				"width": widthRatio,
+				"height": heightRatio
+			}
+		}
+	}
 }
 
 const webwin = {
-    create: (title, url, codename) => {
-        return new Promise((resolve) => {
-            // Default Values if none provided
-            const properties = {
-                title,
-                url,
-                codename,
-                width: 850,
-                height: 480,
-                x: 100,
-                y: 100,
-                max: false,
-                min: false,
-                autosize: false,
-                fullscreen: false,
-            };
+	create: (title, url, codename) => {
+		return new Promise((resolve) => {
+			// Default Values if none provided
+			const properties = {
+				title,
+				url,
+				codename,
+				width: 850,
+				height: 480,
+				x: 100,
+				y: 100,
+				max: false,
+				min: false,
+				autosize: false,
+				fullscreen: false,
+			};
 
-            const webwin = {
-                title: (titletext) => {
-                    title = titletext;
-                    return webwin;
-                },
-                url: (urltext) => {
-                    url = urltext;
-                    return webwin;
-                },
-                setWidth: (w) => {
-                    properties.width = w;
-                    return webwin;
-                },
-                setHeight: (h) => {
-                    properties.height = h;
-                    return webwin;
-                },
-                setX: (xpos) => {
-                    properties.x = xpos;
-                    return webwin;
-                },
-                setY: (ypos) => {
-                    properties.y = ypos;
-                    return webwin;
-                },
-                setMax: (maximize) => {
-                    properties.max = maximize;
-                    return webwin;
-                },
-                setMin: (minimize) => {
-                    properties.min = minimize;
-                    return webwin;
-                },
-                setAutosize: (auto) => {
-                    properties.autosize = auto;
-                    return webwin;
-                },
-                setFullscreen: (fullscreenapp) => {
-                    properties.fullscreen = fullscreenapp;
-                    return webwin;
-                },
-                confirm: () => {
-                    win.create(properties.title, properties.codename).then(win => win
-                        .setWidth(properties.width)
-                        .setHeight(properties.height)
-                        .setX(properties.x)
-                        .setY(properties.y)
-                        .setMax(properties.max)
-                        .setMin(properties.min)
-                        .setAutosize(properties.autosize)
-                        .setFullscreen(properties.fullscreen)
-                        .confirm()
-                    );
-                    element.create('iframe', '', 'webframe').then(elm => elm
-                        .window(properties.codename)
-                        .width("100%")
-                        .height("100%")
-                        .radius("12px")
-                        .source(url)
-                        .attribute('allowfullscreen', 'true')
-                    );
-                }
-            }
-            resolve(webwin);
-        });
-    }
+			const webwin = {
+				title: (titletext) => {
+					title = titletext;
+					return webwin;
+				},
+				url: (urltext) => {
+					url = urltext;
+					return webwin;
+				},
+				setWidth: (w) => {
+					properties.width = w;
+					return webwin;
+				},
+				setHeight: (h) => {
+					properties.height = h;
+					return webwin;
+				},
+				setX: (xpos) => {
+					properties.x = xpos;
+					return webwin;
+				},
+				setY: (ypos) => {
+					properties.y = ypos;
+					return webwin;
+				},
+				setMax: (maximize) => {
+					properties.max = maximize;
+					return webwin;
+				},
+				setMin: (minimize) => {
+					properties.min = minimize;
+					return webwin;
+				},
+				setAutosize: (auto) => {
+					properties.autosize = auto;
+					return webwin;
+				},
+				setFullscreen: (fullscreenapp) => {
+					properties.fullscreen = fullscreenapp;
+					return webwin;
+				},
+				confirm: () => {
+					win.create(properties.title, properties.codename).then(win => win
+						.setWidth(properties.width)
+						.setHeight(properties.height)
+						.setX(properties.x)
+						.setY(properties.y)
+						.setMax(properties.max)
+						.setMin(properties.min)
+						.setAutosize(properties.autosize)
+						.setFullscreen(properties.fullscreen)
+						.confirm()
+					);
+					element.create('iframe', '', 'webframe').then(elm => elm
+						.window(properties.codename)
+						.width("100%")
+						.height("100%")
+						.radius("12px")
+						.source(url)
+						.attribute('allowfullscreen', 'true')
+					);
+				}
+			}
+			resolve(webwin);
+		});
+	}
 }
 
 const strings = {
-    greeting: () => {
-        const currentHour = new Date().getHours();
-        let greeting;
+	greeting: () => {
+		const currentHour = new Date().getHours();
+		let greeting;
 
-        if (currentHour >= 5 && currentHour < 12) {
-            greeting = "Good morning";
-        } else if (currentHour >= 12 && currentHour < 18) {
-            greeting = "Good afternoon";
-        } else if (currentHour >= 18 && currentHour < 22) {
-            greeting = "Good evening";
-        } else {
-            greeting = "Good night";
-        }
-        return greeting;
-    },
+		if (currentHour >= 5 && currentHour < 12) {
+			greeting = "Good morning";
+		} else if (currentHour >= 12 && currentHour < 18) {
+			greeting = "Good afternoon";
+		} else if (currentHour >= 18 && currentHour < 22) {
+			greeting = "Good evening";
+		} else {
+			greeting = "Good night";
+		}
+		return greeting;
+	},
 	trim_to_length: (str, maxLength) => {
 		if (str.length > maxLength) {
 			return str.slice(0, maxLength) + "..."; // Keep only the first `maxLength` characters

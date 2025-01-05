@@ -215,3 +215,26 @@ p, h1, h2, h3, h4, h5, h6{
   justify-content: left;
   text-align: center;
 }*/
+
+.start-menu {
+  background-color: hsla(270, 44%, 12%, 75%);
+  outline: 1px solid rgba(255, 255, 255, 0.125);
+  /*border-radius: 4px;*/
+  position: fixed;
+  bottom: 60px;
+  left: 145px;
+  width: 650px;
+  height: 70%;
+  margin: 15px;
+  padding: 17px;
+  box-shadow: 0 0 10px 2px #000000cc;
+  display: flex;
+  z-index: 50;
+  backdrop-filter: blur(16px) saturate(200%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  transition-duration: 0.2s;
+}

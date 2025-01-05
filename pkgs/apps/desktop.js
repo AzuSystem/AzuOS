@@ -4,13 +4,12 @@
 */
 
 loadCSS('index.css');
-loadCSS('button.css');
-// loadTheme('default-theme.css');
+loadTheme('default-theme.css');
 // loadTheme('dark-mode.css');
-loadTheme('light-mode.css');
-loadCSS('notification.css');
+// loadTheme('light-mode.css');
 
 // Load all the individial CSS files for elements.
+loadCSS('ui/notification.css');
 loadCSS('ui/button.css');
 
 unloadCSS('boot.css');
@@ -21,9 +20,6 @@ loadPackage('apps:desktop/wallpaper.js');
 loadPackage('apps:desktop/watermark.js');
 loadPackage('apps:desktop/taskbar.js');
 loadPackage('apps:desktop/icons.js');
+loadPackage('apps:desktop/startmenu.js');
+
 sounds.play("login")
-
-// windowManager('start');
-
-// I asked ChatGPT to remake each HTML component into JS
-// taskbar.js may be rewritten to make sense to myself
