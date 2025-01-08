@@ -25,7 +25,7 @@ FreeBSD could probably work too, although shell scripts may require rewriting to
 ## 💻 Getting Started
 If you're interested in contributing to AzuOS or forking the project, you first need to setup up your workspace!
 
-***Disclaimer:AzuOS is primarily designed for Unix-like platforms, such as Linux or BSD. It is not guaranteed to work on Windows due to compatibility issues. If you encounter problems, we encourage you to contribute a fix or seek community support. However, do not make a GitHub Issue about incompatibility for Windows.***
+***Disclaimer: AzuOS is primarily designed for Unix-like platforms, such as Linux or BSD. It is not guaranteed to work on Windows due to compatibility issues. If you encounter problems, we encourage you to contribute a fix or seek community support. However, do not make a GitHub Issue about incompatibility for Windows.***
 
 So here's how:
 
