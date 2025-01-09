@@ -105,8 +105,10 @@ fetch_directory('~/Desktop').then(([files, folders]) => {
 
 		// }
 
-		if (platform_info !== "Windows" && !(file.endsWith(".lnk") || file.endsWith(".url")) || !(file.startsWith(".")) ) {
-        	addDesktopFiles(file, 'assets/icons/questionmark.svg');
+		if (platform_info !== "Windows" && !(file.endsWith(".lnk") || file.endsWith(".url"))) {
+        	if (!(file.startsWith("."))) {
+				addDesktopFiles(file, 'assets/icons/questionmark.svg');
+			}
 		}
     });
 

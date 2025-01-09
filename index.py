@@ -122,6 +122,8 @@ class Api:
 				with open(path, 'w') as file:
 					file.write(content)
 
+	def isWindows(): return True if platform.system() == 'Windows' else False
+
 
 root = tk.Tk()
 

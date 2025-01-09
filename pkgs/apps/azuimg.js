@@ -11,11 +11,10 @@ win.create('AzuImage', "azuimgwin").then(win => win
 // );
 
 if (filename) {
-    var b64image = ""
     var file = pywebview.api.resolve_full_path(filename);
 
     file.then(result => {
-        b64image = pywebview.api.convert_image_to_data_url(result);
+        var b64image = pywebview.api.convert_image_to_data_url(result);
         b64image.then(result => {
             element.create('img', '', 'azuimgpreview').then(elm => elm
                 .window('azuimgwin')
