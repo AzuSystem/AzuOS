@@ -6,17 +6,17 @@
 </div>
 
 ## 👀 What does AzuOS offer?
-An advantage of AzuOS being built on Web Technologies is it allows users and developers to easily customize their system and make it yours!
-From a simple change in a theme file, to replacing a css file, to literally writing your own desktop script :3
+An advantage of AzuOS being built on Web Technologies is it allows users and developers to easily customize their system and make it their own.
+From a simple change in a theme file, to replacing a css file, to literally writing your own desktop script.
 
-All that is required for developers is decent experience with Vanilla Javascript and you're good to go 👍
+All that is required for developers is experience with Vanilla Javascript and you're good to go 👍
 
 ## 🧐 Why?
-I know... it seems weird having a Desktop Environment based on Javascript and Python and this alone is enough to drive some people away, which is kinda understandable.
-A Web-Based Desktop makes development faster and easier, even for those just forking the project. Although admittly, a desktop not written primarily with such languages is better.
+I know... it seems weird having a Desktop Environment based on Javascript and Python and this alone is enough to drive some people away, which is understandable.
+A Web-Based Desktop makes development faster and easier, even for those just forking the project. Although admittedly, a desktop not written primarily with such languages is better.
 
 ## 🔧 What does AzuOS run on?
-AzuOS is built using Javascript & Python, however runs on top of [Arch Linux](https://archlinux.org). _~~so I can say 'I use Arch btw :3'~~_
+AzuOS is built using Javascript & Python, however runs on top of [Arch Linux](https://archlinux.org).
 
 Theoretically, AzuOS can run on other linux systems, assuming they also use bash, you may need to replace some shell scripts with ones that work on your linux distro of choice.
 
@@ -25,8 +25,7 @@ FreeBSD could probably work too, although shell scripts may require rewriting to
 ## 💻 Getting Started
 If you're interested in contributing to AzuOS or forking the project, you first need to setup up your workspace!
 
-***Disclaimer: AzuOS is likely going to error out on any non-unix-like platforms (I'm talking to you Windows 10/11) so if AzuOS doesn't work, please do not make a GitHub issue as I will not be handling it, you're likely going to need to wait for someone else to resolve it for you, or otherwise take matters into your own hands and make it work. To make things easier, just use a Unix-like Platform, like any Linux Distro, or perhaps BSD (untested), you have better chances of using AzuOS with no errors than you have on Windows.
-Thank you in advance 🎩***
+***Disclaimer: AzuOS is primarily designed for Unix-like platforms, such as Linux or BSD. It is not guaranteed to work on Windows due to compatibility issues. If you encounter problems, we encourage you to contribute a fix or seek community support. However, do not make a GitHub Issue about incompatibility for Windows.***
 
 So here's how:
 
@@ -82,7 +81,7 @@ cd {directory of choice}
 It is recommended that you clone this repo into /azuos, although you'll likely need to use sudo to do so.
 
 ### Python 3
-Now for python, which is required for initialising AzuOS, and uh, we won't be using [electron](https://electronjs.org) anytime soon~ :)
+Now for python, which is required for initialising AzuOS, and uh, we won't be using [electron](https://electronjs.org) anytime soon.
 
 Python for Debian/Ubuntu (Debian-based distros):
 
