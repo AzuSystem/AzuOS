@@ -83,6 +83,39 @@ function createDynamicWindow(title, codename, width, height, x, y, max, min, aut
 	console.log("Window ID:", winbox.id);
 }
 
+function newXorgWindow(title, id) {
+	let obj = {};
+
+	var winbox = new WinBox({
+			title: title,
+			url: url,
+			root: document.getElementById('desktop'),
+			overflow: true,
+			onclose: function(){
+				this.g.classList.add("windowClose");
+				document.getElementById(winbox.id).classList.remove("opentask");
+				document.getElementById(winbox.id).classList.add("closetask");
+
+				setTimeout(() => {
+					this.onclose = null;
+					this.close();
+					document.getElementById(winbox.id).remove();
+				}, 200);
+
+				return true;
+			}
+	});
+	const tbtask = document.createElement('a');
+	tbtask.id = winbox.id;
+	tbtask.className = 'taskbartask opentask';
+	tbtask.textContent = title;
+	tbtask.onclick = function() {
+			unminWindow(winbox.id);
+	};
+	document.getElementById('tbtasks').appendChild(tbtask);
+	console.log("Window ID:", winbox.id);
+}
+
 // function newWindowAZML(title, maximized, url) {
 //   fetch(url)
 //     .then(response => {

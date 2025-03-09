@@ -79,6 +79,8 @@ const taskbarprocesses = (`
 	width: calc(100% - 180px);
 `)
 
+let isStartMenuOpen = false;
+
 element.create('div', '', 'taskbar', true).then(elm => elm
 	.css(taskbarcss)
 	.parent('desktop')
@@ -87,7 +89,25 @@ element.create('div', '', 'taskbar', true).then(elm => elm
 // Start Button
 element.create('button', '', 'start-btn').then(elm => elm
 	.css(taskbarcomponent + taskbarstart)
+	.id('start-btn')
 	.parent('taskbar')
+	.attribute('onclick', `
+		var startmenu = document.getElementById('start-menu');
+
+		if (isStartMenuOpen === false) {
+			// startmenu.style.display = 'block';
+			// startmenu.style.pointerEvents = 'all'	
+			startmenu.classList.remove('__azuos-start-menu-out');		
+			startmenu.classList.add('__azuos-start-menu-in');
+			isStartMenuOpen = true;
+		} else if (isStartMenuOpen === true) {
+			// startmenu.style.display = 'none';
+			// startmenu.style.pointerEvents = 'none'	
+			startmenu.classList.remove('__azuos-start-menu-in');
+			startmenu.classList.add('__azuos-start-menu-out');
+			isStartMenuOpen = false;			
+		}
+	`)
 );
 
 element.create('img', '', '').then(elm => elm

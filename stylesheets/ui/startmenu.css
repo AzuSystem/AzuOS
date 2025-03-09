@@ -1,0 +1,42 @@
+/* 
+  Start Menu Animation
+  CSS can be found /pkgs/apps/desktop/startmenu.js 
+*/
+
+@keyframes start-menu-in {
+    from {
+/*      bottom: 80px;*/
+      opacity: 0;
+      pointer-events: none;
+      transform: translateY(20px);
+    }
+    to {
+/*      bottom: 60px;*/
+      opacity: 1;
+      pointer-events: all;
+      transform: translateY(0px);
+    }
+  }
+  
+  @keyframes start-menu-out {
+    from {
+/*      bottom: 60px;*/
+      opacity: 1;
+      pointer-events: all;
+      transform: translateY(0px);
+    }
+    to {
+/*      bottom: 80px;*/
+      opacity: 0;
+      pointer-events: none;
+      transform: translateY(20px);
+    }
+  }
+  
+  .__azuos-start-menu-in {
+    animation: start-menu-in 0.2s ease-out forwards;
+  }
+  
+  .__azuos-start-menu-out {
+    animation: start-menu-out 0.2s ease-in forwards;
+  }

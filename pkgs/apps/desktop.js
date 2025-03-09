@@ -9,8 +9,9 @@ loadTheme('default-theme.css');
 // loadTheme('light-mode.css');
 
 // Load all the individial CSS files for elements.
-loadCSS('ui/notification.css');
+loadCSS('ui/notification.css'); // Notification Animation
 loadCSS('ui/button.css');
+loadCSS('ui/startmenu.css'); // Start Menu Animation
 
 unloadCSS('boot.css');
 unloadCSS('login.css');
@@ -21,5 +22,6 @@ loadPackage('apps:desktop/watermark.js');
 loadPackage('apps:desktop/taskbar.js');
 loadPackage('apps:desktop/icons.js');
 loadPackage('apps:desktop/startmenu.js');
+loadLibrary('system:xorginazuos.js')
 
 sounds.play("login")

@@ -1,4 +1,4 @@
-/*
+	/*
 	Login Display Screen for AzuOS
 	Written by: MTSyntho @ AzuSystem 2024
 */

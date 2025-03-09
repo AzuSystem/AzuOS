@@ -761,6 +761,7 @@ const webwin = {
 						.radius("12px")
 						.source(url)
 						.attribute('allowfullscreen', 'true')
+						.attribute('sandbox')
 					);
 				}
 			}

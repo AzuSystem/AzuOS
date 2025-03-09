@@ -154,6 +154,7 @@ input {
   transition-duration: 0.1s;
   height: 20px;
   padding: 5px;
+  padding-left: 10px;
 }
 
 button {

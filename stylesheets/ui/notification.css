@@ -1,3 +1,8 @@
+/* 
+  Notification Animation
+  CSS can be found /pkgs/apps/desktop/notification.js 
+*/
+
 @keyframes notification-in {
     from {
       right: -400px;

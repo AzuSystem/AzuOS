@@ -25,6 +25,9 @@ const startmenucss = (`
 	flex-direction: column;
 	align-items: left;
 	transition-duration: 0.2s;
+	// display: none;
+	// opacity: 0;
+	// pointer-events: none;
 `)
 
 const startmenupinnedcss = (`
@@ -78,6 +81,9 @@ const startmenubarbtncss = (`
 
 element.create('div', '', 'start-menu').then(elm => elm
 	.css(startmenucss)
+	// .class('__azuos-start-menu-out')
+	.opacity(0)
+	.id('start-menu')
 	.parent('desktop')
 );
 
@@ -120,6 +126,10 @@ element.create('img', '', '').then(elm => elm
 element.create('button', '', 'start-menu-settings-btn').then(elm => elm
 	.css(startmenubarbtncss)
 	.parent('start-menu-left')
+	.attribute('onclick', `
+		close
+		loadPackage("settings:settings.js")
+	`)
 );
 
 element.create('img', '', '').then(elm => elm
@@ -187,7 +197,7 @@ element.create('img', '', '').then(elm => elm
 	.parent('start-menu-power-btn')
 );
 
-// Start Menu Rightt (Account Button)
+// Start Menu Right (Account Button)
 element.create('button', '', 'start-menu-account-btn').then(elm => elm
 	.css(startmenubarbtncss)
 	.parent('start-menu-right')
